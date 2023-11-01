@@ -1,0 +1,18 @@
+site_name: Linked Data Objects (LDO)
+repo_url: https://github.com/o-development/ldo
+theme:
+    name: material
+    logo: assets/Logo-40.png
+    language: en
+    favicon: assets/favicon.png
+    palette:
+      scheme: slate
+      primary: black
+    features:
+      - navigation.tabs
+      - navigation.expand
+      - toc.follow
+      - toc.integrate
+      - search.suggest
+      - search.highlight
+
