@@ -1,5 +1,16 @@
 # `parseRdf`
 
+Parses raw RDF and puts its results into an LdoDataset.
+
+## Usage
+
+```typescript
+import { parseRdf } from "ldo";
+
+const rawTurtle = "...";
+const ldoDataset = parseRdf(rawTurtle, { baseIRI: "https://example.com/" });
+```
+
 ## Definition
 
 ```typescript
@@ -13,12 +24,3 @@ parseRdf(data: string, parserOptions?: ParserOptions): Promise<LdoDataset>
     - `baseIRI` (optional): If this data is hosted at a specific location, you can provide the baseIRI of that location.
     - `blankNodePrefix` (optional): If blank nodes should have a prefix, that should be provided here.
     - `factory` (optional): a RDF Data Factory from  [`@rdfjs/data-model`](https://www.npmjs.com/package/@rdfjs/data-model). 
-
-## Usage
-
-```typescript
-import { parseRdf } from "ldo";
-
-const rawTurtle = "...";
-const ldoDataset = parseRdf(rawTurtle, { baseIRI: "https://example.com/" });
-```

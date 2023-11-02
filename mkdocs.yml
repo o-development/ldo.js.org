@@ -30,14 +30,14 @@ nav:
       - build: 'api/cli/build.md'
     - '@ldo/ldo':
       - 'api/ldo/index.md'
-      - Getting an LDO dataset:
-        - 'api/ldo/getting_an_ldo_dataset/index.md'
-        - createLdoDataset: 'api/ldo/getting_an_ldo_dataset/createldodataset.md'
-        - parseRdf: 'api/ldo/getting_an_ldo_dataset/parserdf.md'
-        - LDO Dataset Factory:
-          - 'api/ldo/getting_an_ldo_dataset/ldodatasetfactory/index.md'
-          - createLdoDatasetFactory: 'api/ldo/getting_an_ldo_dataset/ldodatasetfactory/createldodatasetfactory.md'
-          - LdoDatasetFactory: 'api/ldo/getting_an_ldo_dataset/ldodatasetfactory/ldodatasetfactory.md'
+      - LdoBase: 'api/ldo/LdoBase.md'
+      - ShapeType: 'api/ldo/ShapeType.md'
+      - parseRdf: 'api/ldo/parseRdf.md'
+      - createLdoDatasetFactory: 'api/ldo/createLdoDatasetFactory.md'
+      - LdoDatasetFactory: 'api/ldo/LdoDatasetFactory.md'
+      - createLdoDataset: 'api/ldo/createLdoDataset.md'
+      - LdoDataset: 'api/ldo/LdoDataset.md'
+      - LdoBuilder: 'api/ldo/LdoBuilder.md'
     - '@ldo/solid': 'api/solid/index.md'
     - '@ldo/solid-react': 'api/solid-react/index.md'
     - '@ldo/jsonld-dataset-proxy': 'api/jsonld-dataset-proxy/index.md'

@@ -110,9 +110,11 @@ run();
 
 ## API Details
 
- - [Getting an LDODataset](getting_an_ldo_dataset/index.md)
-    - [`createLdoDataset`](getting_an_ldo_dataset/createLdoDataset)
-    - [`parseRdf`](getting_an_ldo_dataset/parserdf.md)
-    - [LdoDatasetFactory](getting_an_ldo_dataset/ldodatasetfactory/index.md)
-        - [`createLdoDatasetFactory`](getting_an_ldo_dataset/ldodatasetfactory/createldodatasetfactory.md)
-        - [`LdoDatasetFactory`](getting_an_ldo_dataset/ldodatasetfactory/ldodatasetfactory.md)
+ - [`LdoBase`](LdoBase.md)
+ - [`ShapeType`](ShapeType.md)
+ - [`parseRdf`](parseRdf.md)
+ - [`createLdoDatasetFactory`](createLdoDatasetFactory.md)
+ - [`LdoDatasetFactory`](LdoDatasetFactory.md)
+ - [`createLdoDataset`](createLdoDataset.md)
+ - [`LdoDataset`](LdoDataset.md)
+ - [`LdoBuilder`](LdoBuilder.md)
