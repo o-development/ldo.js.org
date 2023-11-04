@@ -7,7 +7,7 @@ This function exists for parity with RDF/JS. Most developers will not use it. In
 ## Usage
 
 ```typescript
-import { createLdoDatasetFactory } from "ldo";
+import { createLdoDatasetFactory } from "@ldo/ldo";
 
 const ldoDatasetFactory = createLdoDatasetFactory();
 const ldoDataset = ldoDatasetFactory.dataset(initialDataset);

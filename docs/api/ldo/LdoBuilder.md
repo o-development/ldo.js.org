@@ -23,6 +23,8 @@ const profile = ldoBuilder
 class LdoBuilder<Type extends LdoBase> 
 ```
 
+---
+
 ### `constructor`
 
 ```typescript
@@ -35,6 +37,8 @@ constructor(
 #### Parameters
  - `jsonldDatasetProxyBuilder`: A [JsonldDatasetProxyBuilder](../jsonld-dataset-proxy/JsonldDatasetProxyBuilder.md)
  - `shapeType`: The [ShapeType](./ShapeType.md) for this builder
+
+---
 
 ### `fromSubject`
 `fromSubject` lets you define a an `entryNode`, the place of entry for the graph. The object returned by `jsonldDatasetProxy` will represent the given node. This parameter accepts both `namedNode`s and `blankNode`s. `fromSubject` takes a generic type representing the typescript type of the given subject.
@@ -54,6 +58,8 @@ const profile = ldoDataset
   .usingType(FoafProfileShapeType)
   .fromSubject("http://example.com/Person1");
 ```
+
+---
 
 ### `matchSubject`
 `matchSubject` returns a Jsonld Dataset Proxy representing all subjects in the dataset matching the given predicate, object, and graph.
@@ -85,6 +91,8 @@ profiles.forEach((person) => {
 });
 ```
 
+---
+
 ### `matchObject`
 `matchObject` returns a Jsonld Dataset Proxy representing all objects in the dataset matching the given subject, predicate, and graph.
 
@@ -115,6 +123,8 @@ friendsOfPerson1.forEach((person) => {
 });
 ```
 
+---
+
 ### `fromJson`
 `fromJson` will take any regular Json, add the information to the dataset, and return a Jsonld Dataset Proxy representing the given data.
 
@@ -135,6 +145,8 @@ const person2 = ldoDataset
     fn: ["Jane Doe"],
   });
 ```
+
+---
 
 ### `write`
 
@@ -161,6 +173,8 @@ console.log(dataset.toString());
 // Logs:
 // <http://example.com/Person1> <http://xmlns.com/foaf/0.1/name> "Jack" <http://example.com/ExampleGraph> .
 ```
+
+---
 
 ### `setLanguagePreferences`
 

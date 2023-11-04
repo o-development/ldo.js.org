@@ -110,11 +110,44 @@ run();
 
 ## API Details
 
+Types
+
  - [`LdoBase`](LdoBase.md)
  - [`ShapeType`](ShapeType.md)
+
+ Getting a LdoDataset
+
  - [`parseRdf`](parseRdf.md)
  - [`createLdoDatasetFactory`](createLdoDatasetFactory.md)
  - [`LdoDatasetFactory`](LdoDatasetFactory.md)
  - [`createLdoDataset`](createLdoDataset.md)
  - [`LdoDataset`](LdoDataset.md)
+
+Getting a Linked Data Object
+
  - [`LdoBuilder`](LdoBuilder.md)
+
+Converting a Linked Data Object to Raw RDF
+
+ - [`toTurtle`](toTurtle.md)
+ - [`toNTriples`](toNTriples.md)
+ - [`serialize`](serialize.md)
+
+Transactions
+
+ - [transactions](transactions.md)
+ - [`toSparqlUpdate`](toSparqlUpdate.md)
+
+Language Tag Support
+
+ - [`languageOf`](languageOf.md)
+ - [`setLanguagePreferences`](setLanguagePreferences.md)
+
+Graph Support
+
+ - [`graphOf`](graphOf.md)
+ - [`write`](write.md)
+
+Other Helper Functions
+
+ - [`getDataset`](getDataset.md)

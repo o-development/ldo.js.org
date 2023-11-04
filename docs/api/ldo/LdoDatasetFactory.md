@@ -19,6 +19,8 @@ const ldoDataset = ldoDatasetFactory.dataset(initialDataset);
 class LdoDatasetFactory implements DatasetFactory<Quad, Quad>
 ```
 
+---
+
 ### `constructor`
 ```typescript
 new LdoDatasetFactory(datasetFactory: DatasetFactory<Quad, Quad>)
@@ -26,6 +28,8 @@ new LdoDatasetFactory(datasetFactory: DatasetFactory<Quad, Quad>)
 
 #### Parameters
  - `datasetFactory`: A generic dataset factory this factory will wrap
+
+---
 
 ### `dataset`
 ```typescript

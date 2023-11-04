@@ -21,6 +21,8 @@ const ldoBuilder = ldoDataset.usingType(FoafProfileShapeType);
 class LdoDataset implements SubscribableDataset<Quad>, Dataset<Quad, Quad>
 ```
 
+---
+
 ### `constructor`
 
 ```typescript
@@ -34,13 +36,19 @@ constructor(
  - `datasetFractory`: A RDF/JS Dataset Factory
  - `initialDataset` (Optional): An RDF/JS Dataset with initial Quads
 
+---
+
 ### Dataset Methods
 
 LdoDataset implements all methods defined in the [Dataset class](../dataset/Dataset.md).
 
+---
+
 ### Subscribable Dataset Methods
 
 LdoDataset implements all methods defined in the [SubscribableDataset class](../subscribable-dataset/SubscribableDataset.md).
+
+---
 
 ### `usingType`
 

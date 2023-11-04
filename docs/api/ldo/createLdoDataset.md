@@ -11,7 +11,7 @@ createLdoDataset(initialDataset?: Dataset<Quad, Quad> | Quad[]): Promise<LdoData
 ## Usage
 
 ```typescript
-import { createLdoDataset } from "ldo";
+import { createLdoDataset } from "@ldo/ldo";
 
 const ldoDataset = createLdoDataset();
 ```
