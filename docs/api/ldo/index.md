@@ -4,7 +4,7 @@
 
 ## Guide
 
-A full walkthrough for using the `@ldo/ldo` library can be found in the [For RDF Usage Guide](https://ldo.js.org/raw_rdf/).
+A full walkthrough for using the `@ldo/ldo` library can be found in the [For RDF Usage Guide](../../raw_rdf/index.md).
 
 ## Installation
 
