@@ -12,16 +12,16 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
 nav:
-  - Guides:
-    - For Raw Rdf:
-      - raw_rdf/index.md
-      - Setup: raw_rdf/setup.md
-    - For Solid:
-      - solid/index.md
-    - For Solid+React:
-      - solid_react/index.md
-    - Advanced Data Manipulation:
-      - advanced_data_manipulation/index.md
+  # - Guides:
+  #   - For Raw Rdf:
+  #     - raw_rdf/index.md
+  #     - Setup: raw_rdf/setup.md
+  #   - For Solid:
+  #     - solid/index.md
+  #   - For Solid+React:
+  #     - solid_react/index.md
+  #   - Advanced Data Manipulation:
+  #     - advanced_data_manipulation/index.md
   - API:
     - 'api/index.md'
     - '@ldo/cli':
@@ -48,15 +48,15 @@ nav:
       - graphOf: 'api/ldo/graphOf.md'
       - write: 'api/ldo/write.md'
       - getDataset: 'api/ldo/getDataset.md'
-    - '@ldo/solid': 'api/solid/index.md'
-    - '@ldo/solid-react': 'api/solid-react/index.md'
-    - '@ldo/jsonld-dataset-proxy': 'api/jsonld-dataset-proxy/index.md'
-    - '@ldo/dataset': 'api/dataset/index.md'
-    - '@ldo/subscribable-dataset': 'api/subscribable-dataset/index.md'
-    - '@ldo/schema-converter-shex': 'api/schema-converter-shex/index.md'
-    - '@ldo/traverser-shexj': 'api/traverser-shexj/index.md'
-    - '@ldo/type-traverser': 'api/type-traverser/index.md'
-    - '@ldo/rdf-utils': 'api/rdf-utils/index.md'
+    # - '@ldo/solid': 'api/solid/index.md'
+    # - '@ldo/solid-react': 'api/solid-react/index.md'
+    # - '@ldo/jsonld-dataset-proxy': 'api/jsonld-dataset-proxy/index.md'
+    # - '@ldo/dataset': 'api/dataset/index.md'
+    # - '@ldo/subscribable-dataset': 'api/subscribable-dataset/index.md'
+    # - '@ldo/schema-converter-shex': 'api/schema-converter-shex/index.md'
+    # - '@ldo/traverser-shexj': 'api/traverser-shexj/index.md'
+    # - '@ldo/type-traverser': 'api/type-traverser/index.md'
+    # - '@ldo/rdf-utils': 'api/rdf-utils/index.md'
 theme:
     name: material
     custom_dir: overrides

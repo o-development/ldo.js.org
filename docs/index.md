@@ -7,13 +7,13 @@ hide:
 
 <h1 style="text-align:center;">Solid and RDF without the Complexity</h1>
 
-<center>
+<!-- <center>
 
 [For Raw Rdf](raw_rdf/index.md){ .md-button .md-button--primary  }
 [For Solid](solid/index.md){ .md-button .md-button--primary  }
 [For Solid+React](solid_react/index.md){ .md-button .md-button--primary  }
 
-</center>
+</center> -->
 
 <div style="display: flex; justify-content: center;">
 <table style="margin-left: auto;margin-right: auto;">
