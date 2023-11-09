@@ -12,16 +12,14 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
 nav:
-  # - Guides:
-  #   - For Raw Rdf:
-  #     - raw_rdf/index.md
-  #     - Setup: raw_rdf/setup.md
-  #   - For Solid:
-  #     - solid/index.md
-  #   - For Solid+React:
-  #     - solid_react/index.md
-  #   - Advanced Data Manipulation:
-  #     - advanced_data_manipulation/index.md
+  - Guides:
+    - 'guides/index.md'
+    - For Raw Rdf: guides/raw_rdf/index.md
+    # - For Solid:
+    #   - guides/solid/index.md
+    - For Solid+React: guides/solid_react/index.md
+    # - Advanced Data Manipulation:
+    #   - guides/advanced_data_manipulation/index.md
   - API:
     - 'api/index.md'
     - '@ldo/cli':
@@ -71,6 +69,7 @@ theme:
       - navigation.tracking
       - navigation.sections
       - navigation.indexes
+      - navigation.footer
       - toc.follow
       - search.suggest
       - search.highlight
