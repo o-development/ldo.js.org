@@ -17,7 +17,7 @@ npx @ldo/cli init
 npm i @ldo/solid-react
 ```
 
-## 3. Observe the generated files in the `/src/./ldo` folder
+## 3. Observe the generated files in the `/src/.ldo` folder
 
 FoafProfile.typings.ts
 
@@ -85,7 +85,7 @@ Login.tsx
 import { FunctionComponent } from "react";
 import { Profile } from "./Profile";
 
-export const Profile: FunctionComponent = () => {
+export const Login: FunctionComponent = () => {
   return <div>
     Login
     <Profile />
