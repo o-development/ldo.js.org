@@ -8,6 +8,8 @@ We'll be making a simple micro-blogging website that allows you to write notes a
 
 This tutorial assumes that you are already familiar with React and the overall concepts associated with Solid.
 
+[Completed Code on Github](https://github.com/o-development/ldo-tutorial-solid-react){ .md-button }
+
 ## 1. Getting Started
 
 First, we'll initialize the project. LDO is designed to work with TypeScript, so we want to initialize a typescript react project.
@@ -27,7 +29,7 @@ import React, { FunctionComponent } from 'react';
 import { Header } from './Header';
 import { Blog } from './Blog';
 
-export const App: FunctionComponent = () => {
+const App: FunctionComponent = () => {
   return (
     <div className="App">
       <Header />
@@ -35,6 +37,8 @@ export const App: FunctionComponent = () => {
     </div>
   );
 }
+
+export default App;
 ```
 
 **Header.tsx**: A header component that will help the user log in.
@@ -77,7 +81,7 @@ export const MakePost: FunctionComponent = () => {
   const [selectedFile, setSelectedFile] = useState<File | undefined>();
 
   const onSubmit = useCallback(
-    (e: FormEvent<HTMLFormElement>) => {
+    async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
       // TODO upload functionality
@@ -132,11 +136,13 @@ npm install @ldo/solid-react
 This library will give us many useful hooks and components for building a Solid application, but it can't be used unless we wrap the application in a provider. Because we're building a React application in the web browser, we'll wrap the application using the `BrowserSolidLdoProvider`.
 
 **App.tsx**
-```tsx
-// ...
+```tsx  hl_lines="4 9 12"
+import React, { FunctionComponent } from 'react';
+import { Header } from './Header';
+import { Blog } from './Blog';
 import { BrowserSolidLdoProvider } from '@ldo/solid-react';
 
-export const App: FunctionComponent = () => {
+const App: FunctionComponent = () => {
   return (
     <div className="App">
       <BrowserSolidLdoProvider>
@@ -146,6 +152,8 @@ export const App: FunctionComponent = () => {
     </div>
   );
 }
+
+export default App;
 ```
 
 ## 4. Implementing Login/Logout in the header
@@ -159,7 +167,7 @@ Next we use the `login(issuer: string)` method to initiate a login. Because a So
 Finally, the `logout()` function lets you easily trigger a log out.
 
 **Header.tsx**
-```tsx
+```tsx hl_lines="1 5 9-33"
 import { useSolidAuth } from "@ldo/solid-react";
 import { FunctionComponent } from "react";
 
@@ -201,7 +209,8 @@ export const Header: FunctionComponent = () => {
 
 Because `useSolidAuth` is a hook, you can use it anywhere in the application, even components that don't contain buttons for "login" and "logout." For example, we could use the `session` object in `Blog.tsx` to display a message if the user is not logged in.
 
-```tsx
+**Blog.tsx**
+```tsx hl_lines="4 7 8"
 import { FunctionComponent } from "react";
 import { MakePost } from "./MakePost";
 import { Post } from "./Post";
@@ -213,11 +222,12 @@ export const Blog: FunctionComponent = () => {
 
   return (
     <main>
-      // ..
+      <MakePost />
+      <hr />
+      <Post />
     </main>
   );
 };
-
 ```
 
 Once you've implemented these changes, the application should look like this when logged out:
@@ -252,6 +262,7 @@ touch ./src/.shapes/solidProfile.shex
 
 Now, let's create a shape for the Solid Profile. The code for a Solid profile is listed below, but you can learn more about creating ShEx shapes of your own on the [ShEx website](https://shex.io)
 
+**.shapes/solidProfile.shex**
 ```shex
 PREFIX srs: <https://shaperepo.com/schemas/solidProfile#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -392,7 +403,8 @@ Well, we can fix that by retrieving the user's profile document and using the da
 
 We can use the `useResource` and `useSubject` hooks to do this.
 
-```tsx
+**Header.tsx**
+```tsx hl_lines="2 3 7-14 21"
 import { FunctionComponent } from "react";
 import { useResource, useSolidAuth, useSubject } from "@ldo/solid-react";
 import { SolidProfileShapeShapeType } from "./.ldo/solidProfile.shapeTypes";
@@ -434,10 +446,10 @@ But, to create a new folder, we want to know what the root folder of the applica
 
 Let's add the following hook to **Blog.tsx**
 
-```tsx
+```tsx hl_lines="2 3 8-28"
 // ...
-import { useLdo, useResource, useSolidAuth } from "@ldo/solid-react";
-import { ConatinerUri } from "@ldo/solid";
+import { useLdo, useSolidAuth } from "@ldo/solid-react";
+import { ContainerUri } from "@ldo/solid";
 
 export const Blog: FunctionComponent = () => {
   const { session } = useSolidAuth();
@@ -464,7 +476,7 @@ export const Blog: FunctionComponent = () => {
     }
   }, [getResource, session.webId]);
 
-  //...
+  if (!session.isLoggedIn) return <p>No blog available. Log in first.</p>;
 ```
 
 Let's walk through what's happening here. First, we can use the `useLdo` hook to get a number of useful functions for interacting with data (and we'll use more in the future). In this case, we're getting the `getResource` function. This serves roughly the same purpose as the `useResource` hook, but in function form rather than hook form. Keep in mind that resources retrieved from the `getResource` function won't trigger rerenders on update, so it's best used when you need a resource for purposes other than the render.
@@ -474,6 +486,8 @@ Using the `getResource` function, we get a resource representing the webId. Ever
 We'll then save the URI of the main application container so we can use it in step 8.
 
 Any container resource has the `child` method which gets a representation of the any child, and with that representation we can call the `createIfAbsent` method to create the create out application's main container.
+
+We'll use the value of "mainContainerUri" in the next step.
 
 ## 8. Rendering Container Children
 
@@ -490,10 +504,92 @@ rootContainer/
 │  │  ├─ another_image.jpg/
 ```
 
-We've already created the `my-solid-app/` container, so let's add a bit of functionality to create the post folders. Let's modify **MakePost.tsx**.
+We've already created the `my-solid-app/` container, so let's add a bit of functionality to create the post folders.
 
-```tsx
-export const MakePost: FunctionComponent<{ mainContainer: Container }> = ({
+First, let's modify **Blog.tsx** to fetch the value of the main container and use that information. We'll use the `useResource` hook on the main container keep track of the status of the main container. 
+
+**Blog.tsx**
+```tsx hl_lines="2 3 30 34 36-47"
+// ...
+import { useLdo, useResource, useSolidAuth } from "@ldo/solid-react";
+import { ContainerUri, Container } from "@ldo/solid";
+
+export const Blog: FunctionComponent = () => {
+  const { session } = useSolidAuth();
+
+  const { getResource } = useLdo();
+  const [mainContainerUri, setMainContainerUri] = useState<
+    ContainerUri | undefined
+  >();
+
+  useEffect(() => {
+    if (session.webId) {
+      // Get the WebId resource
+      const webIdResource = getResource(session.webId);
+      // Get the root container associated with that WebId
+      webIdResource.getRootContainer().then((rootContainerResult) => {
+        // Check if there is an error
+        if (rootContainerResult.isError) return;
+        // Get a child of the root resource called "my-solid-app/"
+        const mainContainer = rootContainerResult.child("my-solid-app/");
+        setMainContainerUri(mainContainer.uri);
+        // Create the main container if it doesn't exist yet
+        mainContainer.createIfAbsent();
+      });
+    }
+  }, [getResource, session.webId]);
+
+  const mainContainer = useResource(mainContainerUri);
+
+  return (
+    <main>
+      <MakePost mainContainer={mainContainer} />
+      <hr />
+      {mainContainer
+        // Get all the children of the main container
+        ?.children()
+        // Filter out children that aren't containers themselves
+        .filter((child): child is Container => child.type === "container")
+        // Render a "Post" for each child
+        .map((child) => (
+          <Fragment key={child.uri}> 
+            <Post key={child.uri} postUri={child.uri} />
+            <hr />
+          </Fragment>
+        ))}
+    </main>
+  );
+};
+```
+
+In the render, we can use the `children()` method on the main container to get all the child elements of our container. As discussed earlier, the only children of this container should be containers themselves, so we'll filter out all non-containers. And finally, we render the post for each child.
+
+Now that we can iterate through all the Posts made on the Solid Pod, let's create a little render method for those Posts. For now, we'll just display the URI for the Post, but we'll make it more complex in the future. Notice that we've added a new prop to the Post component so that we can pass in the `postUri`.
+
+**Post.tsx**
+```tsx hl_lines="1 3-5 8"
+import { ContainerUri } from "@ldo/solid";
+
+export const Post: FunctionComponent<{ postUri: ContainerUri }> = ({
+  postUri,
+}) => {
+  return (
+    <div>
+      <p>ContainerURI is: {postUri}</p>
+    </div>
+  );
+};
+```
+
+Finally, let's add some simple functionality to **MakePost.tsx** that creates the containers for Posts. We'll add functionality to fill that Post with content in future steps.
+
+**MakePost.tsx**
+```tsx hl_lines="2-3 5-7 15-27 29"
+// ...
+import { Container } from "@ldo/solid";
+import { v4 } from "uuid";
+
+export const MakePost: FunctionComponent<{ mainContainer?: Container }> = ({
   mainContainer,
 }) => {
   const [message, setMessage] = useState("");
@@ -502,6 +598,9 @@ export const MakePost: FunctionComponent<{ mainContainer: Container }> = ({
   const onSubmit = useCallback(
     async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+
+      // Don't create a post is main container isn't present
+      if (!mainContainer) return;
 
       // Create the container for the post
       const postContainerResult = await mainContainer.createChildAndOverwrite(
@@ -519,64 +618,9 @@ export const MakePost: FunctionComponent<{ mainContainer: Container }> = ({
   //...
 ```
 
-Firstly, note that we've added a prop to include a main container. We use this in the `onSubmit` function to call the `createChildAndOverwrite` method. We can generate a name for the sub-folder any way we want, but in this example, we used UUID to generate a random name for the folder.
+Note that we've added a prop to include a main container. We use this in the `onSubmit` function to call the `createChildAndOverwrite` method. We can generate a name for the sub-folder any way we want, but in this example, we used UUID to generate a random name for the folder.
 
 Finally, we check to see if the result is an error, and if it isn't we extract our new Post container from the result.
-
-Now that we have the ability to create a container, let's view it.
-
-We'll modify **Post.tsx** to include the uri of the post:
-
-```tsx
-import { ContainerUri } from "@ldo/solid";
-
-export const Post: FunctionComponent<{ postUri: ContainerUri }> = ({
-  postUri,
-}) => {
-  return (
-    <div>
-      <p>ContainerURI is: {postUri}</p>
-    </div>
-  );
-};
-```
-
-And, in **Blog.tsx** we'll use the `useResource` hook on the main container keep track of the status of the main container. 
-
-```tsx
-export const Blog: FunctionComponent = () => {
-  const { session } = useSolidAuth();
-
-  const { getResource } = useLdo();
-  const [mainContainerUri, setMainContainerUri] = useState<
-    ContainerUri | undefined
-  >();
-  const mainContainer = useResource(mainContainerUri);
-
-  // ...
-
-  return (
-    <main>
-      <MakePost mainContainer={mainContainer} />
-      <hr />
-      {mainContainer
-        // Get all the children of the main container
-        .children()
-        // Filter out children that aren't containers themselves
-        .filter((child): child is Container => child.type === "container")
-        // Render a "Post" for each child
-        .map((child) => (
-          <Fragment key={child.uri}> 
-            <Post key={child.uri} postUri={child.uri} />
-            <hr />
-          </Fragment>
-        ))}
-    </main>
-  );
-};
-```
-
-In the render, we can use the `children()` method on the main container to get all the child elements of our container. As discussed earlier, the only children of this container should be containers themselves, so we'll filter out all non-containers. And finally, we render the post for each child.
 
 Once this step is done, you should be able to press the "Post" button to create posts (or at least the container for the post. We'll make the rest of the post in future steps). It should look like this.
 
@@ -586,10 +630,28 @@ Once this step is done, you should be able to press the "Post" button to create 
 
 Pods aren't just for storing containers, of course. They can also about storing raw data like images and videos. Let's add the ability to upload an image to our application.
 
-```tsx
+**MakePost.tsx**
+```tsx hl_lines="1 21-34"
+import { Container, Leaf, LeafUri } from "@ldo/solid";
+// ...
   const onSubmit = useCallback(
     async (e: FormEvent<HTMLFormElement>) => {
-      // ...
+      e.preventDefault();
+
+      // Don't create a post is main container isn't present
+      if (!mainContainer) return;
+
+      // Create the container for the post
+      const postContainerResult = await mainContainer.createChildAndOverwrite(
+        `${v4()}/`
+      );
+      // Check if there was an error
+      if (postContainerResult.isError) {
+        alert(postContainerResult.message);
+        return;
+      }
+      const postContainer = postContainerResult.resource;
+
       // Upload Image
       let uploadedImage: Leaf | undefined;
       if (selectedFile) {
@@ -660,8 +722,9 @@ npm run build:ldo
 
 With the new shape in order, let's add some code to **MakePost.tsx** to create the structured data we need.
 
-```tsx
+```tsx hl_lines="1 2 8 14-37 39"
 import { PostShShapeType } from "./.ldo/post.shapeTypes";
+import { useLdo } from "@ldo/solid-react";
 
 export const MakePost: FunctionComponent<{ mainContainer: Container }> = ({
   mainContainer,
@@ -728,7 +791,7 @@ When all is saved, the data on the Pod should look something like this:
 Finally, let's bring it all together and modify **Post.tsx** to display the uploaded data.
 
 **Post.tsx**
-```tsx
+```tsx hl_lines="1-4 9-42"
 import { FunctionComponent, useCallback, useMemo } from "react";
 import { ContainerUri, LeafUri } from "@ldo/solid";
 import { useLdo, useResource, useSubject } from "@ldo/solid-react";
