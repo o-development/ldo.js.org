@@ -1,8 +1,10 @@
 # `createLdoDataset`
 
+A function that initializes an LdoDataset.
+
 ## Definition
 ```typescript
-createLdoDataset(initialDataset?: Dataset<Quad, Quad> | Quad[]): Promise<LdoDataset>
+createLdoDataset(initialDataset?: Dataset<Quad, Quad> | Quad[]): LdoDataset
 ```
 
 ### Parameters

@@ -2,9 +2,9 @@
 
 `@ldo/solid` is an interface for accessing Linked Data Objects with the Solid API.
 
-## Guide
+<!-- ## Guide
 
-A full walkthrough for using the `@ldo/solid` library can be found in the [For Solid Guide](../../solid/index.md).
+A full walkthrough for using the `@ldo/solid` library can be found in the [For Solid Guide](../../solid/index.md). -->
 
 ## Installation
 
@@ -30,7 +30,7 @@ npm i @ldo/solid @ldo/ldo
 Below is a simple example of LDO in a real use-case (changing the name on a Solid Pod). Assume that a ShapeType was previously generated and placed at `./.ldo/foafProfile.shapeTypes`.
 
 ```typescript
-import { createSolidLdoDataset } from "@ldo/solid";
+import { createSolidLdoDataset, changeData, commitData } from "@ldo/solid";
 import { startTransaction, transactionChanges } from "@ldo/ldo";
 import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes";
 
@@ -83,9 +83,9 @@ async function run() {
    * Step 5: Change data and commit it back to the Pod
    */
   // Begins a transaction that tracks your changes
-  startTransaction(janeProfile);
-  janeProfile.name = "Jane Smith";
-  janeProfile.knows?.push({
+  const cJaneProfile = changeData(janeProfile, webIdResource);
+  cJaneProfile.name = "Jane Smith";
+  cJaneProfile.knows?.push({
     "@id": "https://solidweb.me/john_smith/profile/card#me",
     type: {
       "@id": "Person",
@@ -93,7 +93,7 @@ async function run() {
     name: "John Smith",
     knows: [janeProfile],
   });
-  await (transactionChanges(janeProfile));
+  await commitData(cJaneProfile);
 }
 run();
 ```
@@ -103,4 +103,35 @@ run();
 Getting a SolidLdoDataset
 
  - [createSolidLdoDataset](createSolidLdoDataset.md)
+ - [UriTypes](UriTypes.md)
  - [SolidLdoDataset](SolidLdoDataset.md)
+ - [ContainerResource](ContainerResource.md)
+ - [LeafResource](LeafResource.md)
+ - [checkRootContainer](checkRootContainer.md)
+ - [createDataResource](createDataResource.md)
+ - [deleteResource](deleteResource.md)
+ - [getAccessRules](getAccessRules.md)
+ - [readResource](readResource.md)
+ - [requestOptions](requestOptions.md)
+ - [setAccessRules](setAccessRules.md)
+ - [updateDataResource](updateDataResource.md)
+ - [uploadResource](uploadResource.md)
+ - [Result](results/index.md)
+   - [AggregateSuccess](results/AggregateSuccess.md)
+   - [SetAccessRuleSuccess](results/SetAccessRuleSuccess.md)
+   - [GetAccessRuleSuccess](results/GetAccessRuleSuccess.md)
+   - [CheckRootContainerSuccess](results/CheckRootContainerSuccess.md)
+   - [CreateSuccess](results/CreateSuccess.md)
+   - [DeleteSuccess](results/DeleteSuccess.md)
+   - [BinaryReadSuccess](results/BinaryReadSuccess.md)
+   - [DataReadSuccess](results/DataReadSuccess.md)
+   - [ContainerReadSuccess](results/ContainerReadSuccess.md)
+   - [AbsentReadSuccess](results/AbsentReadSuccess.md)
+   - [UpdateSuccess](results/UpdateSuccess.md)
+   - [Unfetched](results/Unfetched.md)
+   - [AggregateError](results/AggregateError.md)
+   - [AccessControlError](results/AccessControlError.md)
+   - [ServerHttpError](results/ServerHttpError.md)
+   - [UnauthenticatedHttpError](results/UnauthenticatedHttpError.md)
+   - [UnexpectedHttpError](results/UnexpectedHttpError.md)
+   - [UnexpectedResourceError](results/UnexpectedResourceError.md)
