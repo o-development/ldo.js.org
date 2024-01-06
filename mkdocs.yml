@@ -18,8 +18,8 @@ nav:
     # - For Solid:
     #   - guides/solid/index.md
     - For Solid+React: guides/solid_react/index.md
-    # - Advanced Data Manipulation:
-    #   - guides/advanced_data_manipulation/index.md
+    - Advanced Data Manipulation:
+      - guides/advanced_data_manipulation/index.md
   - API:
     - 'api/index.md'
     - '@ldo/cli':
@@ -46,8 +46,32 @@ nav:
       - graphOf: 'api/ldo/graphOf.md'
       - write: 'api/ldo/write.md'
       - getDataset: 'api/ldo/getDataset.md'
-    # - '@ldo/solid': 'api/solid/index.md'
-    # - '@ldo/solid-react': 'api/solid-react/index.md'
+    - '@ldo/solid':
+      - 'api/solid/README.md'
+      - createSolidLdoDataset: 'api/solid/functions/createSolidLdoDataset.md'
+      - SolidLdoDataset: 'api/solid/classes/SolidLdoDataset.md'
+      - LeafUri: 'api/solid/types/LeafUri.md'
+      - ContainerUri: 'api/solid/types/ContainerUri.md'
+      - Leaf: 'api/solid/classes/Leaf.md'
+      - Container: 'api/solid/classes/Container.md'
+      - checkRootContainer: 'api/solid/functions/checkRootContainer.md'
+      - createDataResource: 'api/solid/functions/createDataResource.md'
+      - deleteResource: 'api/solid/functions/deleteResource.md'
+      - readResource: 'api/solid/functions/readResource.md'
+      - updateDataResource: 'api/solid/functions/updateDataResource.md'
+      - uploadResource: 'api/solid/functions/uploadResource.md'
+      - changeData: 'api/solid/functions/changeData.md'
+      - commitData: 'api/solid/functions/commitData.md'
+    - '@ldo/solid-react':
+      - 'api/solid-react/index.md'
+      - BrowserSolidLdoProvider: 'api/solid-react/BrowserSolidLdoProvider.md'
+      - SolidLdoProvider: 'api/solid-react/SolidLdoProvider.md'
+      - useLdo: 'api/solid-react/useLdo.md'
+      - useResource: 'api/solid-react/useResource.md'
+      - useRootContainer: 'api/solid-react/useRootContainer.md'
+      - useSolidAuth: 'api/solid-react/useSolidAuth.md'
+      - useSubject: 'api/solid-react/useSubject.md'
+
     # - '@ldo/jsonld-dataset-proxy': 'api/jsonld-dataset-proxy/index.md'
     # - '@ldo/dataset': 'api/dataset/index.md'
     # - '@ldo/subscribable-dataset': 'api/subscribable-dataset/index.md'

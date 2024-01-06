@@ -2,7 +2,9 @@
 
 LDO (Linked Data Objects) is a library that lets you easily manipulate RDF as if it were a standard TypeScript object that follows a [ShEx](https://shex.io) shape you define.
 
-For a full tutorial of using LDO to build React Solid applications, see [this tutorial](https://medium.com/@JacksonMorgan/building-solid-apps-with-ldo-6127a5a1979c).
+This tutorial will walk you through using LDO on raw RDF. How that raw RDF is fetched is left up the developer.
+
+[Completed Code on Github](https://github.com/o-development/ldo-tutorial-raw-rdf){ .md-button }
 
 ## Setup
 
@@ -13,9 +15,9 @@ To setup LDO, `cd` into your typescript project and run `npx @ldo/cli init`.
 cd my-typescript-project
 npx @ldo/cli init
 ```
-
-### Manual Setup
-The following is handled by the __automatic setup__:
+<details>
+<summary>Manual Setup</summary>
+The following is handled by the automatic setup:
 
 Install the LDO dependencies.
 ```bash
@@ -34,12 +36,13 @@ Create a script to build ShEx shapes and convert them into Linked Data Objects. 
   ...
   scripts: {
     ...
-    "build:ldo": "ldo build --input ./shapes --output ./ldo"
+    "build:ldo": "ldo build --input ./shapes --output ./.ldo"
     ...
   }
   ...
 }
 ```
+</details>
 
 ## Creating ShEx Schemas
 LDO uses [ShEx](https://shex.io) as a schema for the RDF data in your project. To add a ShEx schema to your project, simply create a file ending in `.shex` to the `shapes` folder.
@@ -49,7 +52,7 @@ For more information on writing ShEx schemas see the [ShEx Primer](http://shex.i
 
 `./shapes/foafProfile.shex`:
 ```shex
-PREFIX ex: <https://example.com/>
+PREFIX ex: <http://example.com/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -72,10 +75,10 @@ npm run build:ldo
 ```
 
 This will generate five files:
- - `./ldo/foafProfile.shapeTypes.ts` <-- This is the important file
- - `./ldo/foafProfile.typings.ts`
- - `./ldo/foafProfile.schema.ts`
- - `./ldo/foafProfile.context.ts`
+ - `./.ldo/foafProfile.shapeTypes.ts` <-- This is the important file
+ - `./.ldo/foafProfile.typings.ts`
+ - `./.ldo/foafProfile.schema.ts`
+ - `./.ldo/foafProfile.context.ts`
 
 ## Simple Example
 
@@ -83,7 +86,7 @@ Below is a simple example of LDO in a real use-case (changing the name on a Soli
 
 ```typescript
 import { parseRdf, startTransaction, toSparqlUpdate, toTurtle } from "@ldo/ldo";
-import { FoafProfileShapeType } from "./ldo/foafProfile.shapeTypes";
+import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes";
 
 async function run() {
   const rawTurtle = `
@@ -181,7 +184,7 @@ const ldoDataset = createLdoDataset();
 import { parseRdf } from "@ldo/ldo";
 
 const rawTurtle = "...";
-const ldoDataset = parseRdf(rawTurtle, { baseIRI: "https://example.com/" });
+const ldoDataset =  await parseRdf(rawTurtle, { baseIRI: "http://example.com/" });
 ```
 
  - `data`: The raw data to parse as a `string`.
@@ -197,7 +200,7 @@ Once you have an LdoDataset we can get a Linked Data Object. A linked data objec
 Thie first step is defining which Shape Type you want to retrieve from the dataset. We can use the generated shape types and the `usingType()` method for this.
 
 ```typescript
-import { FoafProfileShapeType } from "./ldo/foafProfile.shapeTypes.ts";
+import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes.ts";
 
 // ... Get the LdoDataset
 
@@ -262,15 +265,15 @@ Once you've created a Linked Data Object, you can get and set data as if it were
 
 ```typescript
 import { LinkedDataObject } from "@ldo/ldo";
-import { FoafProfileFactory } from "./ldo/foafProfile.ldoFactory.ts";
-import { FoafProfile } from "./ldo/foafProfile.typings";
+import { FoafProfileFactory } from "./.ldo/foafProfile.ldoFactory.ts";
+import { FoafProfile } from "./.ldo/foafProfile.typings";
 
 aysnc function start() {
   const profile: FoafProfile = // Create LDO
   // Logs "Aang"
   console.log(profile.name);
   // Logs "Person"
-  console.log(profile.type);
+  console.log(profile.type["@id"]);
   // Logs 1
   console.log(profile.knows?.length);
   // Logs "Katara"
@@ -279,7 +282,7 @@ aysnc function start() {
   // Logs "Bonzu Pippinpaddleopsicopolis III"
   console.log(profile.name);
   profile.knows?.push({
-    type: "Person",
+    type: { "@id": "Person" },
     name: "Sokka"
   });
   // Logs 2
@@ -308,10 +311,12 @@ const rawNTriples: string = await toNTriples(profile);
 
 ### `serialize(linkedDataObject, options)`
 ```typescript
-const rawTurtle: string = await profile.$serialize({
+import { serialize } from "@ldo/ldo";
+
+const rawTurtle: string = await serialize({
   format: "Turtle",
   prefixes: {
-    ex: "https://example.com/",
+    ex: "http://example.com/",
     foaf: "http://xmlns.com/foaf/0.1/",
   }
 });
@@ -338,10 +343,10 @@ import {
 
 startTransaction(profile);
 profile.name = "Kuzon"
-const changes = transactionChanges(profile));
-// Logs: <https://example.com/aang> <http://xmlns.com/foaf/0.1/name> "Kuzon"
+const changes = transactionChanges(profile);
+// Logs: <http://example.com/aang> <http://xmlns.com/foaf/0.1/name> "Kuzon"
 console.log(changes.added?.toString())
-// Logs: <https://example.com/aang> <http://xmlns.com/foaf/0.1/name> "Aang"
+// Logs: <http://example.com/aang> <http://xmlns.com/foaf/0.1/name> "Aang"
 console.log(changes.removed?.toString())
 console.log(await toSparqlUpdate(profile));
 commitTransaction(profile);
