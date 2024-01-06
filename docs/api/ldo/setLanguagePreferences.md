@@ -2,8 +2,6 @@
 
 A language preference is an ordered list telling the Linked Data Object the language you prefer as well as callbacks. 
 
-
-
 For read operations, the Linked Data Object will search for values in order of the preference. Write operations will choose the first language in the language preference, unless that language is `@other`, in which case it will choose the next language.
 
 ```typescript

@@ -14,6 +14,8 @@ graphOf(person, "age"); // returns defaultGraph()
 ## Definition
 
 ```typescript
+import { graphOf } from "@ldo/ldo"
+
 graphOf(
   subject: LdoBase,
   predicate: string | Symbol,
