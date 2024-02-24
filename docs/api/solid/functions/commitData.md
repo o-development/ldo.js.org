@@ -1,6 +1,6 @@
 # Function: commitData
 
-▸ **commitData**(`input`): `ReturnType`\<[`SolidLdoDataset`](../classes/SolidLdoDataset.md)[``"commitChangesToPod"``]\>
+▸ **commitData**(`input`): `ReturnType`\<[`SolidLdoTransactionDataset`](../classes/SolidLdoTransactionDataset.md)[``"commitToPod"``]\>
 
 Commits the transaction to the global dataset, syncing all subscribing
 components and Solid Pods
@@ -13,7 +13,7 @@ components and Solid Pods
 
 #### Returns
 
-`ReturnType`\<[`SolidLdoDataset`](../classes/SolidLdoDataset.md)[``"commitChangesToPod"``]\>
+`ReturnType`\<[`SolidLdoTransactionDataset`](../classes/SolidLdoTransactionDataset.md)[``"commitToPod"``]\>
 
 **`Example`**
 
@@ -29,9 +29,9 @@ const resource = solidLdoDataset.getResource("https://example.com/profile");
 
 const cProfile = changeData(profile, resource);
 cProfile.name = "My New Name";
-await commitData(cProfile);
+const result = await commitData(cProfile);
 ```
 
 #### Defined in
 
-[packages/solid/src/methods.ts:78](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/methods.ts#L78)
+[packages/solid/src/methods.ts:71](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/methods.ts#L71)

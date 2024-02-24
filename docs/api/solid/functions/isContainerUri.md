@@ -18,4 +18,4 @@ true if the string is a container URI
 
 #### Defined in
 
-[packages/solid/src/util/uriTypes.ts:23](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/util/uriTypes.ts#L23)
+[packages/solid/src/util/uriTypes.ts:23](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/util/uriTypes.ts#L23)

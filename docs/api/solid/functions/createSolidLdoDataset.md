@@ -27,4 +27,4 @@ const solidLdoDataset = createSolidLdoDataset({ fetch });
 
 #### Defined in
 
-[packages/solid/src/createSolidLdoDataset.ts:43](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/createSolidLdoDataset.ts#L43)
+[packages/solid/src/createSolidLdoDataset.ts:44](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/createSolidLdoDataset.ts#L44)

@@ -6,4 +6,4 @@ All possible errors returned by creating a resource if absent
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:62](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/requester/requests/createDataResource.ts#L62)
+[packages/solid/src/requester/requests/createDataResource.ts:62](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L62)

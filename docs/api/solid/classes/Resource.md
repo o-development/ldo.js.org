@@ -36,7 +36,7 @@ Represents the current status of a specific Resource on a Pod as known by LDO.
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:85](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L85)
+[packages/solid/src/resource/Resource.ts:101](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L101)
 
 ## Properties
 
@@ -48,7 +48,7 @@ True if this resource has been fetched but does not exist
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:80](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L80)
+[packages/solid/src/resource/Resource.ts:84](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L84)
 
 ___
 
@@ -60,7 +60,7 @@ The SolidLdoDatasetContext from the Parent Dataset
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:47](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L47)
+[packages/solid/src/resource/Resource.ts:51](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L51)
 
 ___
 
@@ -72,7 +72,7 @@ True if this resource has been fetched at least once
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:74](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L74)
+[packages/solid/src/resource/Resource.ts:78](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L78)
 
 ___
 
@@ -84,7 +84,7 @@ Batched Requester for the Resource
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:68](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L68)
+[packages/solid/src/resource/Resource.ts:72](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L72)
 
 ___
 
@@ -96,7 +96,7 @@ The status of the last request made for this resource
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:62](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L62)
+[packages/solid/src/resource/Resource.ts:66](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L66)
 
 ___
 
@@ -108,7 +108,7 @@ The type of resource (leaf or container)
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:57](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L57)
+[packages/solid/src/resource/Resource.ts:61](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L61)
 
 ___
 
@@ -120,13 +120,37 @@ The uri of the resource
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:52](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L52)
+[packages/solid/src/resource/Resource.ts:56](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L56)
+
+___
+
+### wacRule
+
+• `Protected` `Optional` **wacRule**: [`WacRule`](../interfaces/WacRule.md)
+
+If a wac rule was fetched, it is cached here
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:96](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L96)
+
+___
+
+### wacUri
+
+• `Protected` `Optional` **wacUri**: [`LeafUri`](../types/LeafUri.md)
+
+If a wac uri is fetched, it is cached here
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:90](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L90)
 
 ## Methods
 
 ### addListener
 
-▸ **addListener**\<`E`\>(`event`, `listener`): [`Resource`](Resource.md)
+▸ **addListener**\<`E`\>(`event`, `listener`): `this`
 
 #### Type parameters
 
@@ -143,7 +167,7 @@ The uri of the resource
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -159,13 +183,13 @@ ___
 
 ### createAndOverwrite
 
-▸ **createAndOverwrite**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `CreateSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+▸ **createAndOverwrite**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 Creates a resource at this URI and overwrites any that already exists
 
 #### Returns
 
-`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `CreateSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 CreateAndOverwriteResult
 
@@ -180,19 +204,19 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:428](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L428)
+[packages/solid/src/resource/Resource.ts:444](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L444)
 
 ___
 
 ### createIfAbsent
 
-▸ **createIfAbsent**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+▸ **createIfAbsent**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 Creates a resource at this URI if the resource doesn't already exist
 
 #### Returns
 
-`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 CreateIfAbsentResult
 
@@ -207,7 +231,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:464](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L464)
+[packages/solid/src/resource/Resource.ts:480](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L480)
 
 ___
 
@@ -256,7 +280,7 @@ Emits an update event for both this resource and the parent
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:297](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L297)
+[packages/solid/src/resource/Resource.ts:313](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L313)
 
 ___
 
@@ -300,6 +324,20 @@ node_modules/typed-emitter/index.d.ts:39
 
 ___
 
+### getParentContainer
+
+▸ **getParentContainer**(): `Promise`\<`undefined` \| [`CheckRootResultError`](../types/CheckRootResultError.md) \| [`Container`](Container.md)\>
+
+#### Returns
+
+`Promise`\<`undefined` \| [`CheckRootResultError`](../types/CheckRootResultError.md) \| [`Container`](Container.md)\>
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:529](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L529)
+
+___
+
 ### getRootContainer
 
 ▸ **getRootContainer**(): `Promise`\<[`CheckRootResultError`](../types/CheckRootResultError.md) \| [`Container`](Container.md)\>
@@ -328,45 +366,118 @@ if (!rootContainer.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:511](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L511)
+[packages/solid/src/resource/Resource.ts:527](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L527)
+
+___
+
+### getWac
+
+▸ **getWac**(`options?`): `Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `NotFoundHttpError` \| [`GetWacRuleSuccess`](../interfaces/GetWacRuleSuccess.md) \| [`WacRuleAbsent`](../interfaces/WacRuleAbsent.md)\>
+
+Retrieves web access control (WAC) rules for this resource
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | set the "ignoreCache" field to true to ignore any cached information on WAC rules. |
+| `options.ignoreCache` | `boolean` | - |
+
+#### Returns
+
+`Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `NotFoundHttpError` \| [`GetWacRuleSuccess`](../interfaces/GetWacRuleSuccess.md) \| [`WacRuleAbsent`](../interfaces/WacRuleAbsent.md)\>
+
+WAC Rules results
+
+**`Example`**
+
+```typescript
+const resource = ldoSolidDataset
+  .getResource("https://example.com/container/resource.ttl");
+const wacRulesResult = await resource.getWac();
+if (!wacRulesResult.isError) {
+  const wacRules = wacRulesResult.wacRule;
+  // True if the resource is publicly readable
+  console.log(wacRules.public.read);
+  // True if authenticated agents can write to the resource
+  console.log(wacRules.authenticated.write);
+  // True if the given WebId has append access
+  console.log(
+    wacRules.agent[https://example.com/person1/profile/card#me].append
+  );
+  // True if the given WebId has control access
+  console.log(
+    wacRules.agent[https://example.com/person1/profile/card#me].control
+  );
+}
+```
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:596](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L596)
+
+___
+
+### getWacUri
+
+▸ **getWacUri**(`options?`): `Promise`\<[`GetWacUriResult`](../types/GetWacUriResult.md)\>
+
+Retrieves the URI for the web access control (WAC) rules for this resource
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | set the "ignoreCache" field to true to ignore any cached information on WAC rules. |
+| `options.ignoreCache` | `boolean` | - |
+
+#### Returns
+
+`Promise`\<[`GetWacUriResult`](../types/GetWacUriResult.md)\>
+
+WAC Rules results
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:545](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L545)
 
 ___
 
 ### handleCreateAndOverwrite
 
-▸ **handleCreateAndOverwrite**(): `Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `CreateSuccess`\>
+▸ **handleCreateAndOverwrite**(): `Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess`\>
 
 Helper method that handles the core functions for creating and overwriting
 a resource
 
 #### Returns
 
-`Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `CreateSuccess`\>
+`Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess`\>
 
 DeleteResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:441](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L441)
+[packages/solid/src/resource/Resource.ts:457](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L457)
 
 ___
 
 ### handleCreateIfAbsent
 
-▸ **handleCreateIfAbsent**(): `Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`\>
+▸ **handleCreateIfAbsent**(): `Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`\>
 
 Helper method that handles the core functions for creating a resource if
  absent
 
 #### Returns
 
-`Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`\>
+`Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `CreateSuccess` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess`\>
 
 DeleteResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:477](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L477)
+[packages/solid/src/resource/Resource.ts:493](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L493)
 
 ___
 
@@ -384,25 +495,25 @@ DeleteResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:389](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L389)
+[packages/solid/src/resource/Resource.ts:405](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L405)
 
 ___
 
 ### handleRead
 
-▸ **handleRead**(): `Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`\>
+▸ **handleRead**(): `Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`\>
 
 A helper method that handles the core functions for reading
 
 #### Returns
 
-`Promise`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`\>
+`Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`\>
 
 ReadResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:327](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L327)
+[packages/solid/src/resource/Resource.ts:343](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L343)
 
 ___
 
@@ -432,7 +543,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:264](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L264)
+[packages/solid/src/resource/Resource.ts:280](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L280)
 
 ___
 
@@ -461,7 +572,7 @@ console.log(resource.isCreating());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:128](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L128)
+[packages/solid/src/resource/Resource.ts:144](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L144)
 
 ___
 
@@ -490,7 +601,7 @@ console.log(resource.isDeleting());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:164](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L164)
+[packages/solid/src/resource/Resource.ts:180](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L180)
 
 ___
 
@@ -519,7 +630,7 @@ console.log(resource.isDoingInitialFetch());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:182](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L182)
+[packages/solid/src/resource/Resource.ts:198](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L198)
 
 ___
 
@@ -549,7 +660,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:226](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L226)
+[packages/solid/src/resource/Resource.ts:242](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L242)
 
 ___
 
@@ -578,7 +689,7 @@ console.log(resource.isLoading());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:110](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L110)
+[packages/solid/src/resource/Resource.ts:126](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L126)
 
 ___
 
@@ -608,7 +719,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:283](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L283)
+[packages/solid/src/resource/Resource.ts:299](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L299)
 
 ___
 
@@ -637,7 +748,7 @@ console.log(resource.isReading());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:146](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L146)
+[packages/solid/src/resource/Resource.ts:162](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L162)
 
 ___
 
@@ -667,7 +778,7 @@ console.log(resource.isCreating());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:201](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L201)
+[packages/solid/src/resource/Resource.ts:217](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L217)
 
 ___
 
@@ -697,7 +808,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:245](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L245)
+[packages/solid/src/resource/Resource.ts:261](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L261)
 
 ___
 
@@ -767,7 +878,7 @@ ___
 
 ### off
 
-▸ **off**\<`E`\>(`event`, `listener`): [`Resource`](Resource.md)
+▸ **off**\<`E`\>(`event`, `listener`): `this`
 
 #### Type parameters
 
@@ -784,7 +895,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -800,7 +911,7 @@ ___
 
 ### on
 
-▸ **on**\<`E`\>(`event`, `listener`): [`Resource`](Resource.md)
+▸ **on**\<`E`\>(`event`, `listener`): `this`
 
 #### Type parameters
 
@@ -817,7 +928,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -833,7 +944,7 @@ ___
 
 ### once
 
-▸ **once**\<`E`\>(`event`, `listener`): [`Resource`](Resource.md)
+▸ **once**\<`E`\>(`event`, `listener`): `this`
 
 #### Type parameters
 
@@ -850,7 +961,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -866,7 +977,7 @@ ___
 
 ### prependListener
 
-▸ **prependListener**\<`E`\>(`event`, `listener`): [`Resource`](Resource.md)
+▸ **prependListener**\<`E`\>(`event`, `listener`): `this`
 
 #### Type parameters
 
@@ -883,7 +994,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -899,7 +1010,7 @@ ___
 
 ### prependOnceListener
 
-▸ **prependOnceListener**\<`E`\>(`event`, `listener`): [`Resource`](Resource.md)
+▸ **prependOnceListener**\<`E`\>(`event`, `listener`): `this`
 
 #### Type parameters
 
@@ -916,7 +1027,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -964,41 +1075,41 @@ ___
 
 ### read
 
-▸ **read**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+▸ **read**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 Reads the resource
 
 #### Returns
 
-`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:349](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L349)
+[packages/solid/src/resource/Resource.ts:365](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L365)
 
 ___
 
 ### readIfUnfetched
 
-▸ **readIfUnfetched**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+▸ **readIfUnfetched**(): `Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 Reads the resource if it isn't fetched yet
 
 #### Returns
 
-`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
+`Promise`\<`ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
 
 a ReadResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:357](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L357)
+[packages/solid/src/resource/Resource.ts:373](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L373)
 
 ___
 
 ### removeAllListeners
 
-▸ **removeAllListeners**\<`E`\>(`event?`): [`Resource`](Resource.md)
+▸ **removeAllListeners**\<`E`\>(`event?`): `this`
 
 #### Type parameters
 
@@ -1014,7 +1125,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -1030,7 +1141,7 @@ ___
 
 ### removeListener
 
-▸ **removeListener**\<`E`\>(`event`, `listener`): [`Resource`](Resource.md)
+▸ **removeListener**\<`E`\>(`event`, `listener`): `this`
 
 #### Type parameters
 
@@ -1047,7 +1158,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -1061,29 +1172,9 @@ node_modules/typed-emitter/index.d.ts:30
 
 ___
 
-### setAccessRules
-
-▸ **setAccessRules**(`newAccessRules`): `Promise`\<`ResourceResult`\<[`SetAccessRulesResult`](../types/SetAccessRulesResult.md), [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `newAccessRules` | `AccessRule` |
-
-#### Returns
-
-`Promise`\<`ResourceResult`\<[`SetAccessRulesResult`](../types/SetAccessRulesResult.md), [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>\>
-
-#### Defined in
-
-[packages/solid/src/resource/Resource.ts:518](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L518)
-
-___
-
 ### setMaxListeners
 
-▸ **setMaxListeners**(`maxListeners`): [`Resource`](Resource.md)
+▸ **setMaxListeners**(`maxListeners`): `this`
 
 #### Parameters
 
@@ -1093,7 +1184,7 @@ ___
 
 #### Returns
 
-[`Resource`](Resource.md)
+`this`
 
 #### Inherited from
 
@@ -1107,21 +1198,74 @@ node_modules/typed-emitter/index.d.ts:40
 
 ___
 
+### setWac
+
+▸ **setWac**(`wacRule`): `Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `NotFoundHttpError` \| [`SetWacRuleSuccess`](../interfaces/SetWacRuleSuccess.md)\>
+
+Sets access rules for a specific resource
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `wacRule` | [`WacRule`](../interfaces/WacRule.md) | the access rules to set |
+
+#### Returns
+
+`Promise`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `NotFoundHttpError` \| [`SetWacRuleSuccess`](../interfaces/SetWacRuleSuccess.md)\>
+
+SetWacRuleResult
+
+**`Example`**
+
+```typescript
+const resource = ldoSolidDataset
+  .getResource("https://example.com/container/resource.ttl");
+const wacRulesResult = await resource.setWac({
+  public: {
+    read: true,
+    write: false,
+    append: false,
+    control: false
+  },
+  authenticated: {
+    read: true,
+    write: false,
+    append: true,
+    control: false
+  },
+  agent: {
+    "https://example.com/person1/profile/card#me": {
+      read: true,
+      write: true,
+      append: true,
+      control: true
+    }
+  }
+});
+```
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:669](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L669)
+
+___
+
 ### toReadResult
 
-▸ **toReadResult**(): `ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>
+▸ **toReadResult**(): `ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>
 
 Converts the current state of this resource to a readResult
 
 #### Returns
 
-`ResourceResult`\<`UnexpectedResourceError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `NoncompliantPodError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>
+`ResourceResult`\<`UnexpectedResourceError` \| `NoncompliantPodError` \| `ServerHttpError` \| `UnexpectedHttpError` \| `UnauthenticatedHttpError` \| `UnauthorizedHttpError` \| `BinaryReadSuccess` \| `DataReadSuccess` \| `ContainerReadSuccess` \| `AbsentReadSuccess`, [`Leaf`](Leaf.md) \| [`Container`](Container.md)\>
 
 a ReadResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:341](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L341)
+[packages/solid/src/resource/Resource.ts:357](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L357)
 
 ___
 
@@ -1143,7 +1287,7 @@ A helper method updates this resource's internal state upon create success
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:408](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L408)
+[packages/solid/src/resource/Resource.ts:424](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L424)
 
 ___
 
@@ -1165,7 +1309,7 @@ A helper method updates this resource's internal state upon delete success
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:379](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L379)
+[packages/solid/src/resource/Resource.ts:395](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L395)
 
 ___
 
@@ -1187,4 +1331,4 @@ A helper method updates this resource's internal state upon read success
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:317](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/resource/Resource.ts#L317)
+[packages/solid/src/resource/Resource.ts:333](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L333)

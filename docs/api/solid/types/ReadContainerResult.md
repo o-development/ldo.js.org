@@ -6,4 +6,4 @@ All possible return values for reading a container
 
 #### Defined in
 
-[packages/solid/src/requester/requests/readResource.ts:36](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/requester/requests/readResource.ts#L36)
+[packages/solid/src/requester/requests/readResource.ts:36](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/readResource.ts#L36)

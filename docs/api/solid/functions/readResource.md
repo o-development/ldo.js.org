@@ -45,7 +45,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/readResource.ts:83](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/requester/requests/readResource.ts#L83)
+[packages/solid/src/requester/requests/readResource.ts:83](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/readResource.ts#L83)
 
 ▸ **readResource**(`uri`, `options?`): `Promise`\<[`ReadContainerResult`](../types/ReadContainerResult.md)\>
 
@@ -62,7 +62,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/readResource.ts:87](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/requester/requests/readResource.ts#L87)
+[packages/solid/src/requester/requests/readResource.ts:87](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/readResource.ts#L87)
 
 ▸ **readResource**(`uri`, `options?`): `Promise`\<[`ReadLeafResult`](../types/ReadLeafResult.md) \| [`ReadContainerResult`](../types/ReadContainerResult.md)\>
 
@@ -79,4 +79,4 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/readResource.ts:91](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/requester/requests/readResource.ts#L91)
+[packages/solid/src/requester/requests/readResource.ts:91](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/readResource.ts#L91)

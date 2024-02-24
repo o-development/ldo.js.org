@@ -38,9 +38,9 @@ const resource = solidLdoDataset.getResource("https://example.com/profile");
 
 const cProfile = changeData(profile, resource);
 cProfile.name = "My New Name";
-await commitData(cProfile);
+const result = await commitData(cProfile);
 ```
 
 #### Defined in
 
-[packages/solid/src/methods.ts:40](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/methods.ts#L40)
+[packages/solid/src/methods.ts:33](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/methods.ts#L33)

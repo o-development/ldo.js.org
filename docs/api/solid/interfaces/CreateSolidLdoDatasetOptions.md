@@ -18,7 +18,7 @@ A blank dataset
 
 #### Defined in
 
-[packages/solid/src/createSolidLdoDataset.ts:21](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/createSolidLdoDataset.ts#L21)
+[packages/solid/src/createSolidLdoDataset.ts:22](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/createSolidLdoDataset.ts#L22)
 
 ___
 
@@ -36,13 +36,15 @@ An extended RDFJS DatasetFactory
 
 #### Defined in
 
-[packages/solid/src/createSolidLdoDataset.ts:26](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/createSolidLdoDataset.ts#L26)
+[packages/solid/src/createSolidLdoDataset.ts:27](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/createSolidLdoDataset.ts#L27)
 
 ___
 
 ### fetch
 
-• `Optional` **fetch**: (`input`: `RequestInfo` \| `URL`, `init?`: `RequestInit`) => `Promise`\<`Response`\>
+• `Optional` **fetch**: (`input`: `RequestInfo` \| `URL`, `init?`: `RequestInit`) => `Promise`\<`Response`\>(`input`: `string` \| `Request` \| `URL`, `init?`: `RequestInit`) => `Promise`\<`Response`\>
+
+A fetch function. Most often, this is the fetch function from @inrupt/solid-clieht-authn-js
 
 #### Type declaration
 
@@ -61,6 +63,21 @@ A fetch function. Most often, this is the fetch function from @inrupt/solid-clie
 
 `Promise`\<`Response`\>
 
+▸ (`input`, `init?`): `Promise`\<`Response`\>
+
+A fetch function. Most often, this is the fetch function from @inrupt/solid-clieht-authn-js
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `input` | `string` \| `Request` \| `URL` |
+| `init?` | `RequestInit` |
+
+##### Returns
+
+`Promise`\<`Response`\>
+
 #### Defined in
 
-[packages/solid/src/createSolidLdoDataset.ts:16](https://github.com/o-development/ldo/blob/b955d3b/packages/solid/src/createSolidLdoDataset.ts#L16)
+[packages/solid/src/createSolidLdoDataset.ts:17](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/createSolidLdoDataset.ts#L17)
