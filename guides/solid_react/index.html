@@ -1,0 +1,2841 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ldo.js.org/guides/solid_react/">
+      
+      
+        <link rel="prev" href="../raw_rdf/">
+      
+      
+        <link rel="next" href="../advanced_data_manipulation/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+    
+    
+      
+        <title>For Solid+React - Linked Data Objects (LDO)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ldo-for-solid-react-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Linked Data Objects (LDO)" class="md-header__button md-logo" aria-label="Linked Data Objects (LDO)" data-md-component="logo">
+      
+  <img src="../../assets/Logo-40.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linked Data Objects (LDO)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              For Solid+React
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/o-development/ldo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Linked Data Objects (LDO)" class="md-nav__button md-logo" aria-label="Linked Data Objects (LDO)" data-md-component="logo">
+      
+  <img src="../../assets/Logo-40.png" alt="logo">
+
+    </a>
+    Linked Data Objects (LDO)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/o-development/ldo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raw_rdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Raw Rdf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    For Solid+React
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    For Solid+React
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-setting-up-a-basic-app-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Setting up a basic app infrastructure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-installing-ldo-for-solid-and-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Installing LDO for Solid and React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implementing-loginlogout-in-the-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Implementing Login/Logout in the header
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setting-up-a-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Setting up a shape
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fetching-and-using-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Fetching and using information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-getting-the-main-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Getting the main container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-rendering-container-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Rendering Container Children
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-uploading-unstructured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Uploading unstructured data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-addeding-structured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Addeding structured data.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-displaying-the-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Displaying the Post
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../advanced_data_manipulation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Advanced Data Manipulation
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced Data Manipulation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/cli/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/cli
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/cli
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cli/init/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    init
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cli/build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    build
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/ldo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/ldo
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/ldo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/LdoBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoBase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/ShapeType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShapeType
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/parseRdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    parseRdf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/createLdoDatasetFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createLdoDatasetFactory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/LdoDatasetFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoDatasetFactory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/createLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createLdoDataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/LdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoDataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/LdoBuilder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoBuilder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/toTurtle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toTurtle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/toNTriples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toNTriples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/serialize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    serialize
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/transactions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    transactions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/toSparqlUpdate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toSparqlUpdate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/languageOf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    languageOf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/setLanguagePreferences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    setLanguagePreferences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/graphOf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    graphOf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/write/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    write
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ldo/getDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getDataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/solid/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/solid
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/solid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/createSolidLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createSolidLdoDataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/classes/SolidLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidLdoDataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/types/LeafUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LeafUri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/types/ContainerUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ContainerUri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/classes/Leaf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/classes/Container/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Container
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/checkRootContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    checkRootContainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/createDataResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createDataResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/deleteResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    deleteResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/readResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    readResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/updateDataResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    updateDataResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/uploadResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    uploadResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/getWacUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getWacUri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/getWacRuleWithAclUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getWacRuleWithAclUri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/setWacRuleForAclUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    setWacRuleForAclUri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/changeData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    changeData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid/functions/commitData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commitData
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/solid-react/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/solid-react
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/solid-react
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid-react/BrowserSolidLdoProvider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BrowserSolidLdoProvider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid-react/SolidLdoProvider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidLdoProvider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid-react/useLdo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useLdo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid-react/useResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid-react/useRootContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useRootContainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid-react/useSolidAuth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSolidAuth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/solid-react/useSubject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSubject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-setting-up-a-basic-app-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Setting up a basic app infrastructure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-installing-ldo-for-solid-and-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Installing LDO for Solid and React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implementing-loginlogout-in-the-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Implementing Login/Logout in the header
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setting-up-a-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Setting up a shape
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fetching-and-using-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Fetching and using information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-getting-the-main-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Getting the main container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-rendering-container-children" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Rendering Container Children
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-uploading-unstructured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Uploading unstructured data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-addeding-structured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Addeding structured data.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-displaying-the-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Displaying the Post
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="ldo-for-solid-react-guide">LDO for Solid + React Guide</h1>
+<p>Solid separates the application from the storage, allowing users to put their data wherever they choose. Core to achieving this is application interoparability, the ability to use multiple apps on the same dataset. In order to make applications interoperable, Solid is standardized around RDF (Resource Description Framework), a standard for representing data. While RDF is extremely flexible, it is sometimes cumbersome to work with, that's where LDO (Linked Data Objects) comes in.</p>
+<p>In this tutorial, we'll build a web application for Solid using React and LDO. LDO's react library, "@ldo/solid-react" is designed to make it easy to manipulate data on a Solid Pod.</p>
+<p>We'll be making a simple micro-blogging website that allows you to write notes and upload photos.</p>
+<p>This tutorial assumes that you are already familiar with React and the overall concepts associated with Solid.</p>
+<p><a class="md-button" href="https://github.com/o-development/ldo-tutorial-solid-react">Completed Code on Github</a></p>
+<h2 id="1-getting-started">1. Getting Started</h2>
+<p>First, we'll initialize the project. LDO is designed to work with TypeScript, so we want to initialize a typescript react project.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx<span class="w"> </span>create-react-app<span class="w"> </span>my-solid-app<span class="w"> </span>--template<span class="w"> </span>typescript
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>my-solid-app
+</span></code></pre></div>
+<h2 id="2-setting-up-a-basic-app-infrastructure">2. Setting up a basic app infrastructure</h2>
+<p>Before we can use LDO and connect to a Solid Pod, let's get the boilerplace React infrastructure out of the way. We'll set up a single page that renders your blog timeline and lets you make new posts, and we'll do this with 5 components:</p>
+<p><strong>App.tsx</strong>: Base of the application.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>import React, { FunctionComponent } from &#39;react&#39;;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>import { Header } from &#39;./Header&#39;;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>import { Blog } from &#39;./Blog&#39;;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>const App: FunctionComponent = () =&gt; {
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  return (
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    &lt;div className=&quot;App&quot;&gt;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      &lt;Header /&gt;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      &lt;Blog /&gt;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    &lt;/div&gt;
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  );
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>}
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>export default App;
+</span></code></pre></div></p>
+<p><strong>Header.tsx</strong>: A header component that will help the user log in.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>import { FunctionComponent } from &quot;react&quot;;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>export const Header: FunctionComponent = () =&gt; {
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  return (
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    &lt;header&gt;
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>      &lt;p&gt;Header&lt;/p&gt;
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>      &lt;hr /&gt;
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    &lt;/header&gt;
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  );
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>};
+</span></code></pre></div></p>
+<p><strong>Blog.tsx</strong>: The main place for the blog timeline. We'll use this component to list all posts you've made.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>import { FunctionComponent } from &quot;react&quot;;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>import { MakePost } from &quot;./MakePost&quot;;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>import { Post } from &quot;./Post&quot;;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>export const Blog: FunctionComponent = () =&gt; {
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  return (
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    &lt;main&gt;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      &lt;MakePost /&gt;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      &lt;hr /&gt;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>      &lt;Post /&gt;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    &lt;/main&gt;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  );
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>};
+</span></code></pre></div></p>
+<p><strong>MakePost.tsx</strong>: A form to submit new posts. We've already wired it up with form elements to create a text body and upload an image for the post. We just need to fill out the <code>onSubmit</code> function.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>import { FormEvent, FunctionComponent, useCallback, useState } from &quot;react&quot;;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>export const MakePost: FunctionComponent = () =&gt; {
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  const [message, setMessage] = useState(&quot;&quot;);
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  const [selectedFile, setSelectedFile] = useState&lt;File | undefined&gt;();
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  const onSubmit = useCallback(
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    async (e: FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>      e.preventDefault();
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>      // TODO upload functionality
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    },
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    [message, selectedFile]
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>  );
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>  return (
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    &lt;form onSubmit={onSubmit}&gt;
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>      &lt;input
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        type=&quot;text&quot;
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        placeholder=&quot;Make a Post&quot;
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        value={message}
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        onChange={(e) =&gt; setMessage(e.target.value)}
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>      /&gt;
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>      &lt;input
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        type=&quot;file&quot;
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        accept=&quot;image/*&quot;
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        onChange={(e) =&gt; setSelectedFile(e.target.files?.[0])}
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>      /&gt;
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>      &lt;input type=&quot;submit&quot; value=&quot;Post&quot; /&gt;
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    &lt;/form&gt;
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>  );
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>};
+</span></code></pre></div></p>
+<p><strong>Post.tsx</strong>: A component to render a single post.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>import { FunctionComponent } from &quot;react&quot;;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>export const Post: FunctionComponent = () =&gt; {
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  return (
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    &lt;div&gt;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>      &lt;p&gt;Post&lt;/p&gt;
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    &lt;/div&gt;
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  );
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>};
+</span></code></pre></div></p>
+<p>When everything's done, run <code>npm run start</code> and your application should look like this:</p>
+<p><img alt="What the site should like after step 2 is complete." src="images/Step2.png" /></p>
+<h2 id="step-3-installing-ldo-for-solid-and-react">Step 3: Installing LDO for Solid and React</h2>
+<p>With the main infrastructure set up, let's install LDO's Solid/React library.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@ldo/solid-react
+</span></code></pre></div>
+<p>This library will give us many useful hooks and components for building a Solid application, but it can't be used unless we wrap the application in a provider. Because we're building a React application in the web browser, we'll wrap the application using the <code>BrowserSolidLdoProvider</code>.</p>
+<p><strong>App.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>import React, { FunctionComponent } from &#39;react&#39;;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>import { Header } from &#39;./Header&#39;;
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>import { Blog } from &#39;./Blog&#39;;
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="hll">import { BrowserSolidLdoProvider } from &#39;@ldo/solid-react&#39;;
+</span></span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>const App: FunctionComponent = () =&gt; {
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  return (
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    &lt;div className=&quot;App&quot;&gt;
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="hll">      &lt;BrowserSolidLdoProvider&gt;
+</span></span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        &lt;Header /&gt;
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        &lt;Blog /&gt;
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="hll">      &lt;/BrowserSolidLdoProvider&gt;
+</span></span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    &lt;/div&gt;
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>  );
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>}
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>export default App;
+</span></code></pre></div></p>
+<h2 id="4-implementing-loginlogout-in-the-header">4. Implementing Login/Logout in the header</h2>
+<p>Setting up login for a Solid application is easy when you're using ldo's Solid React library. With the <code>useSolidAuth()</code> hook, you can get information and methods to setup login.</p>
+<p>In the component below, we use the <code>session</code> object for information about the current session including <code>session.isLoggedIn</code>, a boolean indicating if the user is currently logged in, and <code>session.webId</code> to get the current user's webId. These will automatically update and rerender the component if anything changes about the current session.</p>
+<p>Next we use the <code>login(issuer: string)</code> method to initiate a login. Because a Solid Pod could be anywhere onthe web, we first ask the user to enter their Solid issuer then provide that to the login function.</p>
+<p>Finally, the <code>logout()</code> function lets you easily trigger a log out.</p>
+<p><strong>Header.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="hll">import { useSolidAuth } from &quot;@ldo/solid-react&quot;;
+</span></span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>import { FunctionComponent } from &quot;react&quot;;
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>export const Header: FunctionComponent = () =&gt; {
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="hll">  const { session, login, logout } = useSolidAuth();
+</span></span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  return (
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    &lt;header&gt;
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="hll">      {session.isLoggedIn ? (
+</span></span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="hll">        // Is the session is logged in
+</span></span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="hll">        &lt;p&gt;
+</span></span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="hll">          You are logged in with the webId {session.webId}.{&quot; &quot;}
+</span></span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="hll">          &lt;button onClick={logout}&gt;Log Out&lt;/button&gt;
+</span></span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="hll">        &lt;/p&gt;
+</span></span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="hll">      ) : (
+</span></span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="hll">        // If the session is not logged in
+</span></span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="hll">        &lt;p&gt;
+</span></span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="hll">          You are not Logged In{&quot; &quot;}
+</span></span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="hll">          &lt;button
+</span></span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="hll">            onClick={() =&gt; {
+</span></span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="hll">              // Get the Solid issuer the user should log into
+</span></span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="hll">              const issuer = prompt(
+</span></span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="hll">                &quot;Enter your Solid Issuer&quot;,
+</span></span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="hll">                &quot;https://solidweb.me&quot;
+</span></span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="hll">              );
+</span></span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="hll">              if (!issuer) return;
+</span></span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="hll">              login(issuer);
+</span></span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="hll">            }}
+</span></span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="hll">          &gt;
+</span></span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="hll">            Log In
+</span></span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="hll">          &lt;/button&gt;
+</span></span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="hll">        &lt;/p&gt;
+</span></span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="hll">      )}
+</span></span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>      &lt;hr /&gt;
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>    &lt;/header&gt;
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>  );
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>};
+</span></code></pre></div></p>
+<p>Because <code>useSolidAuth</code> is a hook, you can use it anywhere in the application, even components that don't contain buttons for "login" and "logout." For example, we could use the <code>session</code> object in <code>Blog.tsx</code> to display a message if the user is not logged in.</p>
+<p><strong>Blog.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>import { FunctionComponent } from &quot;react&quot;;
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>import { MakePost } from &quot;./MakePost&quot;;
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>import { Post } from &quot;./Post&quot;;
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="hll">import { useSolidAuth } from &quot;@ldo/solid-react&quot;;
+</span></span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>export const Blog: FunctionComponent = () =&gt; {
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="hll">  const { session } = useSolidAuth();
+</span></span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="hll">  if (!session.isLoggedIn) return &lt;p&gt;No blog available. Log in first.&lt;/p&gt;;
+</span></span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  return (
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    &lt;main&gt;
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>      &lt;MakePost /&gt;
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>      &lt;hr /&gt;
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>      &lt;Post /&gt;
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    &lt;/main&gt;
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>  );
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>};
+</span></code></pre></div></p>
+<p>Once you've implemented these changes, the application should look like this when logged out:</p>
+<p><img alt="Your site when logged out after completing step 4." src="images/Step4Logout.png" /></p>
+<p>And this when logged in:</p>
+<p><img alt="Your site when logged in after completing step 4." src="images/Step4Login.png" /></p>
+<h2 id="5-setting-up-a-shape">5. Setting up a shape</h2>
+<p>In step 6, we're going to use information from a user's Solid WebId profile. But, before we can do that, we want to set up a shape for the Solid Profile.</p>
+<p>LDO uses ShEx "Shapes" as schemas to describe how data looks in an application. We can get started by using the <code>init</code> command line tool to get the project ready to use shapes.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>npx<span class="w"> </span>@ldo/cli<span class="w"> </span>init
+</span></code></pre></div>
+<p>This command will install required libraries and creates two folders: the <code>.shapes</code> folder and the <code>.ldo</code> folder.</p>
+<p>If you look in the <code>.shapes</code> folder, you'll find a default file called <code>foafProfile.shex</code>. This is a ShEx shape that defines a very simplified profile object.</p>
+<p>If you look in the <code>.ldo</code> folder, you'll files generated from the shape. For example, <code>foafProfile.typings.ts</code> contains the Typescript typings associated with the shape, <code>foafProfile.context.ts</code> conatians a JSON-LD context for the shape, and <code>foafProfile.shapeTypes.ts</code> contains a shape type, a special object that groups all the information for a shape together. We'll be using ShapeTypes later in this tutorial.</p>
+<p>For our project, we want to use a Solid Profile, so let's delete the "foafProfile" ShEx shape and make a new file for our Solid profile.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>rm<span class="w"> </span>./src/.shapes/foafProfile.shex
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>touch<span class="w"> </span>./src/.shapes/solidProfile.shex
+</span></code></pre></div>
+<p>Now, let's create a shape for the Solid Profile. The code for a Solid profile is listed below, but you can learn more about creating ShEx shapes of your own on the <a href="https://shex.io">ShEx website</a></p>
+<p><strong>.shapes/solidProfile.shex</strong>
+<div class="language-shex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">PREFIX</span> <span class="nn">srs</span><span class="p">:</span> <span class="nl">&lt;https://shaperepo.com/schemas/solidProfile#&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">PREFIX</span> <span class="nn">foaf</span><span class="p">:</span> <span class="nl">&lt;http://xmlns.com/foaf/0.1/&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">PREFIX</span> <span class="nn">schem</span><span class="p">:</span> <span class="nl">&lt;http://schema.org/&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">PREFIX</span> <span class="nn">vcard</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2006/vcard/ns#&gt;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">PREFIX</span> <span class="nn">xsd</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">PREFIX</span> <span class="nn">acl</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/auth/acl#&gt;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">PREFIX</span> <span class="nn">cert</span><span class="p">:</span>  <span class="nl">&lt;http://www.w3.org/ns/auth/cert#&gt;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">PREFIX</span> <span class="nn">ldp</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/ldp#&gt;</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="k">PREFIX</span> <span class="nn">sp</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/pim/space#&gt;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="k">PREFIX</span> <span class="nn">solid</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/solid/terms#&gt;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="nn">srs</span><span class="p">:</span><span class="nt">SolidProfileShape</span> <span class="k">EXTRA</span> <span class="k">a</span> <span class="p">{</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>  <span class="k">a</span> <span class="p">[</span> <span class="nn">schem</span><span class="p">:</span><span class="nt">Person</span> <span class="p">]</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;Defines the node as a Person (from Schema.org)&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>  <span class="k">a</span> <span class="p">[</span> <span class="nn">foaf</span><span class="p">:</span><span class="nt">Person</span> <span class="p">]</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;Defines the node as a Person (from foaf)&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">fn</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The formatted name of a person. Example: John Smith&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>  <span class="nn">foaf</span><span class="p">:</span><span class="nt">name</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;An alternate way to define a person&#39;s name.&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">hasAddress</span> <span class="o">@</span><span class="nn">srs</span><span class="p">:</span><span class="nt">AddressShape</span> <span class="o">*</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The person&#39;s street address.&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">hasEmail</span> <span class="o">@</span><span class="nn">srs</span><span class="p">:</span><span class="nt">EmailShape</span> <span class="o">*</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The person&#39;s email.&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">hasPhoto</span> <span class="k">IRI</span> <span class="o">?</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;A link to the person&#39;s photo&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>  <span class="nn">foaf</span><span class="p">:</span><span class="nt">img</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;Photo link but in string form&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">hasTelephone</span> <span class="o">@</span><span class="nn">srs</span><span class="p">:</span><span class="nt">PhoneNumberShape</span> <span class="o">*</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;Person&#39;s telephone number&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">phone</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;An alternative way to define a person&#39;s telephone number using a string&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">organization-name</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The name of the organization with which the person is affiliated&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">role</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The name of the person&#39;s role in their organization&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>  <span class="nn">acl</span><span class="p">:</span><span class="nt">trustedApp</span> <span class="o">@</span><span class="nn">srs</span><span class="p">:</span><span class="nt">TrustedAppShape</span> <span class="o">*</span>
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;A list of app origins that are trusted by this user&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>  <span class="nn">cert</span><span class="p">:</span><span class="nt">key</span> <span class="o">@</span><span class="nn">srs</span><span class="p">:</span><span class="nt">RSAPublicKeyShape</span> <span class="o">*</span>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;A list of RSA public keys that are associated with private keys the user holds.&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-42"><a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>  <span class="nn">ldp</span><span class="p">:</span><span class="nt">inbox</span> <span class="k">IRI</span>
+</span><span id="__span-12-43"><a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The user&#39;s LDP inbox to which apps can post notifications&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-44"><a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>  <span class="nn">sp</span><span class="p">:</span><span class="nt">preferencesFile</span> <span class="k">IRI</span> <span class="o">?</span>
+</span><span id="__span-12-45"><a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The user&#39;s preferences&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-46"><a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>  <span class="nn">sp</span><span class="p">:</span><span class="nt">storage</span> <span class="k">IRI</span> <span class="o">*</span>
+</span><span id="__span-12-47"><a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The location of a Solid storage server related to this WebId&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-48"><a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>  <span class="nn">solid</span><span class="p">:</span><span class="nt">account</span> <span class="k">IRI</span> <span class="o">?</span>
+</span><span id="__span-12-49"><a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The user&#39;s account&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-50"><a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a>  <span class="nn">solid</span><span class="p">:</span><span class="nt">privateTypeIndex</span> <span class="k">IRI</span> <span class="o">*</span>
+</span><span id="__span-12-51"><a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;A registry of all types used on the user&#39;s Pod (for private access only)&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-52"><a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>  <span class="nn">solid</span><span class="p">:</span><span class="nt">publicTypeIndex</span> <span class="k">IRI</span> <span class="o">*</span>
+</span><span id="__span-12-53"><a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;A registry of all types used on the user&#39;s Pod (for public access)&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-54"><a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a>  <span class="nn">foaf</span><span class="p">:</span><span class="nt">knows</span> <span class="k">IRI</span> <span class="o">*</span>
+</span><span id="__span-12-55"><a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;A list of WebIds for all the people this user knows.&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-56"><a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a><span class="p">}</span>
+</span><span id="__span-12-57"><a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>
+</span><span id="__span-12-58"><a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a><span class="nn">srs</span><span class="p">:</span><span class="nt">AddressShape</span> <span class="p">{</span>
+</span><span id="__span-12-59"><a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">country-name</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-60"><a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The name of the user&#39;s country of residence&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-61"><a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">locality</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-62"><a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The name of the user&#39;s locality (City, Town etc.) of residence&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-63"><a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">postal-code</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-64"><a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The user&#39;s postal code&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-65"><a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">region</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-66"><a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The name of the user&#39;s region (State, Province etc.) of residence&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-67"><a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">street-address</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="o">?</span>
+</span><span id="__span-12-68"><a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The user&#39;s street address&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-69"><a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a><span class="p">}</span>
+</span><span id="__span-12-70"><a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a>
+</span><span id="__span-12-71"><a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a><span class="nn">srs</span><span class="p">:</span><span class="nt">EmailShape</span> <span class="k">EXTRA</span> <span class="k">a</span> <span class="p">{</span>
+</span><span id="__span-12-72"><a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a>  <span class="k">a</span> <span class="p">[</span>
+</span><span id="__span-12-73"><a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Dom</span>
+</span><span id="__span-12-74"><a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Home</span>
+</span><span id="__span-12-75"><a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">ISDN</span>
+</span><span id="__span-12-76"><a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Internet</span>
+</span><span id="__span-12-77"><a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Intl</span>
+</span><span id="__span-12-78"><a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Label</span>
+</span><span id="__span-12-79"><a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Parcel</span>
+</span><span id="__span-12-80"><a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Postal</span>
+</span><span id="__span-12-81"><a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Pref</span>
+</span><span id="__span-12-82"><a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Work</span>
+</span><span id="__span-12-83"><a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">X400</span>
+</span><span id="__span-12-84"><a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a>  <span class="p">]</span> <span class="o">?</span>
+</span><span id="__span-12-85"><a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The type of email.&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-86"><a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">value</span> <span class="k">IRI</span>
+</span><span id="__span-12-87"><a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The value of an email as a mailto link (Example &lt;mailto:jane@example.com&gt;)&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-88"><a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a><span class="p">}</span>
+</span><span id="__span-12-89"><a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a>
+</span><span id="__span-12-90"><a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a><span class="nn">srs</span><span class="p">:</span><span class="nt">PhoneNumberShape</span> <span class="k">EXTRA</span> <span class="k">a</span> <span class="p">{</span>
+</span><span id="__span-12-91"><a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a>  <span class="k">a</span> <span class="p">[</span>
+</span><span id="__span-12-92"><a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Dom</span>
+</span><span id="__span-12-93"><a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Home</span>
+</span><span id="__span-12-94"><a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">ISDN</span>
+</span><span id="__span-12-95"><a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Internet</span>
+</span><span id="__span-12-96"><a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Intl</span>
+</span><span id="__span-12-97"><a id="__codelineno-12-97" name="__codelineno-12-97" href="#__codelineno-12-97"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Label</span>
+</span><span id="__span-12-98"><a id="__codelineno-12-98" name="__codelineno-12-98" href="#__codelineno-12-98"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Parcel</span>
+</span><span id="__span-12-99"><a id="__codelineno-12-99" name="__codelineno-12-99" href="#__codelineno-12-99"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Postal</span>
+</span><span id="__span-12-100"><a id="__codelineno-12-100" name="__codelineno-12-100" href="#__codelineno-12-100"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Pref</span>
+</span><span id="__span-12-101"><a id="__codelineno-12-101" name="__codelineno-12-101" href="#__codelineno-12-101"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">Work</span>
+</span><span id="__span-12-102"><a id="__codelineno-12-102" name="__codelineno-12-102" href="#__codelineno-12-102"></a>    <span class="nn">vcard</span><span class="p">:</span><span class="nt">X400</span>
+</span><span id="__span-12-103"><a id="__codelineno-12-103" name="__codelineno-12-103" href="#__codelineno-12-103"></a>  <span class="p">]</span> <span class="o">?</span>
+</span><span id="__span-12-104"><a id="__codelineno-12-104" name="__codelineno-12-104" href="#__codelineno-12-104"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;They type of Phone Number&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-105"><a id="__codelineno-12-105" name="__codelineno-12-105" href="#__codelineno-12-105"></a>  <span class="nn">vcard</span><span class="p">:</span><span class="nt">value</span> <span class="k">IRI</span>
+</span><span id="__span-12-106"><a id="__codelineno-12-106" name="__codelineno-12-106" href="#__codelineno-12-106"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The value of a phone number as a tel link (Example &lt;tel:555-555-5555&gt;)&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-107"><a id="__codelineno-12-107" name="__codelineno-12-107" href="#__codelineno-12-107"></a><span class="p">}</span>
+</span><span id="__span-12-108"><a id="__codelineno-12-108" name="__codelineno-12-108" href="#__codelineno-12-108"></a>
+</span><span id="__span-12-109"><a id="__codelineno-12-109" name="__codelineno-12-109" href="#__codelineno-12-109"></a><span class="nn">srs</span><span class="p">:</span><span class="nt">TrustedAppShape</span> <span class="p">{</span>
+</span><span id="__span-12-110"><a id="__codelineno-12-110" name="__codelineno-12-110" href="#__codelineno-12-110"></a>  <span class="nn">acl</span><span class="p">:</span><span class="nt">mode</span> <span class="p">[</span><span class="nn">acl</span><span class="p">:</span><span class="nt">Append</span> <span class="nn">acl</span><span class="p">:</span><span class="nt">Control</span> <span class="nn">acl</span><span class="p">:</span><span class="nt">Read</span> <span class="nn">acl</span><span class="p">:</span><span class="nt">Write</span><span class="p">]</span> <span class="o">+</span>
+</span><span id="__span-12-111"><a id="__codelineno-12-111" name="__codelineno-12-111" href="#__codelineno-12-111"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;The level of access provided to this origin&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-112"><a id="__codelineno-12-112" name="__codelineno-12-112" href="#__codelineno-12-112"></a>  <span class="nn">acl</span><span class="p">:</span><span class="nt">origin</span> <span class="k">IRI</span>
+</span><span id="__span-12-113"><a id="__codelineno-12-113" name="__codelineno-12-113" href="#__codelineno-12-113"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The app origin the user trusts&quot;</span>
+</span><span id="__span-12-114"><a id="__codelineno-12-114" name="__codelineno-12-114" href="#__codelineno-12-114"></a><span class="p">}</span>
+</span><span id="__span-12-115"><a id="__codelineno-12-115" name="__codelineno-12-115" href="#__codelineno-12-115"></a>
+</span><span id="__span-12-116"><a id="__codelineno-12-116" name="__codelineno-12-116" href="#__codelineno-12-116"></a><span class="nn">srs</span><span class="p">:</span><span class="nt">RSAPublicKeyShape</span> <span class="p">{</span>
+</span><span id="__span-12-117"><a id="__codelineno-12-117" name="__codelineno-12-117" href="#__codelineno-12-117"></a>  <span class="nn">cert</span><span class="p">:</span><span class="nt">modulus</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span>
+</span><span id="__span-12-118"><a id="__codelineno-12-118" name="__codelineno-12-118" href="#__codelineno-12-118"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;RSA Modulus&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-119"><a id="__codelineno-12-119" name="__codelineno-12-119" href="#__codelineno-12-119"></a>  <span class="nn">cert</span><span class="p">:</span><span class="nt">exponent</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span>
+</span><span id="__span-12-120"><a id="__codelineno-12-120" name="__codelineno-12-120" href="#__codelineno-12-120"></a>    <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>  <span class="s">&quot;RSA Exponent&quot;</span> <span class="p">;</span>
+</span><span id="__span-12-121"><a id="__codelineno-12-121" name="__codelineno-12-121" href="#__codelineno-12-121"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Finally, we can run the command below to build the Solid Profile shape.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>npm<span class="w"> </span>run<span class="w"> </span>build:ldo
+</span></code></pre></div>
+<p>You'll notice that the <code>.ldo</code> folder contains information about a <em>solid</em> profile.</p>
+<h2 id="6-fetching-and-using-information">6. Fetching and using information</h2>
+<p>Let's go back to the header we built. Yeah it's cool, but if your profile includes a name, wouldn't it be better if it said, "You are logged in as Jackson Morgan" rather than "You are logged in with the webId https://solidweb.me/jackson3/profile/card#me?"</p>
+<p>Well, we can fix that by retrieving the user's profile document and using the data from it.</p>
+<p>We can use the <code>useResource</code> and <code>useSubject</code> hooks to do this.</p>
+<p><strong>Header.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>import { FunctionComponent } from &quot;react&quot;;
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="hll">import { useResource, useSolidAuth, useSubject } from &quot;@ldo/solid-react&quot;;
+</span></span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="hll">import { SolidProfileShapeShapeType } from &quot;./.ldo/solidProfile.shapeTypes&quot;;
+</span></span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>export const Header: FunctionComponent = () =&gt; {
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  const { session, login, logout } = useSolidAuth();
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="hll">  const webIdResource = useResource(session.webId);
+</span></span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="hll">  const profile = useSubject(SolidProfileShapeShapeType, session.webId);
+</span></span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="hll">
+</span></span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="hll">  const loggedInName = webIdResource?.isReading()
+</span></span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="hll">    ? &quot;LOADING...&quot;
+</span></span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="hll">    : profile?.fn
+</span></span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="hll">    ? profile.fn
+</span></span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="hll">    : session.webId;
+</span></span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>  return (
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    &lt;header&gt;
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>      {session.isLoggedIn ? (
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>        // Is the session is logged in
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>        &lt;p&gt;
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="hll">          You are logged as {loggedInName}.{&quot; &quot;}
+</span></span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>          &lt;button onClick={logout}&gt;Log Out&lt;/button&gt;
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>        &lt;/p&gt;
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>      ) : (
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>// ...
+</span></code></pre></div></p>
+<p>The <code>useResource(uri: string)</code> will load a provided URI into your application. You can use methods like <code>.isReading()</code> to get the current status of the resource. When anything updates with the resource, a rerender will be triggered on your component.</p>
+<p>RDF data is automatically loaded into a central dataset inside your application. To access that dataset, we can use <code>useSubject(uri: string)</code>. <code>useSubject</code> takes in a ShapeType and an uri. It returns a JSON representation of that URI given the ShapeType. In the above example, we've provided the autogenerated <code>SolidProfileShapeShapeType</code> as well as the webId. This essentially says to LDO, "The URI I've provided is a Solid Profile. Please give me JSON representing this as a Solid Profile."</p>
+<p>Once we have the subject, all we have to do is treat it like JSON. To get the "formalName" for a profile, just call <code>profile.fn</code>.</p>
+<h2 id="7-getting-the-main-container">7. Getting the main container</h2>
+<p>Let's move on to building the blog section of our site. One of the biggest questions when building Solid applications is "Where should I save new data?" While that question may have an different answer in the future, today apps traditionally create a new folder to save new data to.</p>
+<p>But, to create a new folder, we want to know what the root folder of the application is. At the time of login, the only URL we know is the WebId, so we want to find the root folder for that WebId. It's not always to root domain. For example, on some pod servers a WebId follows this format <code>https://example.pod/myusername/profile/card#me</code> and the root file is <code>https://example.pod/myusername/</code>. So, how do we know which container is the real root container? Well, we can use the <code>getRootContainer</code> method.</p>
+<p>Let's add the following hook to <strong>Blog.tsx</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>// ...
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="hll">import { useLdo, useSolidAuth } from &quot;@ldo/solid-react&quot;;
+</span></span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="hll">import { ContainerUri } from &quot;@ldo/solid&quot;;
+</span></span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>export const Blog: FunctionComponent = () =&gt; {
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>  const { session } = useSolidAuth();
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="hll">  const { getResource } = useLdo();
+</span></span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="hll">  const [mainContainerUri, setMainContainerUri] = useState&lt;
+</span></span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="hll">    ContainerUri | undefined
+</span></span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="hll">  &gt;();
+</span></span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="hll">
+</span></span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="hll">  useEffect(() =&gt; {
+</span></span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="hll">    if (session.webId) {
+</span></span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="hll">      // Get the WebId resource
+</span></span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="hll">      const webIdResource = getResource(session.webId);
+</span></span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="hll">      // Get the root container associated with that WebId
+</span></span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="hll">      webIdResource.getRootContainer().then((rootContainerResult) =&gt; {
+</span></span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="hll">        // Check if there is an error
+</span></span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="hll">        if (rootContainerResult.isError) return;
+</span></span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="hll">        // Get a child of the root resource called &quot;my-solid-app/&quot;
+</span></span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="hll">        const mainContainer = rootContainerResult.child(&quot;my-solid-app/&quot;);
+</span></span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="hll">        setMainContainerUri(mainContainer.uri);
+</span></span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="hll">        // Create the main container if it doesn&#39;t exist yet
+</span></span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="hll">        mainContainer.createIfAbsent();
+</span></span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="hll">      });
+</span></span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="hll">    }
+</span></span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="hll">  }, [getResource, session.webId]);
+</span></span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>  if (!session.isLoggedIn) return &lt;p&gt;No blog available. Log in first.&lt;/p&gt;;
+</span></code></pre></div>
+<p>Let's walk through what's happening here. First, we can use the <code>useLdo</code> hook to get a number of useful functions for interacting with data (and we'll use more in the future). In this case, we're getting the <code>getResource</code> function. This serves roughly the same purpose as the <code>useResource</code> hook, but in function form rather than hook form. Keep in mind that resources retrieved from the <code>getResource</code> function won't trigger rerenders on update, so it's best used when you need a resource for purposes other than the render.</p>
+<p>Using the <code>getResource</code> function, we get a resource representing the webId. Every resource has the <code>getRootContainer</code> method which returns a promise with either the root container, or an error. Everything returned by LDO methods has the <code>isError</code> parameter, so you can easily check if it's an error.</p>
+<p>We'll then save the URI of the main application container so we can use it in step 8.</p>
+<p>Any container resource has the <code>child</code> method which gets a representation of the any child, and with that representation we can call the <code>createIfAbsent</code> method to create the create out application's main container.</p>
+<p>We'll use the value of "mainContainerUri" in the next step.</p>
+<h2 id="8-rendering-container-children">8. Rendering Container Children</h2>
+<p>Before we continue, let's talk a bit about the folder structure for this application. We just got our "main folder", the folder we'll save everything to. Inside that folder, we'll put our individual blog posts. These will be folders themselves with potentially two files: a post data file (index.ttl) and some image file. Overall, our folder layout will look like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rootContainer/
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>├─ my-solid-app/
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>│  ├─ post1/
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>│  │  ├─ index.ttl
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>│  │  ├─ some_image.png/
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>│  ├─ post2/
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>│  │  ├─ index.ttl
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>│  │  ├─ another_image.jpg/
+</span></code></pre></div>
+<p>We've already created the <code>my-solid-app/</code> container, so let's add a bit of functionality to create the post folders.</p>
+<p>First, let's modify <strong>Blog.tsx</strong> to fetch the value of the main container and use that information. We'll use the <code>useResource</code> hook on the main container keep track of the status of the main container. </p>
+<p><strong>Blog.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>// ...
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="hll">import { useLdo, useResource, useSolidAuth } from &quot;@ldo/solid-react&quot;;
+</span></span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="hll">import { ContainerUri, Container } from &quot;@ldo/solid&quot;;
+</span></span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>export const Blog: FunctionComponent = () =&gt; {
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>  const { session } = useSolidAuth();
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>  const { getResource } = useLdo();
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>  const [mainContainerUri, setMainContainerUri] = useState&lt;
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    ContainerUri | undefined
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>  &gt;();
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>  useEffect(() =&gt; {
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    if (session.webId) {
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>      // Get the WebId resource
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>      const webIdResource = getResource(session.webId);
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>      // Get the root container associated with that WebId
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>      webIdResource.getRootContainer().then((rootContainerResult) =&gt; {
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>        // Check if there is an error
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>        if (rootContainerResult.isError) return;
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>        // Get a child of the root resource called &quot;my-solid-app/&quot;
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>        const mainContainer = rootContainerResult.child(&quot;my-solid-app/&quot;);
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>        setMainContainerUri(mainContainer.uri);
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>        // Create the main container if it doesn&#39;t exist yet
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>        mainContainer.createIfAbsent();
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>      });
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>    }
+</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>  }, [getResource, session.webId]);
+</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="hll">  const mainContainer = useResource(mainContainerUri);
+</span></span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>  return (
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>    &lt;main&gt;
+</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a><span class="hll">      &lt;MakePost mainContainer={mainContainer} /&gt;
+</span></span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>      &lt;hr /&gt;
+</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="hll">      {mainContainer
+</span></span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="hll">        // Get all the children of the main container
+</span></span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a><span class="hll">        ?.children()
+</span></span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="hll">        // Filter out children that aren&#39;t containers themselves
+</span></span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="hll">        .filter((child): child is Container =&gt; child.type === &quot;container&quot;)
+</span></span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="hll">        // Render a &quot;Post&quot; for each child
+</span></span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="hll">        .map((child) =&gt; (
+</span></span><span id="__span-17-43"><a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a><span class="hll">          &lt;Fragment key={child.uri}&gt; 
+</span></span><span id="__span-17-44"><a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a><span class="hll">            &lt;Post key={child.uri} postUri={child.uri} /&gt;
+</span></span><span id="__span-17-45"><a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="hll">            &lt;hr /&gt;
+</span></span><span id="__span-17-46"><a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a><span class="hll">          &lt;/Fragment&gt;
+</span></span><span id="__span-17-47"><a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a><span class="hll">        ))}
+</span></span><span id="__span-17-48"><a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>    &lt;/main&gt;
+</span><span id="__span-17-49"><a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a>  );
+</span><span id="__span-17-50"><a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a>};
+</span></code></pre></div></p>
+<p>In the render, we can use the <code>children()</code> method on the main container to get all the child elements of our container. As discussed earlier, the only children of this container should be containers themselves, so we'll filter out all non-containers. And finally, we render the post for each child.</p>
+<p>Now that we can iterate through all the Posts made on the Solid Pod, let's create a little render method for those Posts. For now, we'll just display the URI for the Post, but we'll make it more complex in the future. Notice that we've added a new prop to the Post component so that we can pass in the <code>postUri</code>.</p>
+<p><strong>Post.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="hll">import { ContainerUri } from &quot;@ldo/solid&quot;;
+</span></span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="hll">export const Post: FunctionComponent&lt;{ postUri: ContainerUri }&gt; = ({
+</span></span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="hll">  postUri,
+</span></span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="hll">}) =&gt; {
+</span></span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>  return (
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    &lt;div&gt;
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="hll">      &lt;p&gt;ContainerURI is: {postUri}&lt;/p&gt;
+</span></span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    &lt;/div&gt;
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>  );
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>};
+</span></code></pre></div></p>
+<p>Finally, let's add some simple functionality to <strong>MakePost.tsx</strong> that creates the containers for Posts. We'll add functionality to fill that Post with content in future steps.</p>
+<p><strong>MakePost.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>// ...
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="hll">import { Container } from &quot;@ldo/solid&quot;;
+</span></span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="hll">import { v4 } from &quot;uuid&quot;;
+</span></span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="hll">export const MakePost: FunctionComponent&lt;{ mainContainer?: Container }&gt; = ({
+</span></span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="hll">  mainContainer,
+</span></span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="hll">}) =&gt; {
+</span></span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>  const [message, setMessage] = useState(&quot;&quot;);
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>  const [selectedFile, setSelectedFile] = useState&lt;File | undefined&gt;();
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>  const onSubmit = useCallback(
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>    async (e: FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>      e.preventDefault();
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="hll">      // Don&#39;t create a post is main container isn&#39;t present
+</span></span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="hll">      if (!mainContainer) return;
+</span></span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="hll">
+</span></span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="hll">      // Create the container for the post
+</span></span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="hll">      const postContainerResult = await mainContainer.createChildAndOverwrite(
+</span></span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="hll">        `${v4()}/`
+</span></span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="hll">      );
+</span></span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="hll">      // Check if there was an error
+</span></span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="hll">      if (postContainerResult.isError) {
+</span></span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="hll">        alert(postContainerResult.message);
+</span></span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="hll">        return;
+</span></span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="hll">      }
+</span></span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="hll">      const postContainer = postContainerResult.resource;
+</span></span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>    },
+</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a><span class="hll">    [message, selectedFile, mainContainer]
+</span></span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>  );
+</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>  //...
+</span></code></pre></div></p>
+<p>Note that we've added a prop to include a main container. We use this in the <code>onSubmit</code> function to call the <code>createChildAndOverwrite</code> method. We can generate a name for the sub-folder any way we want, but in this example, we used UUID to generate a random name for the folder.</p>
+<p>Finally, we check to see if the result is an error, and if it isn't we extract our new Post container from the result.</p>
+<p>Once this step is done, you should be able to press the "Post" button to create posts (or at least the container for the post. We'll make the rest of the post in future steps). It should look like this.</p>
+<p><img alt="Your site when after completing step 8." src="images/Step8.png" /></p>
+<h2 id="9-uploading-unstructured-data">9. Uploading unstructured data</h2>
+<p>Pods aren't just for storing containers, of course. They can also about storing raw data like images and videos. Let's add the ability to upload an image to our application.</p>
+<p><strong>MakePost.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="hll">import { Container, Leaf, LeafUri } from &quot;@ldo/solid&quot;;
+</span></span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>// ...
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>  const onSubmit = useCallback(
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    async (e: FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>      e.preventDefault();
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>      // Don&#39;t create a post is main container isn&#39;t present
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>      if (!mainContainer) return;
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>      // Create the container for the post
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>      const postContainerResult = await mainContainer.createChildAndOverwrite(
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>        `${v4()}/`
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>      );
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>      // Check if there was an error
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>      if (postContainerResult.isError) {
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>        alert(postContainerResult.message);
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>        return;
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>      }
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>      const postContainer = postContainerResult.resource;
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="hll">      // Upload Image
+</span></span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="hll">      let uploadedImage: Leaf | undefined;
+</span></span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="hll">      if (selectedFile) {
+</span></span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="hll">        const result = await postContainer.uploadChildAndOverwrite(
+</span></span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="hll">          selectedFile.name as LeafUri,
+</span></span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="hll">          selectedFile,
+</span></span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="hll">          selectedFile.type
+</span></span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="hll">        );
+</span></span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="hll">        if (result.isError) {
+</span></span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="hll">          alert(result.message);
+</span></span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="hll">          await postContainer.delete();
+</span></span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="hll">          return;
+</span></span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="hll">        }
+</span></span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="hll">        uploadedImage = result.resource;
+</span></span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>      }
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>    },
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a>    [message, selectedFile, mainContainer]
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a>  );
+</span></code></pre></div></p>
+<p>We added the above section to the onSubmit function in <strong>MakePost.tsx</strong>. In this part of code, we use the selected file created in Step 2 as well as the post container's <code>uploadChildAndOverwrite</code> method to upload the file. This method takes in three parameters:
+ * The name of the file.
+ * The file itself (or any Blob)
+ * The file's mime-type</p>
+<p>Finally, we check if there's an error, and if there isn't, we assign the result to a variable, <code>uploadedImage</code>. We'll use this in step 10.</p>
+<p>After implementing this step, your application should now be able to upload photos to your Pod.</p>
+<h2 id="10-addeding-structured-data">10. Addeding structured data.</h2>
+<p>Unstructured data is good, but the real lifeblood of Solid comes from its structured data. In this step, we'll create a Post document that contains the Post's text body, a link to the image, and it's time of posting.</p>
+<p>Before we can do that, like we did with the profile, we want to have a ShEx shape for a social media posting. Create a new file called <strong>./.shapes.post.shex</strong> and paste the following ShEx shape.</p>
+<p><strong>./.shapes/post.shex</strong>
+<div class="language-shex highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">PREFIX</span> <span class="nn">rdf</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">PREFIX</span> <span class="nn">xsd</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">PREFIX</span> <span class="nn">ex</span><span class="p">:</span> <span class="nl">&lt;https://example.com/&gt;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="k">BASE</span> <span class="nl">&lt;http://schema.org/&gt;</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nn">ex</span><span class="p">:</span><span class="nt">PostSh</span> <span class="p">{</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>  <span class="k">a</span> <span class="p">[</span><span class="nl">&lt;SocialMediaPosting&gt;</span> <span class="nl">&lt;CreativeWork&gt;</span> <span class="nl">&lt;Thing&gt;</span><span class="p">]</span> <span class="p">;</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>  <span class="nl">&lt;articleBody&gt;</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span><span class="o">?</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>      <span class="err">//</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&#39;&#39;&#39;articleBody&#39;&#39;&#39;</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="s">      // rdfs:comment &#39;&#39;&#39;The actual body of the article. &#39;&#39;&#39; ;</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="s">  &lt;uploadDate&gt; xsd:date</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="s">      // rdfs:label &#39;&#39;&#39;uploadDate&#39;&#39;&#39;</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="s">      // rdfs:comment &#39;&#39;&#39;Date when this media object was uploaded to this site.&#39;&#39;&#39; ;</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="s">  &lt;image&gt; IRI ?</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="s">      // rdfs:label &#39;&#39;&#39;image&#39;&#39;&#39;</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="s">      // rdfs:comment &#39;&#39;&#39;A media object that encodes this CreativeWork. This property is a synonym for encoding.&#39;&#39;&#39; ;</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="s">  &lt;publisher&gt; IRI</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="s">      // rdfs:label &#39;&#39;&#39;publisher&#39;&#39;&#39;</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="s">      // rdfs:comment &#39;&#39;&#39;The publisher of the creative work.&#39;&#39;&#39; ;</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="s">}</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="s">// rdfs:label &#39;&#39;&#39;SocialMediaPost&#39;&#39;&#39;</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="s">// rdfs:comment &#39;&#39;&#39;A post to a social media platform, including blog posts, tweets, Facebook posts, etc.&#39;&#39;&#39;</span>
+</span></code></pre></div></p>
+<p>Now we can build the shapes again by running:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>npm<span class="w"> </span>run<span class="w"> </span>build:ldo
+</span></code></pre></div>
+<p>With the new shape in order, let's add some code to <strong>MakePost.tsx</strong> to create the structured data we need.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="hll">import { PostShShapeType } from &quot;./.ldo/post.shapeTypes&quot;;
+</span></span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="hll">import { useLdo } from &quot;@ldo/solid-react&quot;;
+</span></span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>export const MakePost: FunctionComponent&lt;{ mainContainer: Container }&gt; = ({
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>  mainContainer,
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>}) =&gt; {
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>  // ...
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="hll">  const { createData, commitData } = useLdo();
+</span></span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>  const onSubmit = useCallback(
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>    async (e: FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>      // ...
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="hll">      // Create Post
+</span></span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="hll">      const indexResource = postContainer.child(&quot;index.ttl&quot;);
+</span></span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="hll">      // Create new data of type &quot;Post&quot; where the subject is the index
+</span></span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="hll">      // resource&#39;s uri, and write any changes to the indexResource.
+</span></span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="hll">      const post = createData(
+</span></span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="hll">        PostShShapeType,
+</span></span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="hll">        indexResource.uri,
+</span></span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="hll">        indexResource
+</span></span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="hll">      );
+</span></span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="hll">      // Set the article body
+</span></span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="hll">      post.articleBody = message;
+</span></span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="hll">      if (uploadedImage) {
+</span></span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="hll">        // Link the URI to the 
+</span></span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="hll">        post.image = { &quot;@id&quot;: uploadedImage.uri };
+</span></span><span id="__span-23-28"><a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a><span class="hll">      }
+</span></span><span id="__span-23-29"><a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a><span class="hll">      // Say that the type is a &quot;SocialMediaPosting&quot;
+</span></span><span id="__span-23-30"><a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a><span class="hll">      post.type = { &quot;@id&quot;: &quot;SocialMediaPosting&quot; };
+</span></span><span id="__span-23-31"><a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a><span class="hll">      // Add an upload date
+</span></span><span id="__span-23-32"><a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a><span class="hll">      post.uploadDate = new Date().toISOString();
+</span></span><span id="__span-23-33"><a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a><span class="hll">      // The commitData function handles sending the data to the Pod.
+</span></span><span id="__span-23-34"><a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a><span class="hll">      const result = await commitData(post);
+</span></span><span id="__span-23-35"><a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a><span class="hll">      if (result.isError) {
+</span></span><span id="__span-23-36"><a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a><span class="hll">        alert(result.message);
+</span></span><span id="__span-23-37"><a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a><span class="hll">      }
+</span></span><span id="__span-23-38"><a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a>    },
+</span><span id="__span-23-39"><a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a><span class="hll">    [mainContainer, selectedFile, createData, message, commitData]
+</span></span><span id="__span-23-40"><a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>  );
+</span><span id="__span-23-41"><a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a>  // ...
+</span></code></pre></div>
+<p>Structured data is a little different than unstructured data. Data can potentially exist in multiple resources. That isn't the case here, but we're still going to treat index.ttl, the resource, separately from the data we put on the resource.</p>
+<p>When we want to create data we can use the <code>createData</code> function (which we can get through the <code>useLdo</code> hook). <code>createData</code> takes three arguments:
+* The ShapeType of the data. In this case, we're asserting that this data is a "Post."
+* The uri for the data's "subject." In this case, it's the same as the index.ttl resource.
+* A list of resources that this data will be written to. All triples that are created when you modify this data will be saved to this list of resources.</p>
+<p>From there, we can just modify the data as if it were normal JSON. Note that in some cases we set a field to <code>{ "@id": uri }</code>. This means that the field should point to the given URI.</p>
+<p>Finally the <code>commitData()</code> method takes the modified data and syncs it with the Solid Pods.</p>
+<p>When all is saved, the data on the Pod should look something like this:</p>
+<div class="language-turtle highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nv">&lt;https://solidweb.me/jackson3/my-solid-app/7780dac6-7ed2-4ab1-ab31-e63257bc4b3f/index.ttl&gt;</span> <span class="nv">&lt;http://schema.org/articleBody&gt;</span> <span class="s">&quot;Hello this is a post&quot;</span><span class="p">;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="nv">&lt;http://schema.org/image&gt;</span> <span class="nv">&lt;https://solidweb.me/jackson3/my-solid-app/7780dac6-7ed2-4ab1-ab31-e63257bc4b3f/coolImage.png&gt;</span><span class="p">;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="kt">a</span> <span class="nv">&lt;http://schema.org/SocialMediaPosting&gt;</span><span class="p">;</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    <span class="nv">&lt;http://schema.org/uploadDate&gt;</span> <span class="s">&quot;2023-09-26T19:01:17.263Z&quot;</span><span class="o">^^</span><span class="ge">&lt;http://www.w3.org/2001/XMLSchema#date&gt;</span><span class="p">.</span>
+</span></code></pre></div>
+<h2 id="11-displaying-the-post">11. Displaying the Post</h2>
+<p>Finally, let's bring it all together and modify <strong>Post.tsx</strong> to display the uploaded data.</p>
+<p><strong>Post.tsx</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="hll">import { FunctionComponent, useCallback, useMemo } from &quot;react&quot;;
+</span></span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="hll">import { ContainerUri, LeafUri } from &quot;@ldo/solid&quot;;
+</span></span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="hll">import { useLdo, useResource, useSubject } from &quot;@ldo/solid-react&quot;;
+</span></span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="hll">import { PostShShapeType } from &quot;./.ldo/post.shapeTypes&quot;;
+</span></span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>export const Post: FunctionComponent&lt;{ postUri: ContainerUri }&gt; = ({
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>  postUri,
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>}) =&gt; {
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="hll">  const postIndexUri = `${postUri}index.ttl`;
+</span></span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="hll">  const postResource = useResource(postIndexUri);
+</span></span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="hll">  const post = useSubject(PostShShapeType, postIndexUri);
+</span></span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="hll">  const { getResource } = useLdo();
+</span></span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="hll">  const imageResource = useResource(
+</span></span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="hll">    post?.image?.[&quot;@id&quot;] as LeafUri | undefined
+</span></span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="hll">  );
+</span></span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="hll">
+</span></span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="hll">  // Convert the blob into a URL to be used in the img tag
+</span></span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="hll">  const blobUrl = useMemo(() =&gt; {
+</span></span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="hll">    if (imageResource &amp;&amp; imageResource.isBinary()) {
+</span></span><span id="__span-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="hll">      return URL.createObjectURL(imageResource.getBlob()!);
+</span></span><span id="__span-25-21"><a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="hll">    }
+</span></span><span id="__span-25-22"><a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="hll">    return undefined;
+</span></span><span id="__span-25-23"><a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a><span class="hll">  }, [imageResource]);
+</span></span><span id="__span-25-24"><a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="hll">
+</span></span><span id="__span-25-25"><a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="hll">  const deletePost = useCallback(async () =&gt; {
+</span></span><span id="__span-25-26"><a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a><span class="hll">    const postContainer = getResource(postUri);
+</span></span><span id="__span-25-27"><a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="hll">    await postContainer.delete();
+</span></span><span id="__span-25-28"><a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a><span class="hll">  }, [postUri, getResource]);
+</span></span><span id="__span-25-29"><a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a><span class="hll">
+</span></span><span id="__span-25-30"><a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a><span class="hll">  if (postResource.status.isError) {
+</span></span><span id="__span-25-31"><a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a><span class="hll">    return &lt;p&gt;postResource.status.message&lt;/p&gt;;
+</span></span><span id="__span-25-32"><a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a><span class="hll">  }
+</span></span><span id="__span-25-33"><a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a><span class="hll">
+</span></span><span id="__span-25-34"><a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a><span class="hll">  return (
+</span></span><span id="__span-25-35"><a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a><span class="hll">    &lt;div&gt;
+</span></span><span id="__span-25-36"><a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a><span class="hll">      &lt;p&gt;{post.articleBody}&lt;/p&gt;
+</span></span><span id="__span-25-37"><a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a><span class="hll">      {blobUrl &amp;&amp; (
+</span></span><span id="__span-25-38"><a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a><span class="hll">        &lt;img src={blobUrl} alt={post.articleBody} style={{ height: 300 }} /&gt;
+</span></span><span id="__span-25-39"><a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a><span class="hll">      )}
+</span></span><span id="__span-25-40"><a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a><span class="hll">      &lt;button onClick={deletePost}&gt;Delete Post&lt;/button&gt;
+</span></span><span id="__span-25-41"><a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a><span class="hll">    &lt;/div&gt;
+</span></span><span id="__span-25-42"><a id="__codelineno-25-42" name="__codelineno-25-42" href="#__codelineno-25-42"></a><span class="hll">  );
+</span></span><span id="__span-25-43"><a id="__codelineno-25-43" name="__codelineno-25-43" href="#__codelineno-25-43"></a>};
+</span></code></pre></div></p>
+<p>Here, we've employed a few concepts that we're already familiar with as well as a few new tricks. Of course, we're using "useResource" and "useSubject" to get data about the Post. Then we can render that information by treating it just like JSON. For example <code>&lt;p&gt;{post.articleBody}&lt;/p&gt;</code>.</p>
+<p>Notice that we can get the URL for the image with <code>post.image["@id"]</code>, but we're not using that directly in the img tag (eg <code>&lt;img src={post.image["@id"]} /&gt;</code>). Why? Many resources on a Solid Pod (these included) are not open to the public. If we put the image URL directly in the the img tag, the request to get that image would be unauthorized. Instead, we perform an authenticated fetch on the image the same way we do with anything else: using <code>useResource</code>. Once we have the resource, we can convert the resource to a blob url with <code>URL.createObjectURL(imageResource.getBlob())</code>.</p>
+<p>We've also added a delete button. Deleting containers and resources is just as simple as running <code>resource.delete()</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And with that, you have a fully functional Solid application. LDO's React/Solid integration keeps track of state and makes sure everything is run efficiently so you can focus on developing your application.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../raw_rdf/" class="md-footer__link md-footer__link--prev" aria-label="Previous: For Raw Rdf">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                For Raw Rdf
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../advanced_data_manipulation/" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Data Manipulation Guide">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Advanced Data Manipulation Guide
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div>
+    Made by <a href="https://o.team" target="_blank">O.team</a> with a grant from NGI Zero Entrust via nlnet. Learn more on the <a href="https://nlnet.nl/project/SolidUsableApps/" target="_blank">NLnet project page</a>.
+  </div>
+  <div style="margin-top:16px;margin-bottom:16px;">
+    <a href="https://o.team" target="_blank">
+      <img src="https://images.squarespace-cdn.com/content/v1/626466daaa2f5f40deefa559/c9a1dd7c-0d9a-4da5-9c15-14f9b8092d19/OteamLogo.png?format=150h" alt="O.team Logo" style="height:50px;" />
+    </a>
+    <a href="https://nlnet.nl/" target="_blank">
+      <img src="https://nlnet.nl/logo/banner.png" alt="nlnet foundation logo" style="height:50px;" />
+    </a>
+    <a href="https://nlnet.nl/entrust/" target="_blank">
+      <img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="NGI Zero Entrust Logo" style="height:50px;" />
+    </a>
+  </div>
+  
+    Documentation made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
