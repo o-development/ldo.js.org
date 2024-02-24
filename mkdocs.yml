@@ -60,6 +60,9 @@ nav:
       - readResource: 'api/solid/functions/readResource.md'
       - updateDataResource: 'api/solid/functions/updateDataResource.md'
       - uploadResource: 'api/solid/functions/uploadResource.md'
+      - getWacUri: 'api/solid/functions/getWacUri.md'
+      - getWacRuleWithAclUri: 'api/solid/functions/getWacRuleWithAclUri.md'
+      - setWacRuleForAclUri: 'api/solid/functions/setWacRuleForAclUri.md'
       - changeData: 'api/solid/functions/changeData.md'
       - commitData: 'api/solid/functions/commitData.md'
     - '@ldo/solid-react':
