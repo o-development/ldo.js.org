@@ -26,6 +26,7 @@ nav:
       - 'api/cli/index.md'
       - init: 'api/cli/init.md'
       - build: 'api/cli/build.md'
+      - create: 'api/cli/create.md'
     - '@ldo/ldo':
       - 'api/ldo/index.md'
       - LdoBase: 'api/ldo/LdoBase.md'
@@ -52,6 +53,7 @@ nav:
       - SolidLdoDataset: 'api/solid/classes/SolidLdoDataset.md'
       - LeafUri: 'api/solid/types/LeafUri.md'
       - ContainerUri: 'api/solid/types/ContainerUri.md'
+      - Resource: 'api/solid/classes/Resource.md'
       - Leaf: 'api/solid/classes/Leaf.md'
       - Container: 'api/solid/classes/Container.md'
       - checkRootContainer: 'api/solid/functions/checkRootContainer.md'
@@ -74,6 +76,9 @@ nav:
       - useRootContainer: 'api/solid-react/useRootContainer.md'
       - useSolidAuth: 'api/solid-react/useSolidAuth.md'
       - useSubject: 'api/solid-react/useSubject.md'
+      - useMatchSubject: 'api/solid-react/useMatchSubject.md'
+      - useMatchObject: 'api/solid-react/useMatchObject.md'
+      - useSubscribeToResource: 'api/solid-react/useSubscribeToResource.md'
 
     # - '@ldo/jsonld-dataset-proxy': 'api/jsonld-dataset-proxy/index.md'
     # - '@ldo/dataset': 'api/dataset/index.md'

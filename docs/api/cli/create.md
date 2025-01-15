@@ -5,7 +5,7 @@ LDO's cli's create command initializes a package and repsoitory to upload your o
 The command is intended to be run using NPX. For example:
 
 ```bash
-npx run @ldo/cli create ./my_project
+npx @ldo/cli create ./my_project
 cd ./my_project
 ```
 
