@@ -10,7 +10,7 @@ A list of modes that a certain agent has access to
 
 #### Defined in
 
-[packages/solid/src/resource/wac/WacRule.ts:6](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/wac/WacRule.ts#L6)
+[packages/solid/src/resource/wac/WacRule.ts:6](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/wac/WacRule.ts#L6)
 
 ___
 
@@ -20,7 +20,7 @@ ___
 
 #### Defined in
 
-[packages/solid/src/resource/wac/WacRule.ts:8](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/wac/WacRule.ts#L8)
+[packages/solid/src/resource/wac/WacRule.ts:8](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/wac/WacRule.ts#L8)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[packages/solid/src/resource/wac/WacRule.ts:5](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/wac/WacRule.ts#L5)
+[packages/solid/src/resource/wac/WacRule.ts:5](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/wac/WacRule.ts#L5)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[packages/solid/src/resource/wac/WacRule.ts:7](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/wac/WacRule.ts#L7)
+[packages/solid/src/resource/wac/WacRule.ts:7](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/wac/WacRule.ts#L7)

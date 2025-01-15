@@ -79,7 +79,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:135](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L135)
+[packages/solid/src/requester/requests/createDataResource.ts:135](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L135)
 
 ▸ **createDataResource**(`uri`, `overwrite`, `options?`): `Promise`\<[`LeafCreateAndOverwriteResult`](../types/LeafCreateAndOverwriteResult.md)\>
 
@@ -97,7 +97,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:140](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L140)
+[packages/solid/src/requester/requests/createDataResource.ts:140](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L140)
 
 ▸ **createDataResource**(`uri`, `overwrite?`, `options?`): `Promise`\<[`ContainerCreateIfAbsentResult`](../types/ContainerCreateIfAbsentResult.md)\>
 
@@ -115,7 +115,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:145](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L145)
+[packages/solid/src/requester/requests/createDataResource.ts:145](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L145)
 
 ▸ **createDataResource**(`uri`, `overwrite?`, `options?`): `Promise`\<[`LeafCreateIfAbsentResult`](../types/LeafCreateIfAbsentResult.md)\>
 
@@ -133,7 +133,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:150](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L150)
+[packages/solid/src/requester/requests/createDataResource.ts:150](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L150)
 
 ▸ **createDataResource**(`uri`, `overwrite?`, `options?`): `Promise`\<[`ContainerCreateIfAbsentResult`](../types/ContainerCreateIfAbsentResult.md) \| [`ContainerCreateAndOverwriteResult`](../types/ContainerCreateAndOverwriteResult.md)\>
 
@@ -151,7 +151,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:155](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L155)
+[packages/solid/src/requester/requests/createDataResource.ts:155](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L155)
 
 ▸ **createDataResource**(`uri`, `overwrite?`, `options?`): `Promise`\<[`LeafCreateIfAbsentResult`](../types/LeafCreateIfAbsentResult.md) \| [`LeafCreateAndOverwriteResult`](../types/LeafCreateAndOverwriteResult.md)\>
 
@@ -169,7 +169,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:160](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L160)
+[packages/solid/src/requester/requests/createDataResource.ts:160](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L160)
 
 ▸ **createDataResource**(`uri`, `overwrite`, `options?`): `Promise`\<[`ContainerCreateAndOverwriteResult`](../types/ContainerCreateAndOverwriteResult.md) \| [`LeafCreateAndOverwriteResult`](../types/LeafCreateAndOverwriteResult.md)\>
 
@@ -187,7 +187,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:165](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L165)
+[packages/solid/src/requester/requests/createDataResource.ts:165](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L165)
 
 ▸ **createDataResource**(`uri`, `overwrite?`, `options?`): `Promise`\<[`LeafCreateIfAbsentResult`](../types/LeafCreateIfAbsentResult.md) \| [`LeafCreateIfAbsentResult`](../types/LeafCreateIfAbsentResult.md)\>
 
@@ -205,7 +205,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:170](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L170)
+[packages/solid/src/requester/requests/createDataResource.ts:170](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L170)
 
 ▸ **createDataResource**(`uri`, `overwrite?`, `options?`): `Promise`\<[`ContainerCreateAndOverwriteResult`](../types/ContainerCreateAndOverwriteResult.md) \| [`LeafCreateAndOverwriteResult`](../types/LeafCreateAndOverwriteResult.md) \| [`ContainerCreateIfAbsentResult`](../types/ContainerCreateIfAbsentResult.md) \| [`LeafCreateIfAbsentResult`](../types/LeafCreateIfAbsentResult.md)\>
 
@@ -223,4 +223,4 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/createDataResource.ts:175](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/createDataResource.ts#L175)
+[packages/solid/src/requester/requests/createDataResource.ts:175](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/createDataResource.ts#L175)

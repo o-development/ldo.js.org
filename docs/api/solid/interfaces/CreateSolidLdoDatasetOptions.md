@@ -18,7 +18,7 @@ A blank dataset
 
 #### Defined in
 
-[packages/solid/src/createSolidLdoDataset.ts:22](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/createSolidLdoDataset.ts#L22)
+[packages/solid/src/createSolidLdoDataset.ts:22](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/createSolidLdoDataset.ts#L22)
 
 ___
 
@@ -36,7 +36,7 @@ An extended RDFJS DatasetFactory
 
 #### Defined in
 
-[packages/solid/src/createSolidLdoDataset.ts:27](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/createSolidLdoDataset.ts#L27)
+[packages/solid/src/createSolidLdoDataset.ts:27](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/createSolidLdoDataset.ts#L27)
 
 ___
 
@@ -80,4 +80,4 @@ A fetch function. Most often, this is the fetch function from @inrupt/solid-clie
 
 #### Defined in
 
-[packages/solid/src/createSolidLdoDataset.ts:17](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/createSolidLdoDataset.ts#L17)
+[packages/solid/src/createSolidLdoDataset.ts:17](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/createSolidLdoDataset.ts#L17)

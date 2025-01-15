@@ -6,4 +6,4 @@ Statuses shared between both Leaf and Container
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:39](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L39)
+[packages/solid/src/resource/Resource.ts:49](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L49)

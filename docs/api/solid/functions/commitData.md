@@ -34,4 +34,4 @@ const result = await commitData(cProfile);
 
 #### Defined in
 
-[packages/solid/src/methods.ts:71](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/methods.ts#L71)
+[packages/solid/src/methods.ts:71](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/methods.ts#L71)

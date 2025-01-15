@@ -44,7 +44,7 @@ Http fetch function
 
 #### Defined in
 
-[packages/solid/src/SolidLdoDatasetContext.ts:19](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoDatasetContext.ts#L19)
+[packages/solid/src/SolidLdoDatasetContext.ts:19](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoDatasetContext.ts#L19)
 
 ___
 
@@ -56,7 +56,7 @@ The resource store of the SolidLdoDataset
 
 #### Defined in
 
-[packages/solid/src/SolidLdoDatasetContext.ts:15](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoDatasetContext.ts#L15)
+[packages/solid/src/SolidLdoDatasetContext.ts:15](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoDatasetContext.ts#L15)
 
 ___
 
@@ -68,4 +68,4 @@ A pointer to the parent SolidLdoDataset
 
 #### Defined in
 
-[packages/solid/src/SolidLdoDatasetContext.ts:11](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoDatasetContext.ts#L11)
+[packages/solid/src/SolidLdoDatasetContext.ts:11](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoDatasetContext.ts#L11)

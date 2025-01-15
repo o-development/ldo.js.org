@@ -56,3 +56,4 @@ This will generate five files:
 ## API Details
  - [`init` command](init.md)
  - [`build` command](build.md)
+ - [`create` command](create.md)
