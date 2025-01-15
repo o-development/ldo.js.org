@@ -38,7 +38,7 @@ const leaf = solidLdoDataset
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:78](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L78)
+[packages/solid/src/resource/Leaf.ts:79](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L79)
 
 ## Properties
 
@@ -54,7 +54,7 @@ True if this resource has been fetched but does not exist
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:84](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L84)
+[packages/solid/src/resource/Resource.ts:95](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L95)
 
 ___
 
@@ -66,7 +66,7 @@ The raw binary data if this leaf is a Binary resource
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:72](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L72)
+[packages/solid/src/resource/Leaf.ts:73](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L73)
 
 ___
 
@@ -82,7 +82,7 @@ The SolidLdoDatasetContext from the Parent Dataset
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:51](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L51)
+[packages/solid/src/resource/Resource.ts:62](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L62)
 
 ___
 
@@ -98,7 +98,7 @@ True if this resource has been fetched at least once
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:78](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L78)
+[packages/solid/src/resource/Resource.ts:89](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L89)
 
 ___
 
@@ -110,7 +110,23 @@ Indicates that this resource is not an error
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:56](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L56)
+[packages/solid/src/resource/Leaf.ts:57](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L57)
+
+___
+
+### notificationSubscription
+
+• `Protected` **notificationSubscription**: `NotificationSubscription`
+
+Handles notification subscriptions
+
+#### Inherited from
+
+[Resource](Resource.md).[notificationSubscription](Resource.md#notificationsubscription)
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:113](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L113)
 
 ___
 
@@ -126,7 +142,7 @@ Batched Requester for the Leaf
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:46](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L46)
+[packages/solid/src/resource/Leaf.ts:47](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L47)
 
 ___
 
@@ -142,7 +158,7 @@ The status of the last request made for this leaf
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:61](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L61)
+[packages/solid/src/resource/Leaf.ts:62](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L62)
 
 ___
 
@@ -158,7 +174,7 @@ Indicates that this resource is a leaf resource
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:51](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L51)
+[packages/solid/src/resource/Leaf.ts:52](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L52)
 
 ___
 
@@ -174,7 +190,7 @@ The URI of the leaf
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:40](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L40)
+[packages/solid/src/resource/Leaf.ts:41](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L41)
 
 ___
 
@@ -190,7 +206,7 @@ If a wac rule was fetched, it is cached here
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:96](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L96)
+[packages/solid/src/resource/Resource.ts:107](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L107)
 
 ___
 
@@ -206,7 +222,7 @@ If a wac uri is fetched, it is cached here
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:90](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L90)
+[packages/solid/src/resource/Resource.ts:101](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L101)
 
 ## Methods
 
@@ -218,14 +234,14 @@ If a wac uri is fetched, it is cached here
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `listener` | \{ `update`: () => `void`  }[`E`] |
+| `listener` | \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`] |
 
 #### Returns
 
@@ -268,7 +284,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:402](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L402)
+[packages/solid/src/resource/Leaf.ts:411](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L411)
 
 ___
 
@@ -299,7 +315,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:423](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L423)
+[packages/solid/src/resource/Leaf.ts:432](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L432)
 
 ___
 
@@ -324,7 +340,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:372](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L372)
+[packages/solid/src/resource/Leaf.ts:381](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L381)
 
 ___
 
@@ -336,14 +352,14 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `...args` | `Parameters`\<\{ `update`: () => `void`  }[`E`]\> |
+| `...args` | `Parameters`\<\{ `notification`: () => `void` ; `update`: () => `void`  }[`E`]\> |
 
 #### Returns
 
@@ -375,7 +391,7 @@ Emits an update event for both this resource and the parent
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:313](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L313)
+[packages/solid/src/resource/Resource.ts:350](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L350)
 
 ___
 
@@ -419,7 +435,7 @@ console.log(leaf.getBlob()?.toString());
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:153](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L153)
+[packages/solid/src/resource/Leaf.ts:156](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L156)
 
 ___
 
@@ -463,7 +479,7 @@ console.log(leaf.getMimeType());
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:138](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L138)
+[packages/solid/src/resource/Leaf.ts:141](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L141)
 
 ___
 
@@ -497,19 +513,19 @@ if (!leafParent.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:319](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L319)
+[packages/solid/src/resource/Leaf.ts:322](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L322)
 
 ___
 
 ### getRootContainer
 
-▸ **getRootContainer**(): `Promise`\<[`CheckRootResultError`](../types/CheckRootResultError.md) \| [`Container`](Container.md)\>
+▸ **getRootContainer**(): `Promise`\<[`Container`](Container.md) \| [`CheckRootResultError`](../types/CheckRootResultError.md) \| `NoRootContainerError`\>
 
 Gets the root container for this leaf.
 
 #### Returns
 
-`Promise`\<[`CheckRootResultError`](../types/CheckRootResultError.md) \| [`Container`](Container.md)\>
+`Promise`\<[`Container`](Container.md) \| [`CheckRootResultError`](../types/CheckRootResultError.md) \| `NoRootContainerError`\>
 
 The root container for this leaf
 
@@ -533,7 +549,7 @@ if (!rootContainer.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:341](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L341)
+[packages/solid/src/resource/Leaf.ts:344](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L344)
 
 ___
 
@@ -585,7 +601,7 @@ if (!wacRulesResult.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:596](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L596)
+[packages/solid/src/resource/Resource.ts:635](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L635)
 
 ___
 
@@ -614,7 +630,7 @@ WAC Rules results
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:545](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L545)
+[packages/solid/src/resource/Resource.ts:584](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L584)
 
 ___
 
@@ -637,7 +653,7 @@ DeleteResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:457](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L457)
+[packages/solid/src/resource/Resource.ts:494](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L494)
 
 ___
 
@@ -660,7 +676,7 @@ DeleteResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:493](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L493)
+[packages/solid/src/resource/Resource.ts:530](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L530)
 
 ___
 
@@ -682,7 +698,7 @@ DeleteResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:405](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L405)
+[packages/solid/src/resource/Resource.ts:442](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L442)
 
 ___
 
@@ -704,7 +720,7 @@ ReadResult
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:343](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L343)
+[packages/solid/src/resource/Resource.ts:380](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L380)
 
 ___
 
@@ -725,7 +741,7 @@ true if the resource is absent, false if not, undefined if unknown
 ```typescript
 // Logs "undefined"
 console.log(resource.isAbsent());
-const result = resource.read();
+const result = await resource.read();
 if (!result.isError) {
   // False if the resource exists, true if it does not
   console.log(resource.isAbsent());
@@ -738,7 +754,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:280](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L280)
+[packages/solid/src/resource/Resource.ts:302](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L302)
 
 ___
 
@@ -769,7 +785,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:173](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L173)
+[packages/solid/src/resource/Leaf.ts:176](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L176)
 
 ___
 
@@ -802,7 +818,7 @@ console.log(resource.isCreating());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:144](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L144)
+[packages/solid/src/resource/Resource.ts:166](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L166)
 
 ___
 
@@ -833,7 +849,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:196](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L196)
+[packages/solid/src/resource/Leaf.ts:199](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L199)
 
 ___
 
@@ -866,7 +882,7 @@ console.log(resource.isDeleting());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:180](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L180)
+[packages/solid/src/resource/Resource.ts:202](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L202)
 
 ___
 
@@ -899,7 +915,7 @@ console.log(resource.isDoingInitialFetch());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:198](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L198)
+[packages/solid/src/resource/Resource.ts:220](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L220)
 
 ___
 
@@ -933,7 +949,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:242](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L242)
+[packages/solid/src/resource/Resource.ts:264](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L264)
 
 ___
 
@@ -966,7 +982,7 @@ console.log(resource.isLoading());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:126](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L126)
+[packages/solid/src/resource/Resource.ts:148](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L148)
 
 ___
 
@@ -987,7 +1003,7 @@ false if the resource is absent, true if not, undefined if unknown
 ```typescript
 // Logs "undefined"
 console.log(resource.isPresent());
-const result = resource.read();
+const result = await resource.read();
 if (!result.isError) {
   // True if the resource exists, false if it does not
   console.log(resource.isPresent());
@@ -1000,7 +1016,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:299](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L299)
+[packages/solid/src/resource/Resource.ts:321](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L321)
 
 ___
 
@@ -1033,7 +1049,7 @@ console.log(resource.isReading());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:162](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L162)
+[packages/solid/src/resource/Resource.ts:184](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L184)
 
 ___
 
@@ -1067,7 +1083,37 @@ console.log(resource.isCreating());
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:217](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L217)
+[packages/solid/src/resource/Resource.ts:239](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L239)
+
+___
+
+### isSubscribedToNotifications
+
+▸ **isSubscribedToNotifications**(): `boolean`
+
+Is this resource currently listening to notifications from this document
+
+#### Returns
+
+`boolean`
+
+true if the resource is subscribed to notifications, false if not
+
+**`Example`**
+
+```typescript
+await resource.subscribeToNotifications();
+// Logs "true"
+console.log(resource.isSubscribedToNotifications());
+```
+
+#### Inherited from
+
+[Resource](Resource.md).[isSubscribedToNotifications](Resource.md#issubscribedtonotifications)
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:336](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L336)
 
 ___
 
@@ -1101,7 +1147,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:261](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L261)
+[packages/solid/src/resource/Resource.ts:283](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L283)
 
 ___
 
@@ -1130,7 +1176,7 @@ console.log(leaf.isUpdating());
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:123](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L123)
+[packages/solid/src/resource/Leaf.ts:126](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L126)
 
 ___
 
@@ -1159,7 +1205,7 @@ console.log(leaf.isUploading());
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:105](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L105)
+[packages/solid/src/resource/Leaf.ts:108](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L108)
 
 ___
 
@@ -1171,7 +1217,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
@@ -1195,13 +1241,13 @@ ___
 
 ### listeners
 
-▸ **listeners**\<`E`\>(`event`): \{ `update`: () => `void`  }[`E`][]
+▸ **listeners**\<`E`\>(`event`): \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`][]
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
@@ -1211,7 +1257,7 @@ ___
 
 #### Returns
 
-\{ `update`: () => `void`  }[`E`][]
+\{ `notification`: () => `void` ; `update`: () => `void`  }[`E`][]
 
 #### Inherited from
 
@@ -1231,14 +1277,14 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `listener` | \{ `update`: () => `void`  }[`E`] |
+| `listener` | \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`] |
 
 #### Returns
 
@@ -1262,14 +1308,14 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `listener` | \{ `update`: () => `void`  }[`E`] |
+| `listener` | \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`] |
 
 #### Returns
 
@@ -1285,6 +1331,32 @@ node_modules/typed-emitter/index.d.ts:23
 
 ___
 
+### onNotification
+
+▸ **onNotification**(`message`): `Promise`\<`void`\>
+
+Function that triggers whenever a notification is recieved.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `message` | `NotificationMessage` |
+
+#### Returns
+
+`Promise`\<`void`\>
+
+#### Inherited from
+
+[Resource](Resource.md).[onNotification](Resource.md#onnotification)
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:777](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L777)
+
+___
+
 ### once
 
 ▸ **once**\<`E`\>(`event`, `listener`): `this`
@@ -1293,14 +1365,14 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `listener` | \{ `update`: () => `void`  }[`E`] |
+| `listener` | \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`] |
 
 #### Returns
 
@@ -1324,14 +1396,14 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `listener` | \{ `update`: () => `void`  }[`E`] |
+| `listener` | \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`] |
 
 #### Returns
 
@@ -1355,14 +1427,14 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `listener` | \{ `update`: () => `void`  }[`E`] |
+| `listener` | \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`] |
 
 #### Returns
 
@@ -1380,13 +1452,13 @@ ___
 
 ### rawListeners
 
-▸ **rawListeners**\<`E`\>(`event`): \{ `update`: () => `void`  }[`E`][]
+▸ **rawListeners**\<`E`\>(`event`): \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`][]
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
@@ -1396,7 +1468,7 @@ ___
 
 #### Returns
 
-\{ `update`: () => `void`  }[`E`][]
+\{ `notification`: () => `void` ; `update`: () => `void`  }[`E`][]
 
 #### Inherited from
 
@@ -1435,7 +1507,7 @@ if (result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:237](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L237)
+[packages/solid/src/resource/Leaf.ts:240](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L240)
 
 ___
 
@@ -1468,7 +1540,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:292](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L292)
+[packages/solid/src/resource/Leaf.ts:295](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L295)
 
 ___
 
@@ -1480,7 +1552,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
@@ -1510,14 +1582,14 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `E` | extends ``"update"`` |
+| `E` | extends ``"update"`` \| ``"notification"`` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `event` | `E` |
-| `listener` | \{ `update`: () => `void`  }[`E`] |
+| `listener` | \{ `notification`: () => `void` ; `update`: () => `void`  }[`E`] |
 
 #### Returns
 
@@ -1610,7 +1682,63 @@ const wacRulesResult = await resource.setWac({
 
 #### Defined in
 
-[packages/solid/src/resource/Resource.ts:669](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Resource.ts#L669)
+[packages/solid/src/resource/Resource.ts:708](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L708)
+
+___
+
+### subscribeToNotifications
+
+▸ **subscribeToNotifications**(`callbacks?`): `Promise`\<`string`\>
+
+Activates Websocket subscriptions on this resource. Updates, deletions,
+and creations on this resource will be tracked and all changes will be
+relected in LDO's resources and graph.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callbacks?` | `SubscriptionCallbacks` |
+
+#### Returns
+
+`Promise`\<`string`\>
+
+SubscriptionId: A string to use to unsubscribe
+
+**`Example`**
+
+```typescript
+const resource = solidLdoDataset
+  .getResource("https://example.com/spiderman");
+// A listener for if anything about spiderman in the global dataset is
+// changed. Note that this will also listen for any local changes as well
+// as changes to remote resources to which you have notification
+// subscriptions enabled.
+solidLdoDataset.addListener(
+  [namedNode("https://example.com/spiderman#spiderman"), null, null, null],
+  () => {
+    // Triggers when the file changes on the Pod or locally
+    console.log("Something changed about SpiderMan");
+  },
+);
+
+// Subscribe
+const subscriptionId = await testContainer.subscribeToNotifications({
+  // These are optional callbacks. A subscription will automatically keep
+  // the dataset in sync. Use these callbacks for additional functionality.
+  onNotification: (message) => console.log(message),
+  onNotificationError: (err) => console.log(err.message)
+});
+// ... From there you can wait for a file to be changed on the Pod.
+
+#### Inherited from
+
+[Resource](Resource.md).[subscribeToNotifications](Resource.md#subscribetonotifications)
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:765](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L765)
 
 ___
 
@@ -1632,7 +1760,71 @@ a ReadLeafResult
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:248](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L248)
+[packages/solid/src/resource/Leaf.ts:251](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L251)
+
+___
+
+### unsubscribeFromAllNotifications
+
+▸ **unsubscribeFromAllNotifications**(): `Promise`\<`void`\>
+
+Unsubscribes from all notifications on this resource
+
+#### Returns
+
+`Promise`\<`void`\>
+
+UnsubscribeResult[]
+
+**`Example`**
+
+```typescript
+const subscriptionResult = await testContainer.subscribeToNotifications();
+await testContainer.unsubscribeFromAllNotifications();
+```
+
+#### Inherited from
+
+[Resource](Resource.md).[unsubscribeFromAllNotifications](Resource.md#unsubscribefromallnotifications)
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:831](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L831)
+
+___
+
+### unsubscribeFromNotifications
+
+▸ **unsubscribeFromNotifications**(`subscriptionId`): `Promise`\<`void`\>
+
+Unsubscribes from changes made to this resource on the Pod
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `subscriptionId` | `string` |
+
+#### Returns
+
+`Promise`\<`void`\>
+
+UnsubscribeResult
+
+**`Example`**
+
+```typescript
+const subscriptionId = await testContainer.subscribeToNotifications();
+await testContainer.unsubscribeFromNotifications(subscriptionId);
+```
+
+#### Inherited from
+
+[Resource](Resource.md).[unsubscribeFromNotifications](Resource.md#unsubscribefromnotifications)
+
+#### Defined in
+
+[packages/solid/src/resource/Resource.ts:814](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Resource.ts#L814)
 
 ___
 
@@ -1683,7 +1875,7 @@ cosnt result = resource.update(datasetChanges);
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:539](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L539)
+[packages/solid/src/resource/Leaf.ts:548](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L548)
 
 ___
 
@@ -1709,21 +1901,21 @@ A helper method updates this leaf's internal state upon create success
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:386](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L386)
+[packages/solid/src/resource/Leaf.ts:395](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L395)
 
 ___
 
 ### updateWithDeleteSuccess
 
-▸ **updateWithDeleteSuccess**(`_result`): `void`
+▸ **updateWithDeleteSuccess**(`result`): `void`
 
 A helper method updates this leaf's internal state upon delete success
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `_result` | `DeleteSuccess` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `result` | `DeleteSuccess` | the result of the delete success |
 
 #### Returns
 
@@ -1735,7 +1927,7 @@ A helper method updates this leaf's internal state upon delete success
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:357](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L357)
+[packages/solid/src/resource/Leaf.ts:365](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L365)
 
 ___
 
@@ -1761,7 +1953,7 @@ A helper method updates this leaf's internal state upon read success
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:214](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L214)
+[packages/solid/src/resource/Leaf.ts:217](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L217)
 
 ___
 
@@ -1799,7 +1991,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:457](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L457)
+[packages/solid/src/resource/Leaf.ts:466](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L466)
 
 ___
 
@@ -1837,4 +2029,4 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/resource/Leaf.ts:489](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/Leaf.ts#L489)
+[packages/solid/src/resource/Leaf.ts:498](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/Leaf.ts#L498)

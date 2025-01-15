@@ -116,10 +116,13 @@ Providers
 
 Hooks
  - [useLdo](https://ldo.js.org/api/solid-react/useLdo/)
- - [useResource](https://ldo.js.org/api/solid-react/useLdo/)
- - [useRootContainer](https://ldo.js.org/api/solid-react/useLdo/)
- - [useSolidAuth](https://ldo.js.org/api/solid-react/useLdo/)
- - [useSubject](https://ldo.js.org/api/solid-react/useLdo/)
+ - [useResource](https://ldo.js.org/api/solid-react/useResource/)
+ - [useRootContainer](https://ldo.js.org/api/solid-react/useRootContainer/)
+ - [useSolidAuth](https://ldo.js.org/api/solid-react/useSolidAuth/)
+ - [useSubject](https://ldo.js.org/api/solid-react/useSubject/)
+ - [useMatchSubject](https://ldo.js.org/api/solid-react/useMatchSubject/)
+ - [useMatchObject](https://ldo.js.org/api/solid-react/useMatchSubject/)
+ - [useSubscribeToResource](https://ldo.js.org/api/solid-react/useMatchSubject/)
 
 ## Sponsorship
 This project was made possible by a grant from NGI Zero Entrust via nlnet. Learn more on the [NLnet project page](https://nlnet.nl/project/SolidUsableApps/).

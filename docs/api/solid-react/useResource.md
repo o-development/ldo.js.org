@@ -23,6 +23,7 @@ const Component: FunctionComponent = () => {
  - `options: {}` - Options containing the following fields
    - `suppressInitialRead?: boolean` - If true, this hook will not trigger a read event to fetch the document.
    - `reloadOnMount?: boolean` - If true, this hook will trigger a read event whenever this component mounts
+   - `subscribe?: boolean` - If true, this will subscribe to updates via Websockets
 
 ### Returns
 

@@ -45,7 +45,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/uploadResource.ts:50](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/uploadResource.ts#L50)
+[packages/solid/src/requester/requests/uploadResource.ts:50](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/uploadResource.ts#L50)
 
 ▸ **uploadResource**(`uri`, `blob`, `mimeType`, `overwrite?`, `options?`): `Promise`\<[`LeafCreateIfAbsentResult`](../types/LeafCreateIfAbsentResult.md)\>
 
@@ -65,7 +65,7 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/uploadResource.ts:57](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/uploadResource.ts#L57)
+[packages/solid/src/requester/requests/uploadResource.ts:57](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/uploadResource.ts#L57)
 
 ▸ **uploadResource**(`uri`, `blob`, `mimeType`, `overwrite?`, `options?`): `Promise`\<[`LeafCreateIfAbsentResult`](../types/LeafCreateIfAbsentResult.md) \| [`LeafCreateAndOverwriteResult`](../types/LeafCreateAndOverwriteResult.md)\>
 
@@ -85,4 +85,4 @@ if (!result.isError) {
 
 #### Defined in
 
-[packages/solid/src/requester/requests/uploadResource.ts:64](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/uploadResource.ts#L64)
+[packages/solid/src/requester/requests/uploadResource.ts:64](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/uploadResource.ts#L64)

@@ -4,4 +4,4 @@
 
 #### Defined in
 
-[packages/solid/src/resource/wac/setWacRule.ts:16](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/resource/wac/setWacRule.ts#L16)
+[packages/solid/src/resource/wac/setWacRule.ts:16](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/resource/wac/setWacRule.ts#L16)

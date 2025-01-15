@@ -18,7 +18,7 @@ A dataset to be modified with any new information obtained from a request
 
 #### Defined in
 
-[packages/solid/src/requester/requests/requestOptions.ts:21](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/requestOptions.ts#L21)
+[packages/solid/src/requester/requests/requestOptions.ts:21](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/requestOptions.ts#L21)
 
 ___
 
@@ -66,4 +66,4 @@ A fetch function usually imported from @inrupt/solid-client-authn-js
 
 #### Defined in
 
-[packages/solid/src/requester/requests/requestOptions.ts:11](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/requester/requests/requestOptions.ts#L11)
+[packages/solid/src/requester/requests/requestOptions.ts:11](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/requester/requests/requestOptions.ts#L11)

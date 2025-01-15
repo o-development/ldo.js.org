@@ -37,7 +37,7 @@ await transaction.commitToPod();
 
 ## Implements
 
-- `ISolidLdoDataset`
+- [`ISolidLdoDataset`](../interfaces/ISolidLdoDataset.md)
 
 ## Constructors
 
@@ -49,7 +49,7 @@ await transaction.commitToPod();
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `parentDataset` | [`SolidLdoDataset`](SolidLdoDataset.md) | - |
+| `parentDataset` | [`ISolidLdoDataset`](../interfaces/ISolidLdoDataset.md) | - |
 | `context` | [`SolidLdoDatasetContext`](../interfaces/SolidLdoDatasetContext.md) | SolidLdoDatasetContext |
 | `datasetFactory` | `DatasetFactory`\<`Quad`, `Quad`, `Dataset`\<`Quad`, `Quad`\>\> | An optional dataset factory |
 | `transactionDatasetFactory` | `ITransactionDatasetFactory`\<`Quad`\> | A factory for creating transaction datasets |
@@ -64,7 +64,7 @@ LdoTransactionDataset.constructor
 
 #### Defined in
 
-[packages/solid/src/SolidLdoTransactionDataset.ts:77](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoTransactionDataset.ts#L77)
+[packages/solid/src/SolidLdoTransactionDataset.ts:76](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoTransactionDataset.ts#L76)
 
 ## Properties
 
@@ -74,7 +74,7 @@ LdoTransactionDataset.constructor
 
 #### Defined in
 
-[packages/solid/src/SolidLdoTransactionDataset.ts:69](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoTransactionDataset.ts#L69)
+[packages/solid/src/SolidLdoTransactionDataset.ts:68](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoTransactionDataset.ts#L68)
 
 ___
 
@@ -90,7 +90,7 @@ LdoTransactionDataset.dataset
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:22](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L22)
+[packages/dataset/src/ExtendedDataset.ts:22](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L22)
 
 ___
 
@@ -106,7 +106,7 @@ LdoTransactionDataset.datasetCoreFactory
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:27](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L27)
+[packages/dataset/src/ExtendedDataset.ts:27](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L27)
 
 ___
 
@@ -122,7 +122,7 @@ LdoTransactionDataset.datasetFactory
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:31](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L31)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:31](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L31)
 
 ___
 
@@ -138,7 +138,7 @@ LdoTransactionDataset.eventEmitter
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:36](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L36)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:36](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L36)
 
 ___
 
@@ -154,7 +154,7 @@ LdoTransactionDataset.parentDataset
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:20](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L20)
+[packages/subscribable-dataset/src/TransactionDataset.ts:20](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L20)
 
 ___
 
@@ -170,7 +170,7 @@ LdoTransactionDataset.transactionDatasetFactory
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:40](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L40)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:40](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L40)
 
 ## Accessors
 
@@ -184,13 +184,17 @@ A non-negative integer that specifies the number of quads in the set.
 
 `number`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[size](../interfaces/ISolidLdoDataset.md#size)
+
 #### Inherited from
 
 LdoTransactionDataset.size
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:134](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L134)
+[packages/subscribable-dataset/src/TransactionDataset.ts:134](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L134)
 
 ## Methods
 
@@ -204,13 +208,17 @@ Returns an iterator
 
 `Iterator`\<`Quad`, `any`, `undefined`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[[iterator]](../interfaces/ISolidLdoDataset.md#[iterator])
+
 #### Inherited from
 
 LdoTransactionDataset.[iterator]
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:177](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L177)
+[packages/subscribable-dataset/src/TransactionDataset.ts:177](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L177)
 
 ___
 
@@ -233,13 +241,17 @@ Existing quads, as defined in Quad.equals, will be ignored.
 
 the dataset instance it was called on.
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[add](../interfaces/ISolidLdoDataset.md#add)
+
 #### Inherited from
 
 LdoTransactionDataset.add
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:148](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L148)
+[packages/subscribable-dataset/src/TransactionDataset.ts:148](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L148)
 
 ___
 
@@ -262,13 +274,17 @@ This method differs from Dataset.union in that it adds all quads to the current 
 
 the dataset instance it was called on.
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[addAll](../interfaces/ISolidLdoDataset.md#addall)
+
 #### Inherited from
 
 LdoTransactionDataset.addAll
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:62](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L62)
+[packages/subscribable-dataset/src/TransactionDataset.ts:62](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L62)
 
 ___
 
@@ -289,13 +305,17 @@ Alias for emitter.on(eventName, listener).
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[addListener](../interfaces/ISolidLdoDataset.md#addlistener)
+
 #### Inherited from
 
 LdoTransactionDataset.addListener
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:248](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L248)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:248](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L248)
 
 ___
 
@@ -315,13 +335,17 @@ Bulk add and remove triples
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[bulk](../interfaces/ISolidLdoDataset.md#bulk)
+
 #### Inherited from
 
 LdoTransactionDataset.bulk
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:73](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L73)
+[packages/subscribable-dataset/src/TransactionDataset.ts:73](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L73)
 
 ___
 
@@ -341,21 +365,21 @@ LdoTransactionDataset.commit
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:256](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L256)
+[packages/subscribable-dataset/src/TransactionDataset.ts:256](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L256)
 
 ___
 
 ### commitToPod
 
-▸ **commitToPod**(): `Promise`\<`AggregateSuccess`\<`ResourceResult`\<`UpdateSuccess` \| `UpdateDefaultGraphSuccess`, [`Leaf`](Leaf.md)\>\> \| `AggregateError`\<[`UpdateResultError`](../types/UpdateResultError.md) \| `InvalidUriError`\>\>
+▸ **commitToPod**(): `Promise`\<`AggregateSuccess`\<`ResourceResult`\<`UpdateSuccess` \| `UpdateDefaultGraphSuccess`, [`Leaf`](Leaf.md)\>\> \| `AggregateError`\<[`UpdateResultError`](../types/UpdateResultError.md)\>\>
 
 #### Returns
 
-`Promise`\<`AggregateSuccess`\<`ResourceResult`\<`UpdateSuccess` \| `UpdateDefaultGraphSuccess`, [`Leaf`](Leaf.md)\>\> \| `AggregateError`\<[`UpdateResultError`](../types/UpdateResultError.md) \| `InvalidUriError`\>\>
+`Promise`\<`AggregateSuccess`\<`ResourceResult`\<`UpdateSuccess` \| `UpdateDefaultGraphSuccess`, [`Leaf`](Leaf.md)\>\> \| `AggregateError`\<[`UpdateResultError`](../types/UpdateResultError.md)\>\>
 
 #### Defined in
 
-[packages/solid/src/SolidLdoTransactionDataset.ts:111](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoTransactionDataset.ts#L111)
+[packages/solid/src/SolidLdoTransactionDataset.ts:119](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoTransactionDataset.ts#L119)
 
 ___
 
@@ -376,13 +400,17 @@ Blank Nodes will be normalized.
 
 `boolean`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[contains](../interfaces/ISolidLdoDataset.md#contains)
+
 #### Inherited from
 
 LdoTransactionDataset.contains
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:68](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L68)
+[packages/dataset/src/ExtendedDataset.ts:68](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L68)
 
 ___
 
@@ -403,13 +431,17 @@ This method returns the dataset instance it was called on.
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[delete](../interfaces/ISolidLdoDataset.md#delete)
+
 #### Inherited from
 
 LdoTransactionDataset.delete
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:158](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L158)
+[packages/subscribable-dataset/src/TransactionDataset.ts:158](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L158)
 
 ___
 
@@ -434,13 +466,17 @@ This method removes the quads in the current instance that match the given argum
 
 the dataset instance it was called on.
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[deleteMatches](../interfaces/ISolidLdoDataset.md#deletematches)
+
 #### Inherited from
 
 LdoTransactionDataset.deleteMatches
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:86](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L86)
+[packages/subscribable-dataset/src/TransactionDataset.ts:86](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L86)
 
 ___
 
@@ -460,13 +496,17 @@ Returns a new dataset that contains alls quads from the current dataset, not inc
 
 `Dataset`\<`Quad`, `Quad`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[difference](../interfaces/ISolidLdoDataset.md#difference)
+
 #### Inherited from
 
 LdoTransactionDataset.difference
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:105](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L105)
+[packages/dataset/src/ExtendedDataset.ts:105](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L105)
 
 ___
 
@@ -489,13 +529,17 @@ Synchronously calls each of the listeners registered for the event named eventNa
 
 true if the event had listeners, false otherwise.
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[emit](../interfaces/ISolidLdoDataset.md#emit)
+
 #### Inherited from
 
 LdoTransactionDataset.emit
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:262](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L262)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:262](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L262)
 
 ___
 
@@ -515,13 +559,17 @@ Returns true if the current instance contains the same graph structure as the gi
 
 `boolean`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[equals](../interfaces/ISolidLdoDataset.md#equals)
+
 #### Inherited from
 
 LdoTransactionDataset.equals
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:121](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L121)
+[packages/dataset/src/ExtendedDataset.ts:121](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L121)
 
 ___
 
@@ -535,13 +583,17 @@ Returns an array listing the events for which the emitter has registered listene
 
 `QuadMatch`[]
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[eventNames](../interfaces/ISolidLdoDataset.md#eventnames)
+
 #### Inherited from
 
 LdoTransactionDataset.eventNames
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:272](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L272)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:272](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L272)
 
 ___
 
@@ -564,13 +616,17 @@ Note: This method is aligned with Array.prototype.every() in ECMAScript-262.
 
 `boolean`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[every](../interfaces/ISolidLdoDataset.md#every)
+
 #### Inherited from
 
 LdoTransactionDataset.every
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:140](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L140)
+[packages/dataset/src/ExtendedDataset.ts:140](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L140)
 
 ___
 
@@ -591,13 +647,17 @@ Note: This method is aligned with Array.prototype.filter() in ECMAScript-262.
 
 `Dataset`\<`Quad`, `Quad`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[filter](../interfaces/ISolidLdoDataset.md#filter)
+
 #### Inherited from
 
 LdoTransactionDataset.filter
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:154](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L154)
+[packages/dataset/src/ExtendedDataset.ts:154](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L154)
 
 ___
 
@@ -618,13 +678,17 @@ Note: This method is aligned with Array.prototype.forEach() in ECMAScript-262.
 
 `void`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[forEach](../interfaces/ISolidLdoDataset.md#foreach)
+
 #### Inherited from
 
 LdoTransactionDataset.forEach
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:171](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L171)
+[packages/dataset/src/ExtendedDataset.ts:171](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L171)
 
 ___
 
@@ -642,7 +706,7 @@ LdoTransactionDataset.getChanges
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:281](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L281)
+[packages/subscribable-dataset/src/TransactionDataset.ts:281](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L281)
 
 ___
 
@@ -656,13 +720,17 @@ Returns the current max listener value for the EventEmitter which is either set 
 
 `number`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[getMaxListeners](../interfaces/ISolidLdoDataset.md#getmaxlisteners)
+
 #### Inherited from
 
 LdoTransactionDataset.getMaxListeners
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:281](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L281)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:281](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L281)
 
 ___
 
@@ -697,11 +765,11 @@ const profileDocument = solidLdoDataset
 
 #### Implementation of
 
-ISolidLdoDataset.getResource
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[getResource](../interfaces/ISolidLdoDataset.md#getresource)
 
 #### Defined in
 
-[packages/solid/src/SolidLdoTransactionDataset.ts:104](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoTransactionDataset.ts#L104)
+[packages/solid/src/SolidLdoTransactionDataset.ts:103](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoTransactionDataset.ts#L103)
 
 ▸ **getResource**(`uri`, `options?`): [`Leaf`](Leaf.md)
 
@@ -718,13 +786,13 @@ ISolidLdoDataset.getResource
 
 #### Implementation of
 
-ISolidLdoDataset.getResource
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[getResource](../interfaces/ISolidLdoDataset.md#getresource)
 
 #### Defined in
 
-[packages/solid/src/SolidLdoTransactionDataset.ts:105](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoTransactionDataset.ts#L105)
+[packages/solid/src/SolidLdoTransactionDataset.ts:104](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoTransactionDataset.ts#L104)
 
-▸ **getResource**(`uri`, `options?`): [`Leaf`](Leaf.md) \| [`Container`](Container.md)
+▸ **getResource**(`uri`, `options?`): [`Container`](Container.md) \| [`Leaf`](Leaf.md)
 
 #### Parameters
 
@@ -735,15 +803,15 @@ ISolidLdoDataset.getResource
 
 #### Returns
 
-[`Leaf`](Leaf.md) \| [`Container`](Container.md)
+[`Container`](Container.md) \| [`Leaf`](Leaf.md)
 
 #### Implementation of
 
-ISolidLdoDataset.getResource
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[getResource](../interfaces/ISolidLdoDataset.md#getresource)
 
 #### Defined in
 
-[packages/solid/src/SolidLdoTransactionDataset.ts:106](https://github.com/o-development/ldo/blob/e8bb8b1/packages/solid/src/SolidLdoTransactionDataset.ts#L106)
+[packages/solid/src/SolidLdoTransactionDataset.ts:105](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoTransactionDataset.ts#L105)
 
 ___
 
@@ -763,13 +831,17 @@ Determines whether a dataset includes a certain quad, returning true or false as
 
 `boolean`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[has](../interfaces/ISolidLdoDataset.md#has)
+
 #### Inherited from
 
 LdoTransactionDataset.has
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:167](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L167)
+[packages/subscribable-dataset/src/TransactionDataset.ts:167](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L167)
 
 ___
 
@@ -790,13 +862,17 @@ The stream events end and error are wrapped in a Promise.
 
 `Promise`\<[`SolidLdoTransactionDataset`](SolidLdoTransactionDataset.md)\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[import](../interfaces/ISolidLdoDataset.md#import)
+
 #### Inherited from
 
 LdoTransactionDataset.import
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:182](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L182)
+[packages/dataset/src/ExtendedDataset.ts:182](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L182)
 
 ___
 
@@ -816,13 +892,17 @@ Returns a new dataset containing alls quads from the current dataset that are al
 
 `Dataset`\<`Quad`, `Quad`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[intersection](../interfaces/ISolidLdoDataset.md#intersection)
+
 #### Inherited from
 
 LdoTransactionDataset.intersection
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:199](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L199)
+[packages/dataset/src/ExtendedDataset.ts:199](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L199)
 
 ___
 
@@ -842,13 +922,17 @@ Returns the number of listeners listening to the event named eventName.
 
 `number`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[listenerCount](../interfaces/ISolidLdoDataset.md#listenercount)
+
 #### Inherited from
 
 LdoTransactionDataset.listenerCount
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:288](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L288)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:288](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L288)
 
 ___
 
@@ -868,13 +952,17 @@ Returns a copy of the array of listeners for the event named eventName.
 
 `nodeEventListener`\<`Quad`\>[]
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[listeners](../interfaces/ISolidLdoDataset.md#listeners)
+
 #### Inherited from
 
 LdoTransactionDataset.listeners
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:295](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L295)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:295](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L295)
 
 ___
 
@@ -894,13 +982,17 @@ Returns a new dataset containing all quads returned by applying iteratee to each
 
 `Dataset`\<`Quad`, `Quad`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[map](../interfaces/ISolidLdoDataset.md#map)
+
 #### Inherited from
 
 LdoTransactionDataset.map
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:217](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L217)
+[packages/dataset/src/ExtendedDataset.ts:217](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L217)
 
 ___
 
@@ -925,13 +1017,17 @@ This method returns a new dataset that is comprised of all quads in the current 
 
 a Dataset with matching triples
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[match](../interfaces/ISolidLdoDataset.md#match)
+
 #### Inherited from
 
 LdoTransactionDataset.match
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:108](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L108)
+[packages/subscribable-dataset/src/TransactionDataset.ts:108](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L108)
 
 ___
 
@@ -952,13 +1048,17 @@ Alias for emitter.removeListener()
 
 `void`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[off](../interfaces/ISolidLdoDataset.md#off)
+
 #### Inherited from
 
 LdoTransactionDataset.off
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:304](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L304)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:304](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L304)
 
 ___
 
@@ -979,13 +1079,17 @@ Adds the listener function to the end of the listeners array for the event named
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[on](../interfaces/ISolidLdoDataset.md#on)
+
 #### Inherited from
 
 LdoTransactionDataset.on
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:314](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L314)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:314](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L314)
 
 ___
 
@@ -1006,13 +1110,17 @@ Adds a one-time listener function for the event named eventName. The next time e
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[once](../interfaces/ISolidLdoDataset.md#once)
+
 #### Inherited from
 
 LdoTransactionDataset.once
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:330](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L330)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:330](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L330)
 
 ___
 
@@ -1033,13 +1141,17 @@ Adds the listener function to the beginning of the listeners array for the event
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[prependListener](../interfaces/ISolidLdoDataset.md#prependlistener)
+
 #### Inherited from
 
 LdoTransactionDataset.prependListener
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:341](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L341)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:341](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L341)
 
 ___
 
@@ -1060,13 +1172,17 @@ Adds a one-time listener function for the event named eventName to the beginning
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[prependOnceListener](../interfaces/ISolidLdoDataset.md#prependoncelistener)
+
 #### Inherited from
 
 LdoTransactionDataset.prependOnceListener
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:352](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L352)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:352](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L352)
 
 ___
 
@@ -1086,13 +1202,17 @@ Returns a copy of the array of listeners for the event named eventName, includin
 
 `nodeEventListener`\<`Quad`\>[]
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[rawListeners](../interfaces/ISolidLdoDataset.md#rawlisteners)
+
 #### Inherited from
 
 LdoTransactionDataset.rawListeners
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:406](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L406)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:406](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L406)
 
 ___
 
@@ -1121,13 +1241,17 @@ Note: This method is aligned with Array.prototype.reduce() in ECMAScript-262.
 
 `A`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[reduce](../interfaces/ISolidLdoDataset.md#reduce)
+
 #### Inherited from
 
 LdoTransactionDataset.reduce
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:234](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L234)
+[packages/dataset/src/ExtendedDataset.ts:234](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L234)
 
 ___
 
@@ -1147,13 +1271,17 @@ Removes all listeners, or those of the specified eventName.
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[removeAllListeners](../interfaces/ISolidLdoDataset.md#removealllisteners)
+
 #### Inherited from
 
 LdoTransactionDataset.removeAllListeners
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:366](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L366)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:366](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L366)
 
 ___
 
@@ -1174,13 +1302,17 @@ Removes the specified listener from the listener array for the event named event
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[removeListener](../interfaces/ISolidLdoDataset.md#removelistener)
+
 #### Inherited from
 
 LdoTransactionDataset.removeListener
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:374](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L374)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:374](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L374)
 
 ___
 
@@ -1200,13 +1332,17 @@ Removes the specified listener from the listener array for the event named event
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[removeListenerFromAllEvents](../interfaces/ISolidLdoDataset.md#removelistenerfromallevents)
+
 #### Inherited from
 
 LdoTransactionDataset.removeListenerFromAllEvents
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:385](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L385)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:385](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L385)
 
 ___
 
@@ -1226,7 +1362,7 @@ LdoTransactionDataset.rollback
 
 #### Defined in
 
-[packages/subscribable-dataset/src/TransactionDataset.ts:268](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/TransactionDataset.ts#L268)
+[packages/subscribable-dataset/src/TransactionDataset.ts:268](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/TransactionDataset.ts#L268)
 
 ___
 
@@ -1246,13 +1382,17 @@ By default EventEmitters will print a warning if more than 10 listeners are adde
 
 `this`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[setMaxListeners](../interfaces/ISolidLdoDataset.md#setmaxlisteners)
+
 #### Inherited from
 
 LdoTransactionDataset.setMaxListeners
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:398](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L398)
+[packages/subscribable-dataset/src/SubscribableDataset.ts:398](https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/SubscribableDataset.ts#L398)
 
 ___
 
@@ -1275,33 +1415,39 @@ Note: This method is aligned with Array.prototype.some() in ECMAScript-262.
 
 boolean true once a quad that passes the test is found.
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[some](../interfaces/ISolidLdoDataset.md#some)
+
 #### Inherited from
 
 LdoTransactionDataset.some
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:259](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L259)
+[packages/dataset/src/ExtendedDataset.ts:259](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L259)
 
 ___
 
 ### startTransaction
 
-▸ **startTransaction**(): `ITransactionDataset`\<`Quad`\>
-
-Returns a transactional dataset that will update this dataset when its transaction is committed.
+▸ **startTransaction**(): [`SolidLdoTransactionDataset`](SolidLdoTransactionDataset.md)
 
 #### Returns
 
-`ITransactionDataset`\<`Quad`\>
+[`SolidLdoTransactionDataset`](SolidLdoTransactionDataset.md)
 
-#### Inherited from
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[startTransaction](../interfaces/ISolidLdoDataset.md#starttransaction)
+
+#### Overrides
 
 LdoTransactionDataset.startTransaction
 
 #### Defined in
 
-[packages/subscribable-dataset/src/SubscribableDataset.ts:421](https://github.com/o-development/ldo/blob/e8bb8b1/packages/subscribable-dataset/src/SubscribableDataset.ts#L421)
+[packages/solid/src/SolidLdoTransactionDataset.ts:110](https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/SolidLdoTransactionDataset.ts#L110)
 
 ___
 
@@ -1316,13 +1462,17 @@ Note: Since a DatasetCore is an unordered set, the order of the quads within the
 
 `Quad`[]
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[toArray](../interfaces/ISolidLdoDataset.md#toarray)
+
 #### Inherited from
 
 LdoTransactionDataset.toArray
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:272](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L272)
+[packages/dataset/src/ExtendedDataset.ts:272](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L272)
 
 ___
 
@@ -1336,13 +1486,17 @@ Returns an N-Quads string representation of the dataset, preprocessed with RDF D
 
 `string`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[toCanonical](../interfaces/ISolidLdoDataset.md#tocanonical)
+
 #### Inherited from
 
 LdoTransactionDataset.toCanonical
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:283](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L283)
+[packages/dataset/src/ExtendedDataset.ts:283](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L283)
 
 ___
 
@@ -1356,13 +1510,17 @@ Returns a stream that contains all quads of the dataset.
 
 `Stream`\<`Quad`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[toStream](../interfaces/ISolidLdoDataset.md#tostream)
+
 #### Inherited from
 
 LdoTransactionDataset.toStream
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:290](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L290)
+[packages/dataset/src/ExtendedDataset.ts:290](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L290)
 
 ___
 
@@ -1377,13 +1535,17 @@ No prior normalization is required, therefore the results for the same quads may
 
 `string`
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[toString](../interfaces/ISolidLdoDataset.md#tostring)
+
 #### Inherited from
 
 LdoTransactionDataset.toString
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:311](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L311)
+[packages/dataset/src/ExtendedDataset.ts:311](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L311)
 
 ___
 
@@ -1403,13 +1565,17 @@ Returns a new Dataset that is a concatenation of this dataset and the quads give
 
 `Dataset`\<`Quad`, `Quad`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[union](../interfaces/ISolidLdoDataset.md#union)
+
 #### Inherited from
 
 LdoTransactionDataset.union
 
 #### Defined in
 
-[packages/dataset/src/ExtendedDataset.ts:319](https://github.com/o-development/ldo/blob/e8bb8b1/packages/dataset/src/ExtendedDataset.ts#L319)
+[packages/dataset/src/ExtendedDataset.ts:319](https://github.com/o-development/ldo/blob/c70613a/packages/dataset/src/ExtendedDataset.ts#L319)
 
 ___
 
@@ -1433,10 +1599,14 @@ ___
 
 `LdoBuilder`\<`Type`\>
 
+#### Implementation of
+
+[ISolidLdoDataset](../interfaces/ISolidLdoDataset.md).[usingType](../interfaces/ISolidLdoDataset.md#usingtype)
+
 #### Inherited from
 
 LdoTransactionDataset.usingType
 
 #### Defined in
 
-[packages/ldo/src/LdoTransactionDataset.ts:13](https://github.com/o-development/ldo/blob/e8bb8b1/packages/ldo/src/LdoTransactionDataset.ts#L13)
+[packages/ldo/src/LdoTransactionDataset.ts:13](https://github.com/o-development/ldo/blob/c70613a/packages/ldo/src/LdoTransactionDataset.ts#L13)

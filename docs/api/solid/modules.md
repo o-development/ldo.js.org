@@ -16,6 +16,7 @@
 - [DatasetRequestOptions](interfaces/DatasetRequestOptions.md)
 - [GetWacRuleSuccess](interfaces/GetWacRuleSuccess.md)
 - [GetWacUriSuccess](interfaces/GetWacUriSuccess.md)
+- [ISolidLdoDataset](interfaces/ISolidLdoDataset.md)
 - [SetWacRuleSuccess](interfaces/SetWacRuleSuccess.md)
 - [SolidLdoDatasetContext](interfaces/SolidLdoDatasetContext.md)
 - [WacRule](interfaces/WacRule.md)
@@ -65,4 +66,5 @@
 - [readResource](functions/readResource.md)
 - [setWacRuleForAclUri](functions/setWacRuleForAclUri.md)
 - [updateDataResource](functions/updateDataResource.md)
+- [updateDatasetOnSuccessfulDelete](functions/updateDatasetOnSuccessfulDelete.md)
 - [uploadResource](functions/uploadResource.md)
