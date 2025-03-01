@@ -1,6 +1,6 @@
 # `build` command
 
-LDO's cli's `build`` command takes ShEx schemas from an `--input` folder, and converts them into LDO generated code in the `--output` folder.
+LDO's cli's `build` command takes ShEx schemas from an `--input` folder, and converts them into LDO generated code in the `--output` folder.
 
 If you initialized your project using the [`init` command](init.md), a the build command is already added to your `package.json`. Simply run:
 
