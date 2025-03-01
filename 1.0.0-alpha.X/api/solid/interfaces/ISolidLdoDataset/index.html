@@ -1,0 +1,5424 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/ISolidLdoDataset/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Interface: ISolidLdoDataset - Linked Data Objects (LDO)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#interface-isolidldodataset" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Linked Data Objects (LDO)" class="md-header__button md-logo" aria-label="Linked Data Objects (LDO)" data-md-component="logo">
+      
+  <img src="../../../../assets/Logo-40.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linked Data Objects (LDO)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interface: ISolidLdoDataset
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/o-development/ldo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Linked Data Objects (LDO)" class="md-nav__button md-logo" aria-label="Linked Data Objects (LDO)" data-md-component="logo">
+      
+  <img src="../../../../assets/Logo-40.png" alt="logo">
+
+    </a>
+    Linked Data Objects (LDO)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/o-development/ldo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/raw_rdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Raw Rdf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/solid_react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Solid+React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../guides/advanced_data_manipulation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Advanced Data Manipulation
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced Data Manipulation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/cli
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/cli
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/init/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    init
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/create/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    create
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ldo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/ldo
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/ldo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoBase
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/ShapeType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShapeType
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/parseRdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    parseRdf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/createLdoDatasetFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createLdoDatasetFactory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoDatasetFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoDatasetFactory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/createLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoBuilder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoBuilder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/toTurtle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toTurtle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/toNTriples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toNTriples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/serialize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    serialize
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/transactions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    transactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/toSparqlUpdate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toSparqlUpdate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/languageOf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    languageOf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/setLanguagePreferences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    setLanguagePreferences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/graphOf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    graphOf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/write/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/getDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/solid
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/solid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/createSolidLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createSolidLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/SolidLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../types/LeafUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LeafUri
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../types/ContainerUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ContainerUri
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/Resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/Leaf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/Container/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Container
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/checkRootContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    checkRootContainer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/createDataResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createDataResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/deleteResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    deleteResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/readResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    readResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/updateDataResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    updateDataResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/uploadResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    uploadResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/getWacUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getWacUri
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/getWacRuleWithAclUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getWacRuleWithAclUri
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/setWacRuleForAclUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    setWacRuleForAclUri
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/changeData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    changeData
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/commitData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commitData
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../solid-react/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/solid-react
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/solid-react
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/BrowserSolidLdoProvider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BrowserSolidLdoProvider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/SolidLdoProvider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidLdoProvider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useLdo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useLdo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useRootContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useRootContainer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useSolidAuth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSolidAuth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useSubject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSubject
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useMatchSubject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useMatchSubject
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useMatchObject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useMatchObject
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useSubscribeToResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSubscribeToResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implemented-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implemented by
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size" class="md-nav__link">
+    <span class="md-ellipsis">
+      size
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterator" class="md-nav__link">
+    <span class="md-ellipsis">
+      [iterator]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[iterator]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    <span class="md-ellipsis">
+      add
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addall" class="md-nav__link">
+    <span class="md-ellipsis">
+      addAll
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="addAll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addlistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      addListener
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="addListener">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      bulk
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="bulk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      contains
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="contains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletematches" class="md-nav__link">
+    <span class="md-ellipsis">
+      deleteMatches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="deleteMatches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      difference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="difference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emit" class="md-nav__link">
+    <span class="md-ellipsis">
+      emit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="emit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equals" class="md-nav__link">
+    <span class="md-ellipsis">
+      equals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="equals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventnames" class="md-nav__link">
+    <span class="md-ellipsis">
+      eventNames
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="eventNames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#every" class="md-nav__link">
+    <span class="md-ellipsis">
+      every
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="every">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreach" class="md-nav__link">
+    <span class="md-ellipsis">
+      forEach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="forEach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxlisteners" class="md-nav__link">
+    <span class="md-ellipsis">
+      getMaxListeners
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getMaxListeners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getresource" class="md-nav__link">
+    <span class="md-ellipsis">
+      getResource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getResource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has" class="md-nav__link">
+    <span class="md-ellipsis">
+      has
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="has">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    <span class="md-ellipsis">
+      import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      intersection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="intersection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenercount" class="md-nav__link">
+    <span class="md-ellipsis">
+      listenerCount
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="listenerCount">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      listeners
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="listeners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      map
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match" class="md-nav__link">
+    <span class="md-ellipsis">
+      match
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="match">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#off" class="md-nav__link">
+    <span class="md-ellipsis">
+      off
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="off">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on" class="md-nav__link">
+    <span class="md-ellipsis">
+      on
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="on">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#once" class="md-nav__link">
+    <span class="md-ellipsis">
+      once
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="once">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prependlistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      prependListener
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prependListener">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prependoncelistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      prependOnceListener
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="prependOnceListener">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rawlisteners" class="md-nav__link">
+    <span class="md-ellipsis">
+      rawListeners
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="rawListeners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      reduce
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="reduce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removealllisteners" class="md-nav__link">
+    <span class="md-ellipsis">
+      removeAllListeners
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="removeAllListeners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removelistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      removeListener
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="removeListener">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removelistenerfromallevents" class="md-nav__link">
+    <span class="md-ellipsis">
+      removeListenerFromAllEvents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="removeListenerFromAllEvents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmaxlisteners" class="md-nav__link">
+    <span class="md-ellipsis">
+      setMaxListeners
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="setMaxListeners">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some" class="md-nav__link">
+    <span class="md-ellipsis">
+      some
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="some">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starttransaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      startTransaction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="startTransaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overrides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toarray" class="md-nav__link">
+    <span class="md-ellipsis">
+      toArray
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="toArray">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tocanonical" class="md-nav__link">
+    <span class="md-ellipsis">
+      toCanonical
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="toCanonical">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tostream" class="md-nav__link">
+    <span class="md-ellipsis">
+      toStream
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="toStream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      toString
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="toString">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      union
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="union">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usingtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      usingType
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="usingType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="interface-isolidldodataset">Interface: ISolidLdoDataset</h1>
+<p>A SolidLdoDataset provides methods for getting Solid resources.</p>
+<h2 id="hierarchy">Hierarchy</h2>
+<ul>
+<li><code>ILdoDataset</code></li>
+</ul>
+<p>↳ <strong><code>ISolidLdoDataset</code></strong></p>
+<h2 id="implemented-by">Implemented by</h2>
+<ul>
+<li><a href="../../classes/SolidLdoDataset/"><code>SolidLdoDataset</code></a></li>
+<li><a href="../../classes/SolidLdoTransactionDataset/"><code>SolidLdoTransactionDataset</code></a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h3 id="size">size</h3>
+<p>• <code>Readonly</code> <strong>size</strong>: <code>number</code></p>
+<p>A non-negative integer that specifies the number of quads in the set.</p>
+<h4 id="inherited-from">Inherited from</h4>
+<p>ILdoDataset.size</p>
+<h4 id="defined-in">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:11</p>
+<h2 id="methods">Methods</h2>
+<h3 id="iterator">[iterator]</h3>
+<p>▸ <strong>[iterator]</strong>(): <code>Iterator</code>\&lt;<code>Quad</code>, <code>any</code>, <code>undefined</code>&gt;</p>
+<h4 id="returns">Returns</h4>
+<p><code>Iterator</code>\&lt;<code>Quad</code>, <code>any</code>, <code>undefined</code>&gt;</p>
+<h4 id="inherited-from_1">Inherited from</h4>
+<p>ILdoDataset.[iterator]</p>
+<h4 id="defined-in_1">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:47</p>
+<hr />
+<h3 id="add">add</h3>
+<p>▸ <strong>add</strong>(<code>quad</code>): <code>this</code></p>
+<p>Adds the specified quad to the dataset.</p>
+<p>Existing quads, as defined in <code>Quad.equals</code>, will be ignored.</p>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>quad</code></td>
+<td style="text-align: left;"><code>Quad</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_1">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_2">Inherited from</h4>
+<p>ILdoDataset.add</p>
+<h4 id="defined-in_2">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:18</p>
+<hr />
+<h3 id="addall">addAll</h3>
+<p>▸ <strong>addAll</strong>(<code>quads</code>): <code>this</code></p>
+<p>Imports the quads into this dataset.</p>
+<p>This method differs from <code>Dataset.union</code> in that it adds all <code>quads</code> to the current instance, rather than
+combining <code>quads</code> and the current instance to create a new instance.</p>
+<h4 id="parameters_1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>quads</code></td>
+<td style="text-align: left;"><code>Quad</code>[] | <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_2">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_3">Inherited from</h4>
+<p>ILdoDataset.addAll</p>
+<h4 id="defined-in_3">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:64</p>
+<hr />
+<h3 id="addlistener">addListener</h3>
+<p>▸ <strong>addListener</strong>(<code>eventName</code>, <code>listener</code>): <code>this</code></p>
+<p>Alias for emitter.on(eventName, listener).</p>
+<h4 id="parameters_2">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_3">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_4">Inherited from</h4>
+<p>ILdoDataset.addListener</p>
+<h4 id="defined-in_4">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L43">packages/subscribable-dataset/src/types.ts:43</a></p>
+<hr />
+<h3 id="bulk">bulk</h3>
+<p>▸ <strong>bulk</strong>(<code>changes</code>): <code>this</code></p>
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>changes</code></td>
+<td style="text-align: left;"><code>DatasetChanges</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_4">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_5">Inherited from</h4>
+<p>ILdoDataset.bulk</p>
+<h4 id="defined-in_5">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L16">packages/subscribable-dataset/src/types.ts:16</a></p>
+<hr />
+<h3 id="contains">contains</h3>
+<p>▸ <strong>contains</strong>(<code>other</code>): <code>boolean</code></p>
+<p>Returns <code>true</code> if the current instance is a superset of the given dataset; differently put: if the given dataset
+is a subset of, is contained in the current dataset.</p>
+<p>Blank Nodes will be normalized.</p>
+<h4 id="parameters_4">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>other</code></td>
+<td style="text-align: left;"><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_5">Returns</h4>
+<p><code>boolean</code></p>
+<h4 id="inherited-from_6">Inherited from</h4>
+<p>ILdoDataset.contains</p>
+<h4 id="defined-in_6">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:72</p>
+<hr />
+<h3 id="delete">delete</h3>
+<p>▸ <strong>delete</strong>(<code>quad</code>): <code>this</code></p>
+<p>Removes the specified quad from the dataset.</p>
+<h4 id="parameters_5">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>quad</code></td>
+<td style="text-align: left;"><code>Quad</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_6">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_7">Inherited from</h4>
+<p>ILdoDataset.delete</p>
+<h4 id="defined-in_7">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:23</p>
+<hr />
+<h3 id="deletematches">deleteMatches</h3>
+<p>▸ <strong>deleteMatches</strong>(<code>subject?</code>, <code>predicate?</code>, <code>object?</code>, <code>graph?</code>): <code>this</code></p>
+<p>This method removes the quads in the current instance that match the given arguments.</p>
+<p>The logic described in <a href="https://rdf.js.org/dataset-spec/#quad-matching|Quad">Matching</a> is applied for each
+quad in this dataset to select the quads which will be deleted.</p>
+<h4 id="parameters_6">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>subject?</code></td>
+<td style="text-align: left;"><code>Term</code></td>
+<td style="text-align: left;">The optional exact subject to match.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>predicate?</code></td>
+<td style="text-align: left;"><code>Term</code></td>
+<td style="text-align: left;">The optional exact predicate to match.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>object?</code></td>
+<td style="text-align: left;"><code>Term</code></td>
+<td style="text-align: left;">The optional exact object to match.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>graph?</code></td>
+<td style="text-align: left;"><code>Term</code></td>
+<td style="text-align: left;">The optional exact graph to match.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_7">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_8">Inherited from</h4>
+<p>ILdoDataset.deleteMatches</p>
+<h4 id="defined-in_8">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:85</p>
+<hr />
+<h3 id="difference">difference</h3>
+<p>▸ <strong>difference</strong>(<code>other</code>): <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<p>Returns a new dataset that contains all quads from the current dataset, not included in the given dataset.</p>
+<h4 id="parameters_7">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>other</code></td>
+<td style="text-align: left;"><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_8">Returns</h4>
+<p><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<h4 id="inherited-from_9">Inherited from</h4>
+<p>ILdoDataset.difference</p>
+<h4 id="defined-in_9">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:90</p>
+<hr />
+<h3 id="emit">emit</h3>
+<p>▸ <strong>emit</strong>(<code>eventName</code>, <code>changes</code>): <code>boolean</code></p>
+<p>Synchronously calls each of the listeners registered for the event named eventName, in the order they were registered, passing the supplied arguments to each.</p>
+<h4 id="parameters_8">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>changes</code></td>
+<td style="text-align: left;"><code>DatasetChanges</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_9">Returns</h4>
+<p><code>boolean</code></p>
+<p>true if the event had listeners, false otherwise.</p>
+<h4 id="inherited-from_10">Inherited from</h4>
+<p>ILdoDataset.emit</p>
+<h4 id="defined-in_10">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L54">packages/subscribable-dataset/src/types.ts:54</a></p>
+<hr />
+<h3 id="equals">equals</h3>
+<p>▸ <strong>equals</strong>(<code>other</code>): <code>boolean</code></p>
+<p>Returns true if the current instance contains the same graph structure as the given dataset.</p>
+<p>Blank Nodes will be normalized.</p>
+<h4 id="parameters_9">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>other</code></td>
+<td style="text-align: left;"><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_10">Returns</h4>
+<p><code>boolean</code></p>
+<h4 id="inherited-from_11">Inherited from</h4>
+<p>ILdoDataset.equals</p>
+<h4 id="defined-in_11">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:97</p>
+<hr />
+<h3 id="eventnames">eventNames</h3>
+<p>▸ <strong>eventNames</strong>(): <code>QuadMatch</code>[]</p>
+<p>Returns an array listing the events for which the emitter has registered listeners. The values in the array are strings or Symbols.</p>
+<h4 id="returns_11">Returns</h4>
+<p><code>QuadMatch</code>[]</p>
+<h4 id="inherited-from_12">Inherited from</h4>
+<p>ILdoDataset.eventNames</p>
+<h4 id="defined-in_12">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L59">packages/subscribable-dataset/src/types.ts:59</a></p>
+<hr />
+<h3 id="every">every</h3>
+<p>▸ <strong>every</strong>(<code>iteratee</code>): <code>boolean</code></p>
+<p>Universal quantification method, tests whether every quad in the dataset passes the test implemented by the
+provided <code>iteratee</code>.</p>
+<p>This method immediately returns boolean <code>false</code> once a quad that does not pass the test is found.</p>
+<p>This method always returns boolean <code>true</code> on an empty dataset.</p>
+<p>This method is aligned with <code>Array.prototype.every()</code> in ECMAScript-262.</p>
+<h4 id="parameters_10">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>iteratee</code></td>
+<td style="text-align: left;">(<code>quad</code>: <code>Quad</code>, <code>dataset</code>: <code>this</code>) =&gt; <code>boolean</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_12">Returns</h4>
+<p><code>boolean</code></p>
+<h4 id="inherited-from_13">Inherited from</h4>
+<p>ILdoDataset.every</p>
+<h4 id="defined-in_13">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:109</p>
+<hr />
+<h3 id="filter">filter</h3>
+<p>▸ <strong>filter</strong>(<code>iteratee</code>): <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<p>Creates a new dataset with all the quads that pass the test implemented by the provided <code>iteratee</code>.</p>
+<p>This method is aligned with Array.prototype.filter() in ECMAScript-262.</p>
+<h4 id="parameters_11">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>iteratee</code></td>
+<td style="text-align: left;">(<code>quad</code>: <code>Quad</code>, <code>dataset</code>: <code>this</code>) =&gt; <code>boolean</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_13">Returns</h4>
+<p><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<h4 id="inherited-from_14">Inherited from</h4>
+<p>ILdoDataset.filter</p>
+<h4 id="defined-in_14">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:116</p>
+<hr />
+<h3 id="foreach">forEach</h3>
+<p>▸ <strong>forEach</strong>(<code>callback</code>): <code>void</code></p>
+<p>Executes the provided <code>iteratee</code> once on each quad in the dataset.</p>
+<p>This method is aligned with <code>Array.prototype.forEach()</code> in ECMAScript-262.</p>
+<h4 id="parameters_12">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>callback</code></td>
+<td style="text-align: left;">(<code>quad</code>: <code>Quad</code>, <code>dataset</code>: <code>this</code>) =&gt; <code>void</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_14">Returns</h4>
+<p><code>void</code></p>
+<h4 id="inherited-from_15">Inherited from</h4>
+<p>ILdoDataset.forEach</p>
+<h4 id="defined-in_15">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:123</p>
+<hr />
+<h3 id="getmaxlisteners">getMaxListeners</h3>
+<p>▸ <strong>getMaxListeners</strong>(): <code>number</code></p>
+<p>Returns the current max listener value for the EventEmitter which is either set by emitter.setMaxListeners(n) or defaults to events.defaultMaxListeners.</p>
+<h4 id="returns_15">Returns</h4>
+<p><code>number</code></p>
+<h4 id="inherited-from_16">Inherited from</h4>
+<p>ILdoDataset.getMaxListeners</p>
+<h4 id="defined-in_16">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L64">packages/subscribable-dataset/src/types.ts:64</a></p>
+<hr />
+<h3 id="getresource">getResource</h3>
+<p>▸ <strong>getResource</strong>(<code>uri</code>, <code>options?</code>): <a href="../../classes/Container/"><code>Container</code></a></p>
+<h4 id="parameters_13">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>uri</code></td>
+<td style="text-align: left;"><a href="../../types/ContainerUri/"><code>ContainerUri</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>options?</code></td>
+<td style="text-align: left;"><code>ResourceGetterOptions</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_16">Returns</h4>
+<p><a href="../../classes/Container/"><code>Container</code></a></p>
+<h4 id="defined-in_17">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/types.ts#L14">packages/solid/src/types.ts:14</a></p>
+<p>▸ <strong>getResource</strong>(<code>uri</code>, <code>options?</code>): <a href="../../classes/Leaf/"><code>Leaf</code></a></p>
+<h4 id="parameters_14">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>uri</code></td>
+<td style="text-align: left;"><a href="../../types/LeafUri/"><code>LeafUri</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>options?</code></td>
+<td style="text-align: left;"><code>ResourceGetterOptions</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_17">Returns</h4>
+<p><a href="../../classes/Leaf/"><code>Leaf</code></a></p>
+<h4 id="defined-in_18">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/types.ts#L15">packages/solid/src/types.ts:15</a></p>
+<p>▸ <strong>getResource</strong>(<code>uri</code>, <code>options?</code>): <a href="../../classes/Container/"><code>Container</code></a> | <a href="../../classes/Leaf/"><code>Leaf</code></a></p>
+<h4 id="parameters_15">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>uri</code></td>
+<td style="text-align: left;"><code>string</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>options?</code></td>
+<td style="text-align: left;"><code>ResourceGetterOptions</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_18">Returns</h4>
+<p><a href="../../classes/Container/"><code>Container</code></a> | <a href="../../classes/Leaf/"><code>Leaf</code></a></p>
+<h4 id="defined-in_19">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/types.ts#L16">packages/solid/src/types.ts:16</a></p>
+<p>▸ <strong>getResource</strong>(<code>uri</code>, <code>options?</code>): <a href="../../classes/Container/"><code>Container</code></a> | <a href="../../classes/Leaf/"><code>Leaf</code></a></p>
+<h4 id="parameters_16">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>uri</code></td>
+<td style="text-align: left;"><code>string</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>options?</code></td>
+<td style="text-align: left;"><code>ResourceGetterOptions</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_19">Returns</h4>
+<p><a href="../../classes/Container/"><code>Container</code></a> | <a href="../../classes/Leaf/"><code>Leaf</code></a></p>
+<h4 id="defined-in_20">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/types.ts#L17">packages/solid/src/types.ts:17</a></p>
+<hr />
+<h3 id="has">has</h3>
+<p>▸ <strong>has</strong>(<code>quad</code>): <code>boolean</code></p>
+<p>Determines whether a dataset includes a certain quad.</p>
+<h4 id="parameters_17">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>quad</code></td>
+<td style="text-align: left;"><code>Quad</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_20">Returns</h4>
+<p><code>boolean</code></p>
+<h4 id="inherited-from_17">Inherited from</h4>
+<p>ILdoDataset.has</p>
+<h4 id="defined-in_21">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:28</p>
+<hr />
+<h3 id="import">import</h3>
+<p>▸ <strong>import</strong>(<code>stream</code>): <code>Promise</code>\&lt;<a href="./"><code>ISolidLdoDataset</code></a>&gt;</p>
+<p>Imports all quads from the given stream into the dataset.</p>
+<p>The stream events <code>end</code> and <code>error</code> are wrapped in a Promise.</p>
+<h4 id="parameters_18">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>stream</code></td>
+<td style="text-align: left;"><code>Stream</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_21">Returns</h4>
+<p><code>Promise</code>\&lt;<a href="./"><code>ISolidLdoDataset</code></a>&gt;</p>
+<h4 id="inherited-from_18">Inherited from</h4>
+<p>ILdoDataset.import</p>
+<h4 id="defined-in_22">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:130</p>
+<hr />
+<h3 id="intersection">intersection</h3>
+<p>▸ <strong>intersection</strong>(<code>other</code>): <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<p>Returns a new dataset containing alls quads from the current dataset that are also included in the given dataset.</p>
+<h4 id="parameters_19">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>other</code></td>
+<td style="text-align: left;"><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_22">Returns</h4>
+<p><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<h4 id="inherited-from_19">Inherited from</h4>
+<p>ILdoDataset.intersection</p>
+<h4 id="defined-in_23">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:135</p>
+<hr />
+<h3 id="listenercount">listenerCount</h3>
+<p>▸ <strong>listenerCount</strong>(<code>eventName</code>): <code>number</code></p>
+<p>Returns the number of listeners listening to the event named eventName.</p>
+<h4 id="parameters_20">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_23">Returns</h4>
+<p><code>number</code></p>
+<h4 id="inherited-from_20">Inherited from</h4>
+<p>ILdoDataset.listenerCount</p>
+<h4 id="defined-in_24">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L69">packages/subscribable-dataset/src/types.ts:69</a></p>
+<hr />
+<h3 id="listeners">listeners</h3>
+<p>▸ <strong>listeners</strong>(<code>eventName</code>): <code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;[]</p>
+<p>Returns a copy of the array of listeners for the event named eventName.</p>
+<h4 id="parameters_21">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_24">Returns</h4>
+<p><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;[]</p>
+<h4 id="inherited-from_21">Inherited from</h4>
+<p>ILdoDataset.listeners</p>
+<h4 id="defined-in_25">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L74">packages/subscribable-dataset/src/types.ts:74</a></p>
+<hr />
+<h3 id="map">map</h3>
+<p>▸ <strong>map</strong>(<code>iteratee</code>): <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<p>Returns a new dataset containing all quads returned by applying <code>iteratee</code> to each quad in the current dataset.</p>
+<h4 id="parameters_22">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>iteratee</code></td>
+<td style="text-align: left;">(<code>quad</code>: <code>Quad</code>, <code>dataset</code>: <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;) =&gt; <code>Quad</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_25">Returns</h4>
+<p><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<h4 id="inherited-from_22">Inherited from</h4>
+<p>ILdoDataset.map</p>
+<h4 id="defined-in_26">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:140</p>
+<hr />
+<h3 id="match">match</h3>
+<p>▸ <strong>match</strong>(<code>subject?</code>, <code>predicate?</code>, <code>object?</code>, <code>graph?</code>): <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<h4 id="parameters_23">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>subject?</code></td>
+<td style="text-align: left;"><code>null</code> | <code>Term</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>predicate?</code></td>
+<td style="text-align: left;"><code>null</code> | <code>Term</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>object?</code></td>
+<td style="text-align: left;"><code>null</code> | <code>Term</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>graph?</code></td>
+<td style="text-align: left;"><code>null</code> | <code>Term</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_26">Returns</h4>
+<p><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<h4 id="inherited-from_23">Inherited from</h4>
+<p>ILdoDataset.match</p>
+<h4 id="defined-in_27">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:195</p>
+<hr />
+<h3 id="off">off</h3>
+<p>▸ <strong>off</strong>(<code>eventName</code>, <code>listener</code>): <code>void</code></p>
+<p>Alias for emitter.removeListener()</p>
+<h4 id="parameters_24">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_27">Returns</h4>
+<p><code>void</code></p>
+<h4 id="inherited-from_24">Inherited from</h4>
+<p>ILdoDataset.off</p>
+<h4 id="defined-in_28">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L79">packages/subscribable-dataset/src/types.ts:79</a></p>
+<hr />
+<h3 id="on">on</h3>
+<p>▸ <strong>on</strong>(<code>eventName</code>, <code>listener</code>): <code>this</code></p>
+<p>Adds the listener function to the end of the listeners array for the event named eventName. No checks are made to see if the listener has already been added. Multiple calls passing the same combination of eventName and listener will result in the listener being added, and called, multiple times.</p>
+<h4 id="parameters_25">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_28">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_25">Inherited from</h4>
+<p>ILdoDataset.on</p>
+<h4 id="defined-in_29">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L84">packages/subscribable-dataset/src/types.ts:84</a></p>
+<hr />
+<h3 id="once">once</h3>
+<p>▸ <strong>once</strong>(<code>eventName</code>, <code>listener</code>): <code>this</code></p>
+<p>Adds a one-time listener function for the event named eventName. The next time eventName is triggered, this listener is removed and then invoked.</p>
+<h4 id="parameters_26">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_29">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_26">Inherited from</h4>
+<p>ILdoDataset.once</p>
+<h4 id="defined-in_30">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L89">packages/subscribable-dataset/src/types.ts:89</a></p>
+<hr />
+<h3 id="prependlistener">prependListener</h3>
+<p>▸ <strong>prependListener</strong>(<code>eventName</code>, <code>listener</code>): <code>this</code></p>
+<p>Adds the listener function to the beginning of the listeners array for the event named eventName. No checks are made to see if the listener has already been added. Multiple calls passing the same combination of eventName and listener will result in the listener being added, and called, multiple times.</p>
+<h4 id="parameters_27">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_30">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_27">Inherited from</h4>
+<p>ILdoDataset.prependListener</p>
+<h4 id="defined-in_31">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L94">packages/subscribable-dataset/src/types.ts:94</a></p>
+<hr />
+<h3 id="prependoncelistener">prependOnceListener</h3>
+<p>▸ <strong>prependOnceListener</strong>(<code>eventName</code>, <code>listener</code>): <code>this</code></p>
+<p>Adds a one-time listener function for the event named eventName to the beginning of the listeners array. The next time eventName is triggered, this listener is removed, and then invoked.</p>
+<h4 id="parameters_28">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_31">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_28">Inherited from</h4>
+<p>ILdoDataset.prependOnceListener</p>
+<h4 id="defined-in_32">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L102">packages/subscribable-dataset/src/types.ts:102</a></p>
+<hr />
+<h3 id="rawlisteners">rawListeners</h3>
+<p>▸ <strong>rawListeners</strong>(<code>eventName</code>): <code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;[]</p>
+<p>Returns a copy of the array of listeners for the event named eventName, including any wrappers (such as those created by .once()).</p>
+<h4 id="parameters_29">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_32">Returns</h4>
+<p><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;[]</p>
+<h4 id="inherited-from_29">Inherited from</h4>
+<p>ILdoDataset.rawListeners</p>
+<h4 id="defined-in_33">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L133">packages/subscribable-dataset/src/types.ts:133</a></p>
+<hr />
+<h3 id="reduce">reduce</h3>
+<p>▸ <strong>reduce</strong>\&lt;<code>A</code>&gt;(<code>callback</code>, <code>initialValue?</code>): <code>A</code></p>
+<p>This method calls the <code>iteratee</code> on each <code>quad</code> of the <code>Dataset</code>. The first time the <code>iteratee</code> is called, the
+<code>accumulator</code> value is the <code>initialValue</code> or, if not given, equals to the first quad of the <code>Dataset</code>. The return
+value of the <code>iteratee</code> is used as <code>accumulator</code> value for the next calls.</p>
+<p>This method returns the return value of the last <code>iteratee</code> call.</p>
+<p>This method is aligned with <code>Array.prototype.reduce()</code> in ECMAScript-262.</p>
+<h4 id="type-parameters">Type parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>A</code></td>
+<td style="text-align: left;"><code>any</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_30">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>callback</code></td>
+<td style="text-align: left;">(<code>accumulator</code>: <code>A</code>, <code>quad</code>: <code>Quad</code>, <code>dataset</code>: <code>this</code>) =&gt; <code>A</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>initialValue?</code></td>
+<td style="text-align: left;"><code>A</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_33">Returns</h4>
+<p><code>A</code></p>
+<h4 id="inherited-from_30">Inherited from</h4>
+<p>ILdoDataset.reduce</p>
+<h4 id="defined-in_34">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:151</p>
+<hr />
+<h3 id="removealllisteners">removeAllListeners</h3>
+<p>▸ <strong>removeAllListeners</strong>(<code>eventName</code>): <code>this</code></p>
+<p>Removes all listeners, or those of the specified eventName.</p>
+<h4 id="parameters_31">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_34">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_31">Inherited from</h4>
+<p>ILdoDataset.removeAllListeners</p>
+<h4 id="defined-in_35">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L110">packages/subscribable-dataset/src/types.ts:110</a></p>
+<hr />
+<h3 id="removelistener">removeListener</h3>
+<p>▸ <strong>removeListener</strong>(<code>eventName</code>, <code>listener</code>): <code>this</code></p>
+<p>Removes the specified listener from the listener array for the event named eventName.</p>
+<h4 id="parameters_32">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>eventName</code></td>
+<td style="text-align: left;"><code>QuadMatch</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_35">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_32">Inherited from</h4>
+<p>ILdoDataset.removeListener</p>
+<h4 id="defined-in_36">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L115">packages/subscribable-dataset/src/types.ts:115</a></p>
+<hr />
+<h3 id="removelistenerfromallevents">removeListenerFromAllEvents</h3>
+<p>▸ <strong>removeListenerFromAllEvents</strong>(<code>listener</code>): <code>this</code></p>
+<p>Removes the specified listener from all events</p>
+<h4 id="parameters_33">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>listener</code></td>
+<td style="text-align: left;"><code>nodeEventListener</code>\&lt;<code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_36">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_33">Inherited from</h4>
+<p>ILdoDataset.removeListenerFromAllEvents</p>
+<h4 id="defined-in_37">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L123">packages/subscribable-dataset/src/types.ts:123</a></p>
+<hr />
+<h3 id="setmaxlisteners">setMaxListeners</h3>
+<p>▸ <strong>setMaxListeners</strong>(<code>n</code>): <code>this</code></p>
+<p>By default EventEmitters will print a warning if more than 10 listeners are added for a particular event. This is a useful default that helps finding memory leaks. The emitter.setMaxListeners() method allows the limit to be modified for this specific EventEmitter instance. The value can be set to Infinity (or 0) to indicate an unlimited number of listeners.</p>
+<h4 id="parameters_34">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>n</code></td>
+<td style="text-align: left;"><code>number</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_37">Returns</h4>
+<p><code>this</code></p>
+<h4 id="inherited-from_34">Inherited from</h4>
+<p>ILdoDataset.setMaxListeners</p>
+<h4 id="defined-in_38">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/subscribable-dataset/src/types.ts#L128">packages/subscribable-dataset/src/types.ts:128</a></p>
+<hr />
+<h3 id="some">some</h3>
+<p>▸ <strong>some</strong>(<code>iteratee</code>): <code>boolean</code></p>
+<p>Existential quantification method, tests whether some quads in the dataset pass the test implemented by the
+provided <code>iteratee</code>.</p>
+<p>This method immediately returns boolean <code>true</code> once a quad that passes the test is found.</p>
+<p>This method is aligned with <code>Array.prototype.some()</code> in ECMAScript-262.</p>
+<h4 id="parameters_35">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>iteratee</code></td>
+<td style="text-align: left;">(<code>quad</code>: <code>Quad</code>, <code>dataset</code>: <code>this</code>) =&gt; <code>boolean</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_38">Returns</h4>
+<p><code>boolean</code></p>
+<h4 id="inherited-from_35">Inherited from</h4>
+<p>ILdoDataset.some</p>
+<h4 id="defined-in_39">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:161</p>
+<hr />
+<h3 id="starttransaction">startTransaction</h3>
+<p>▸ <strong>startTransaction</strong>(): <a href="../../classes/SolidLdoTransactionDataset/"><code>SolidLdoTransactionDataset</code></a></p>
+<h4 id="returns_39">Returns</h4>
+<p><a href="../../classes/SolidLdoTransactionDataset/"><code>SolidLdoTransactionDataset</code></a></p>
+<h4 id="overrides">Overrides</h4>
+<p>ILdoDataset.startTransaction</p>
+<h4 id="defined-in_40">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/solid/src/types.ts#L12">packages/solid/src/types.ts:12</a></p>
+<hr />
+<h3 id="toarray">toArray</h3>
+<p>▸ <strong>toArray</strong>(): <code>Quad</code>[]</p>
+<p>Returns the set of quads within the dataset as a host language native sequence, for example an <code>Array</code> in
+ECMAScript-262.</p>
+<p>Since a <code>Dataset</code> is an unordered set, the order of the quads within the returned sequence is arbitrary.</p>
+<h4 id="returns_40">Returns</h4>
+<p><code>Quad</code>[]</p>
+<h4 id="inherited-from_36">Inherited from</h4>
+<p>ILdoDataset.toArray</p>
+<h4 id="defined-in_41">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:169</p>
+<hr />
+<h3 id="tocanonical">toCanonical</h3>
+<p>▸ <strong>toCanonical</strong>(): <code>string</code></p>
+<p>Returns an N-Quads string representation of the dataset, preprocessed with
+<a href="https://json-ld.github.io/normalization/spec/|RDF">Dataset Normalization</a> algorithm.</p>
+<h4 id="returns_41">Returns</h4>
+<p><code>string</code></p>
+<h4 id="inherited-from_37">Inherited from</h4>
+<p>ILdoDataset.toCanonical</p>
+<h4 id="defined-in_42">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:175</p>
+<hr />
+<h3 id="tostream">toStream</h3>
+<p>▸ <strong>toStream</strong>(): <code>Stream</code>\&lt;<code>Quad</code>&gt;</p>
+<p>Returns a stream that contains all quads of the dataset.</p>
+<h4 id="returns_42">Returns</h4>
+<p><code>Stream</code>\&lt;<code>Quad</code>&gt;</p>
+<h4 id="inherited-from_38">Inherited from</h4>
+<p>ILdoDataset.toStream</p>
+<h4 id="defined-in_43">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:180</p>
+<hr />
+<h3 id="tostring">toString</h3>
+<p>▸ <strong>toString</strong>(): <code>string</code></p>
+<p>Returns an N-Quads string representation of the dataset.</p>
+<p>No prior normalization is required, therefore the results for the same quads may vary depending on the <code>Dataset</code>
+implementation.</p>
+<h4 id="returns_43">Returns</h4>
+<p><code>string</code></p>
+<h4 id="inherited-from_39">Inherited from</h4>
+<p>ILdoDataset.toString</p>
+<h4 id="defined-in_44">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:188</p>
+<hr />
+<h3 id="union">union</h3>
+<p>▸ <strong>union</strong>(<code>quads</code>): <code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<p>Returns a new <code>Dataset</code> that is a concatenation of this dataset and the quads given as an argument.</p>
+<h4 id="parameters_36">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>quads</code></td>
+<td style="text-align: left;"><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_44">Returns</h4>
+<p><code>Dataset</code>\&lt;<code>Quad</code>, <code>Quad</code>&gt;</p>
+<h4 id="inherited-from_40">Inherited from</h4>
+<p>ILdoDataset.union</p>
+<h4 id="defined-in_45">Defined in</h4>
+<p>node_modules/@rdfjs/types/dataset.d.ts:193</p>
+<hr />
+<h3 id="usingtype">usingType</h3>
+<p>▸ <strong>usingType</strong>\&lt;<code>Type</code>&gt;(<code>shapeType</code>): <code>LdoBuilder</code>\&lt;<code>Type</code>&gt;</p>
+<h4 id="type-parameters_1">Type parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Type</code></td>
+<td style="text-align: left;">extends <code>LdoBase</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="parameters_37">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>shapeType</code></td>
+<td style="text-align: left;"><code>ShapeType</code>\&lt;<code>Type</code>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_45">Returns</h4>
+<p><code>LdoBuilder</code>\&lt;<code>Type</code>&gt;</p>
+<h4 id="inherited-from_41">Inherited from</h4>
+<p>ILdoDataset.usingType</p>
+<h4 id="defined-in_46">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/c70613a/packages/ldo/src/types.ts#L8">packages/ldo/src/types.ts:8</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div>
+    Made by <a href="https://o.team" target="_blank">O.team</a> with a grant from NGI Zero Entrust via nlnet. Learn more on the <a href="https://nlnet.nl/project/SolidUsableApps/" target="_blank">NLnet project page</a>.
+  </div>
+  <div style="margin-top:16px;margin-bottom:16px;">
+    <a href="https://o.team" target="_blank">
+      <img src="https://images.squarespace-cdn.com/content/v1/626466daaa2f5f40deefa559/c9a1dd7c-0d9a-4da5-9c15-14f9b8092d19/OteamLogo.png?format=150h" alt="O.team Logo" style="height:50px;" />
+    </a>
+    <a href="https://nlnet.nl/" target="_blank">
+      <img src="https://nlnet.nl/logo/banner.png" alt="nlnet foundation logo" style="height:50px;" />
+    </a>
+    <a href="https://nlnet.nl/entrust/" target="_blank">
+      <img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="NGI Zero Entrust Logo" style="height:50px;" />
+    </a>
+  </div>
+  
+    Documentation made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"current": "1.0.0-alpha.X", "provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
