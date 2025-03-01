@@ -1,7 +1,7 @@
 site_name: Linked Data Objects (LDO)
 site_url: https://ldo.js.org
 repo_url: https://github.com/o-development/ldo
-copyright: Copyright &copy; 2016 - 2020 Martin Donath
+copyright: Copyright &copy; 2025 Jackson Morgan
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -105,4 +105,17 @@ theme:
       - toc.follow
       - search.suggest
       - search.highlight
-
+plugins:
+  - mike:
+      # These fields are all optional; the defaults are as below...
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ''
+      canonical_version: null
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
+extra:
+  version:
+    provider: mike
+    current: 1.0.0-alpha.X
