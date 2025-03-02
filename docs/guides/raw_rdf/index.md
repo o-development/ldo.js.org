@@ -133,9 +133,9 @@ async function run() {
   // Logs "Jane Smith"
   console.log(janeProfile.name);
   // Logs "John Smith"
-  console.log(janeProfile.knows?.[0].name);
+  console.log(janeProfile.knows?.toArray()[0].name);
   // Logs "Jane Smith"
-  console.log(janeProfile.knows?.[0].knows?.[0].name);
+  console.log(janeProfile.knows?toArray().[0].knows?.toArray()[0].name);
 
   /**
    * Step 3: Convert it back to RDF
