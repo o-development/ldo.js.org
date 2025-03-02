@@ -25,7 +25,7 @@ hide:
 
 ```typescript
 person.age = 23;
-person.name.push("John");
+person.name.add("John");
 ```
 
 </td>
