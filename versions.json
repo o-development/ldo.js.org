@@ -2,7 +2,9 @@
   {
     "version": "1.0.0-alpha.X",
     "title": "1.0.0-alpha.X",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "0.0.1-alpha.X",
