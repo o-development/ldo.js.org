@@ -69,7 +69,7 @@ matchSubject(
   predicate: PredicateNode | string,
   object?: ObjectNode | string,
   graph?: GraphNode | string,
-): Type[]
+): LdSet<Type>
 ```
 
 #### Parameters
@@ -101,7 +101,7 @@ matchObject(
   subject?: SubjectNode | string,
   predicate?: PredicateNode | string,
   graph?: GraphNode | string,
-): Type[]
+): LdSet<Type>
 ```
 
 #### Parameters
@@ -142,7 +142,7 @@ const person2 = ldoDataset
   .usingType(FoafProfileShapeType)
   .fromJson({
     "@id": "http://example.com/Person2",
-    fn: ["Jane Doe"],
+    fn: set("Jane Doe"),
   });
 ```
 

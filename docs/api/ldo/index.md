@@ -60,12 +60,12 @@ async function run() {
   // Logs "Person"
   console.log(janeProfile.type);
   // Logs 0
-  console.log(janeProfile.knows?.length);
+  console.log(janeProfile.knows?.size);
 
   // Begins a transaction that tracks your changes
   startTransaction(janeProfile);
   janeProfile.name = "Jane Smith";
-  janeProfile.knows?.push({
+  janeProfile.knows?.add({
     "@id": "https://solidweb.me/john_smith/profile/card#me",
     type: {
       "@id": "Person",
@@ -77,9 +77,9 @@ async function run() {
   // Logs "Jane Smith"
   console.log(janeProfile.name);
   // Logs "John Smith"
-  console.log(janeProfile.knows?.[0].name);
+  console.log(janeProfile.knows?.toArray()[0].name);
   // Logs "Jane Smith"
-  console.log(janeProfile.knows?.[0].knows?.[0].name);
+  console.log(janeProfile.knows?.toArray()[0].knows?.toArray()[0].name);
 
   /**
    * Step 3: Convert it back to RDF

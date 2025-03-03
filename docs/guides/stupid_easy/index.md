@@ -22,11 +22,11 @@ npm i @ldo/solid-react
 FoafProfile.typings.ts
 
 ```typescript
-import { ContextDefinition } from "jsonld";
+import { LdoJsonldContext, LdSet } from "@ldo/ldo";
 
 export interface FoafProfile {
   "@id"?: string;
-  "@context"?: ContextDefinition;
+  "@context"?: LdoJsonldContext;
   /**
    * Defines the node as a Person (from foaf)
    */
@@ -44,7 +44,7 @@ export interface FoafProfile {
   /**
    * A list of WebIds for all the people this user knows.
    */
-  knows?: FoafProfile[];
+  knows?: LdSet<FoafProfile>;
 }
 ```
 
