@@ -4,8 +4,6 @@ LDO (Linked Data Objects) is a library that lets you easily manipulate RDF as if
 
 This tutorial will walk you through using LDO on raw RDF. How that raw RDF is fetched is left up the developer.
 
-[Completed Code on Github](https://github.com/o-development/ldo-tutorial-raw-rdf){ .md-button }
-
 ## Setup
 
 ### Automatic Setup
@@ -85,7 +83,13 @@ This will generate five files:
 Below is a simple example of LDO in a real use-case (changing the name on a Solid Pod)
 
 ```typescript
-import { parseRdf, startTransaction, toSparqlUpdate, toTurtle } from "@ldo/ldo";
+import {
+  parseRdf,
+  startTransaction,
+  toSparqlUpdate,
+  toTurtle,
+  set,
+} from "@ldo/ldo";
 import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes";
 
 async function run() {
@@ -116,18 +120,18 @@ async function run() {
   // Logs "Person"
   console.log(janeProfile.type);
   // Logs 0
-  console.log(janeProfile.knows?.length);
+  console.log(janeProfile.knows?.size);
 
   // Begins a transaction that tracks your changes
   startTransaction(janeProfile);
   janeProfile.name = "Jane Smith";
-  janeProfile.knows?.push({
+  janeProfile.knows?.add({
     "@id": "https://solidweb.me/john_smith/profile/card#me",
     type: {
       "@id": "Person",
     },
     name: "John Smith",
-    knows: [janeProfile],
+    knows: set(janeProfile),
   });
 
   // Logs "Jane Smith"
@@ -256,7 +260,7 @@ const person2 = ldoDataset
   .usingType(FoafProfileShapeType)
   .fromJson({
     "@id": "http://example.com/Person2",
-    fn: ["Jane Doe"],
+    fn: set("Jane Doe"),
   });
 ```
 
@@ -264,7 +268,7 @@ const person2 = ldoDataset
 Once you've created a Linked Data Object, you can get and set data as if it were a normal TypeScript Object. For specific details, see the documentation at [JSONLD Dataset Proxy](https://github.com/o-development/jsonld-dataset-proxy/blob/master/Readme.md).
 
 ```typescript
-import { LinkedDataObject } from "@ldo/ldo";
+import { LinkedDataObject, set } from "@ldo/ldo";
 import { FoafProfileFactory } from "./.ldo/foafProfile.ldoFactory.ts";
 import { FoafProfile } from "./.ldo/foafProfile.typings";
 
@@ -275,18 +279,18 @@ aysnc function start() {
   // Logs "Person"
   console.log(profile.type["@id"]);
   // Logs 1
-  console.log(profile.knows?.length);
+  console.log(profile.knows?.size);
   // Logs "Katara"
-  console.log(profile.knows?.[0].name);
+  console.log(profile.knows?.toArray()[0].name);
   profile.name = "Bonzu Pippinpaddleopsicopolis III"
   // Logs "Bonzu Pippinpaddleopsicopolis III"
   console.log(profile.name);
-  profile.knows?.push({
+  profile.knows?.add({
     type: { "@id": "Person" },
     name: "Sokka"
   });
   // Logs 2
-  console.log(profile.knows?.length);
+  console.log(profile.knows?.size);
   // Logs "Katara" and "Sokka"
   profile.knows?.forEach((person) => console.log(person.name));
 }

@@ -7,7 +7,7 @@ The graph of specific information can be detected using the `graphOf(subject, pr
 ```typescript
 import { graphOf } from "@ldo/ldo";
 
-graphOf(person, "name", 0); // returns defaultGraph()
+graphOf(person, "name", "Bob"); // returns defaultGraph()
 graphOf(person, "age"); // returns defaultGraph()
 ```
 

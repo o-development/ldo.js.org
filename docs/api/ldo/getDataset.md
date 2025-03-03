@@ -1,4 +1,4 @@
-# `toNTriples`
+# `getDataset`
 
 Returns the Linked Data Object's underlying RDFJS dataset. Modifying this dataset will change the Linked Data Object as well.
 

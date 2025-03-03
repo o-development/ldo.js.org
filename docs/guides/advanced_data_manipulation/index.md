@@ -58,33 +58,7 @@ console.log(dataset.toString());
 ```
 
 ## Deleting an Entire Object
-If you want to delete all triples represented by an object, there are two ways using the `delete` operator.
-
-First, you can call `delete` on a specific property:
-```typescript
-const dataset = await serializedToDataset(`
-  @prefix example: <http://example.com/> .
-  @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-  @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-  example:Person1
-    foaf:name "Alice"^^xsd:string;
-    foaf:bestFriend example:Person2.
-  
-  example:Person2
-    foaf:name "Bob"^^xsd:string;
-    foaf:bestFriend example:Person1.
-`);
-const person = jsonldDatasetProxy(
-  dataset,
-  PersonContext
-).fromSubject<IPerson>(namedNode("http://example.com/Person1"));
-delete person.bestFriend;
-console.log(dataset.toString());
-// <http://example.com/Person1> <http://xmlns.com/foaf/0.1/name> "Alice" .
-```
-
-And secondly, you can call `delete` on the `@id` property.
+If you want to delete all triples represented by an object, you can call `delete` on the `@id` property.
 ```typescript
 const dataset = await serializedToDataset(`
   @prefix example: <http://example.com/> .
@@ -117,7 +91,7 @@ const person = jsonldDatasetProxy(
   PersonContext
 ).fromSubject<IPerson>(namedNode("http://example.com/Person1"));
 person.bestFriend = {
-  name: ["Charlie"],
+  name: set("Charlie"),
 };
 console.log(dataset.toString());
 // <http://example.com/Person1> <http://xmlns.com/foaf/0.1/bestFriend> _:b1 .
@@ -141,7 +115,7 @@ const person = jsonldDatasetProxy(
   PersonContext,
 ).fromSubject<IPerson>(namedNode("http://example.com/Person1"));
 
-const alice = person.knows?.[0];
+const alice = person.knows?.toArray()[0];
 person.bestFriend = alice;
 console.log(dataset.toString());
 // _:n3-0 <http://xmlns.com/foaf/0.1/name> "Alice" .
@@ -161,7 +135,7 @@ The write graph can be set upon creating a jsonld dataset proxy by using the `wr
 const person1 = jsonldDatasetProxy(dataset, PersonContext)
   .write(namedNode("http://example.com/ExampleGraph"))
   .fromSubject<IPerson>(namedNode("http://example.com/Person1"));
-person1.name.push("Jack");
+person1.name.add("Jack");
 console.log(dataset.toString());
 // Logs:
 // <http://example.com/Person1> <http://xmlns.com/foaf/0.1/name> "Jack" <http://example.com/ExampleGraph> .
@@ -179,10 +153,10 @@ const person1 = jsonldDatasetProxy(
 ).fromSubject<IPerson>(namedNode("http://example.com/Person1"));
 // Now all additions with person1 will be on ExampleGraph1
 write(namedNode("http://example.com/ExampleGraph1")).using(person1);
-person1.name.push("Jack");
+person1.name.add("Jack");
 // Now all additions with person1 will be on ExampleGraph2
 write(namedNode("http://example.com/ExampleGraph2")).using(person1);
-person1.name.push("Spicer");
+person1.name.add("Spicer");
 
 console.log(dataset.toString());
 // Logs:
@@ -197,19 +171,19 @@ const person1 = jsonldDatasetProxy(
   dataset,
   PersonContext
 ).fromSubject<IPerson>(namedNode("http://example.com/Person1"));
-person1.name.push("default");
+person1.name.add("default");
 const end1 = write(namedNode("http://example.com/Graph1")).using(person1);
-person1.name.push("1");
+person1.name.add("1");
 const end2 = write(namedNode("http://example.com/Graph2")).using(person1);
-person1.name.push("2");
+person1.name.add("2");
 const end3 = write(namedNode("http://example.com/Graph3")).using(person1);
-person1.name.push("3");
+person1.name.add("3");
 end3();
-person1.name.push("2 again");
+person1.name.add("2 again");
 end2();
-person1.name.push("1 again");
+person1.name.add("1 again");
 end1();
-person1.name.push("default again");
+person1.name.add("default again");
 console.log(dataset.toString());
 // Logs:
 // <http://example.com/Person1> <http://xmlns.com/foaf/0.1/name> "default" .
@@ -232,8 +206,8 @@ const person1 = jsonldDatasetProxy(
 const [person1WritingToNewGraph] = write(
   namedNode("http://example.com/NewGraph")
 ).usingCopy(person1);
-person1WritingToNewGraph.name.push("Brandon");
-person1.name.push("Sanderson");
+person1WritingToNewGraph.name.add("Brandon");
+person1.name.add("Sanderson");
 console.log(dataset.toString());
 // Logs:
 // <http://example.com/Person1> <http://xmlns.com/foaf/0.1/name> "Brandon" <http://example.com/NewGraph> .
@@ -246,10 +220,10 @@ The graph of specific information can be detected using the `graphOf(subject, pr
 
  - `subject`: A Jsonld Dataset Proxy that represents the subject of a quad.
  - `predicate`: A string key
- - `object?`: An optional parameter that represents the direct object of a statement. This could be a Jsonld Dataset Proxy or a number to indicate the location in an array. This argument can be left blank if the given field is not an array.
+ - `object?`: An optional parameter that represents the direct object of a statement. This could be a Jsonld Dataset Proxy or a value to differentiate the part of an LdSet to check.
 
 ```typescript
-graphOf(person, "name", 0); // returns defaultGraph()
+graphOf(person, "name", "Bob"); // returns defaultGraph()
 graphOf(person, "age"); // returns defaultGraph()
 ```
 
@@ -283,7 +257,7 @@ const initialData = `
 // Typescript Typing
 interface IThing {
   label: string;
-  description: string[];
+  description: LdSet<string>;
 }
 
 // Define JSON-LD Context
@@ -328,17 +302,17 @@ const hospitalInfo = jsonldDatasetProxy(dataset, PersonContext)
   .fromSubject<IThing>(namedNode("http://example.com/Hospital"));
 
 console.log(hospitalInfo.label); // Logs "병원"
-console.log(hospitalInfo.description.length); // Logs "2" for the 2 korean entries
-console.log(hospitalInfo.description[0]); // Logs "환자를 치료하다"
-console.log(hospitalInfo.description[1]); // Logs "의사 있음"
+console.log(hospitalInfo.description.size); // Logs "2" for the 2 korean entries
+console.log(hospitalInfo.description.toArray()[0]); // Logs "환자를 치료하다"
+console.log(hospitalInfo.description.toArray()[1]); // Logs "의사 있음"
 
 // Adds a string to the description in spanish, because spanish if the first
 // language in the language preference
-hospitalInfo.description.push("Cura a las pacientes");
+hospitalInfo.description.add("Cura a las pacientes");
 
 // Now that a spanish entry exists, JSON-LD dataset proxy focuses on that
-console.log(hospitalInfo.description.length); // Logs "1" for the 1 spanish entry
-console.log(hospitalInfo.description[0]); // Logs "Cura a las pacientes"
+console.log(hospitalInfo.description.size); // Logs "1" for the 1 spanish entry
+console.log(hospitalInfo.description.toArray()[0]); // Logs "Cura a las pacientes"
 ```
 
 ### `setLanguagePreferences(...languagePreferences).using(...jsonldDatasetProxies)`

@@ -87,6 +87,8 @@ nav:
     # - '@ldo/traverser-shexj': 'api/traverser-shexj/index.md'
     # - '@ldo/type-traverser': 'api/type-traverser/index.md'
     # - '@ldo/rdf-utils': 'api/rdf-utils/index.md'
+  - Blog:
+    - blog/index.md
 theme:
     name: material
     custom_dir: overrides
@@ -115,6 +117,7 @@ plugins:
       version_selector: true
       css_dir: css
       javascript_dir: js
+  - blog
 extra:
   version:
     provider: mike
