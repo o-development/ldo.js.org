@@ -12,6 +12,12 @@ Run:
 pip3 install mkdocs mkdocs-material mike
 ```
 
+Serve server:
+```
+mkdocs serve
+```
+
+## Deploying
 Run:
 ```
 mike deploy [version]
