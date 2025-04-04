@@ -1,4 +1,4 @@
-site_name: Linked Data Objects (LDO:'
+site_name: Linked Data Objects (LDO)
 site_url: https://ldo.js.org
 repo_url: https://github.com/o-development/ldo
 copyright: Copyright &copy; 2025 Jackson Morgan
@@ -16,7 +16,7 @@ nav:
     - 'guides/index.md'
     - For Raw Rdf: guides/raw_rdf/index.md
     - For Solid: guides/solid/index.md
-    - For NextGraph: guides/solid/index.md
+    - For NextGraph: guides/nextgraph/index.md
     - For Solid+React: guides/solid_react/index.md
     - Advanced Data Manipulation:
       - guides/advanced_data_manipulation/index.md
@@ -73,26 +73,14 @@ nav:
       - ResourceError: 'api/connected/classes/ResourceError.md'
       - UnexpectedResourceError: 'api/connected/classes/UnexpectedResourceError.md'
       - UnsupportedNotificationError: 'api/connected/classes/UnsupportedNotificationError.md'
-    - '@ldo/solid':
-      - 'api/solid/README.md'
-      - createSolidLdoDataset: 'api/solid/functions/createSolidLdoDataset.md'
-      - SolidLdoDataset: 'api/solid/classes/SolidLdoDataset.md'
-      - LeafUri: 'api/solid/types/LeafUri.md'
-      - ContainerUri: 'api/solid/types/ContainerUri.md'
-      - Resource: 'api/solid/classes/Resource.md'
-      - Leaf: 'api/solid/classes/Leaf.md'
-      - Container: 'api/solid/classes/Container.md'
-      - checkRootContainer: 'api/solid/functions/checkRootContainer.md'
-      - createDataResource: 'api/solid/functions/createDataResource.md'
-      - deleteResource: 'api/solid/functions/deleteResource.md'
-      - readResource: 'api/solid/functions/readResource.md'
-      - updateDataResource: 'api/solid/functions/updateDataResource.md'
-      - uploadResource: 'api/solid/functions/uploadResource.md'
-      - getWacUri: 'api/solid/functions/getWacUri.md'
-      - getWacRuleWithAclUri: 'api/solid/functions/getWacRuleWithAclUri.md'
-      - setWacRuleForAclUri: 'api/solid/functions/setWacRuleForAclUri.md'
-      - changeData: 'api/solid/functions/changeData.md'
-      - commitData: 'api/solid/functions/commitData.md'
+    - '@ldo/connected-solid':
+      - 'api/connected-solid/README.md'
+      - createSolidLdoDataset: 'api/connected-solid/functions/createSolidLdoDataset.md'
+      - SolidResource: 'api/connected-solid/classes/SolidResource.md'
+      - SolidLeafUri: 'api/connected-solid/types/SolidLeafUri.md'
+      - SolidContainerUri: 'api/connected-solid/types/SolidContainerUri.md'
+      - SolidLeaf: 'api/connected-solid/classes/SolidLeaf.md'
+      - SolidContainer: 'api/connected-solid/classes/SolidContainer.md'
     - '@ldo/solid-react':
       - 'api/solid-react/index.md'
       - BrowserSolidLdoProvider: 'api/solid-react/BrowserSolidLdoProvider.md'

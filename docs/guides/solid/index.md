@@ -119,37 +119,39 @@ Deletes containers recursively. Returns detailed `AggregateError` if some delete
 
 ```ts
 const transaction = dataset.startTransaction();
-const 
+const profile = transaction
+  .usingType(FoafShapeType)
+  .write(resource)
+  .fromSubject("https://example.com/profile#name");
+profile.name = "John Doe";
 const result = await transaction.commitToRemote();
 ```
 
-Includes:
-- Support for batching
-- Type-safe editing via `changeData()` and `commitData()`
-
----
-
-## ✨ LDO Integration
+## LDO Integration
 
 ```ts
-const myPost = dataset.createData(PostShShapeType, "https://pod.example.com/posts/123", resource);
+const myPost = dataset.createData(
+  PostShShapeType,
+  "https://pod.example.com/posts/123",
+  resource
+);
 myPost.title = "Hello Solid";
 await commitData(myPost);
 ```
 
----
-
-## 📁 Container Helpers
+## Container Helpers
 
 ```ts
 const container = dataset.getResource("https://pod.example.com/posts/");
-container.child("newPost.ttl"); // Quick child URI
-container.createChildAndOverwrite("newPost.ttl"); // Shorthand for creating a file
+const childContainer = container.child("newPost.ttl"); // Quick child URI
+// Shorthand for creating a file
+const childResult = container.createChildAndOverwrite("newPost.ttl");
+if (!containerResult.isError) {
+  const childResource = childResult.resource;
+}
 ```
 
----
-
-## 🛡 Access Control (WAC)
+## Access Control (WAC)
 
 ### Read ACL
 
@@ -167,9 +169,7 @@ await resource.setWac({
 });
 ```
 
----
-
-## 📡 Live Updates (WebSocket)
+## Live Updates (WebSocket)
 
 ```ts
 await resource.subscribeToNotifications();
@@ -177,11 +177,7 @@ resource.isSubscribedToNotifications(); // true
 await resource.unsubscribeFromNotifications();
 ```
 
-Also supports `subscribeToNotifications({ onNotificationError })` for reconnect logic.
-
----
-
-## 🧠 Get Storage Container from WebID
+## Get Storage Container from WebID
 
 ```ts
 import { getStorageFromWebId } from "@ldo/connected-solid";
@@ -190,9 +186,7 @@ const result = await getStorageFromWebId(webIdUri, dataset);
 console.log(result.storageContainers); // array of root URIs
 ```
 
----
-
-## ✅ Loading Status
+## Loading Status
 
 Each resource has loading flags like:
 
@@ -200,28 +194,4 @@ Each resource has loading flags like:
 resource.isReading(); 
 resource.isCreating();
 resource.isUpdating();
-// Useful for UI feedback
 ```
-
----
-
-## 🧪 Testing
-
-Integration tests cover:
-- Robust error handling
-- Type safety
-- Notification subscriptions
-- ACL logic
-- RDF/Turtle parsing quirks
-
----
-
-## 📎 Related Packages
-
-- [`@ldo/ldo`](https://ldo.js.org): Linked Data Objects
-- [`@ldo/connected`](https://www.npmjs.com/package/@ldo/connected): Base library
-- [`@solid/community-server`](https://github.com/solid/community-server): Local Pod testing
-
----
-
-Would you like this guide turned into a Markdown file, or integrated into your documentation site?
