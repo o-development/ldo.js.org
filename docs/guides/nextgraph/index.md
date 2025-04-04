@@ -28,11 +28,17 @@ Before you can create or access resources, you need an active session:
 ```ts
 import ng from "nextgraph";
 
+// ...
+
+// load the wallet file
+const wallet = await ng.wallet_read_file(binary_buffer);
+
 // Open your nextgraph wallet
+const mnemonic = ["word0",...]; // the 12 words of your mnemonic
 const openedWallet = await ng.wallet_open_with_mnemonic_words(
-  wallet.wallet,
+  wallet,
   mnemonic,
-  [1, 2, 1, 2]
+  [pin0,pin1,pin2,pin3]
 );
 
 // Start a session

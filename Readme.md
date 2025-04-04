@@ -22,6 +22,7 @@ Run:
 ```
 mike deploy [version]
 ```
+Then merge into main
 
 Run:
 ```
