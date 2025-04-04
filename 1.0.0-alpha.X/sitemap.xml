@@ -2,434 +2,802 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/cli/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/cli/build/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/cli/create/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/cli/init/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/modules/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/AbsentReadSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/AggregateError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/AggregateSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ConnectedLdoDataset/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ConnectedLdoTransactionDataset/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/DisconnectedAttemptingReconnectError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/DisconnectedNotAttemptingReconnectError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ErrorResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/IgnoredInvalidUpdateSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/InvalidIdentifierResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/InvalidUriError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/NotificationSubscription/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ReadSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ResourceError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ResourceSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/SuccessResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/UnexpectedResourceError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/Unfetched/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/UnsupportedNotificationError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/UpdateDefaultGraphSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/UpdateSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/changeData/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/commitData/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/createConnectedLdoDataset/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/graphNodeToString/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/splitChangesByGraph/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/stringToGraphNode/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/ConnectedPlugin/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/ConnectedResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/IConnectedLdoDataset/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/Resource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/SubscriptionCallbacks/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/ConnectedContext/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/GetResourceReturnType/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/NotificationCallbackError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/ResourceEventEmitter/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/ReturnTypeFromArgs/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/modules/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/AccessRuleFetchError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/BatchedRequester/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/BinaryReadSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/CheckRootContainerSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/ContainerBatchedRequester/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/ContainerReadSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/CreateSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/DataReadSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/DeleteSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/DisconnectedAttemptingReconnectError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/DisconnectedNotAttemptingReconnectError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/GetStorageContainerFromWebIdSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/GetWacRuleSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/GetWacUriSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/HttpErrorResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/LeafBatchedRequester/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/NoRootContainerError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/NoncompliantPodError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/NotFoundHttpError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/RequestBatcher/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/ServerHttpError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/SetWacRuleSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/SolidContainer/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/SolidLeaf/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/SolidResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/UnauthenticatedHttpError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/UnauthorizedHttpError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/UnexpectedHttpError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/UnsupportedNotificationError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/WacRuleAbsent/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/Websocket2023NotificationSubscription/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/addRawTurtleToDataset/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/addResourceRdfToContainer/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/checkHeadersForRootContainer/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/checkRootContainer/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/createDataResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/createSolidLdoDataset/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/deleteResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/deleteResourceRdfFromContainer/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/getParentUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/getSlug/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/getStorageFromWebId/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/getWacRuleWithAclUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/getWacUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/guaranteeFetch/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/isReadSuccess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/isSolidContainerUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/isSolidLeafUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/isSolidUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/modifyQueueByMergingEventsWithTheSameKeys/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/rawTurtleToDataset/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/readResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/setWacRuleForAclUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/updateDataResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/updateDatasetOnSuccessfulDelete/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/functions/uploadResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/AccessModeList/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/BasicRequestOptions/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/DatasetRequestOptions/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/SolidConnectedContext/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/SolidConnectedPlugin/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/SolidNotificationMessage/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/WacRule/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/WaitingProcess/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/interfaces/WaitingProcessOptions/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/CheckRootResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/CheckRootResultError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/ContainerCreateAndOverwriteResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/ContainerCreateIfAbsentResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/CreateAndOverwriteResultErrors/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/CreateErrors/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/CreateIfAbsentResultErrors/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/DeleteResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/DeleteResultError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/GetWacRuleError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/GetWacRuleResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/GetWacUriError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/GetWacUriResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/HttpErrorResultType/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/LeafCreateAndOverwriteResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/LeafCreateIfAbsentResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/NotificationCallbackError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/ReadContainerResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/ReadLeafResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/ReadResultError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SetWacRuleError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SetWacRuleResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SharedStatuses/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SolidContainerSlug/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SolidContainerUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SolidLeafSlug/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SolidLeafUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SolidUri/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/SolidUriPrefix/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/UpdateResult/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/types/UpdateResultError/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/ANY_KEY/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/IS_ROOT_CONTAINER_KEY/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/UPDATE_KEY/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/UPLOAD_KEY/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/ldpBasicContainer/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/ldpContainer/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/ldpContains/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/ldpResource/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/rdfType/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/variables/solidConnectedPlugin-1/</loc>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/dataset/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/jsonld-dataset-proxy/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/LdoBase/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/LdoBuilder/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/LdoDataset/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/LdoDatasetFactory/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/ShapeType/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/createLdoDataset/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/createLdoDatasetFactory/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/getDataset/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/graphOf/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/languageOf/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/parseRdf/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/serialize/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/setLanguagePreferences/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/toNTriples/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/toSparqlUpdate/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/toTurtle/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/transactions/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/ldo/write/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/rdf-utils/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/schema-converter-shex/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/modules/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/classes/Container/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/classes/Leaf/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/classes/Resource/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/classes/SolidLdoDataset/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/classes/SolidLdoTransactionDataset/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/changeData/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/checkHeadersForRootContainer/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/checkRootContainer/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/commitData/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/createDataResource/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/createSolidLdoDataset/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/deleteResource/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/getWacRuleWithAclUri/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/getWacUri/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/isContainerUri/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/isLeafUri/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/readResource/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/setWacRuleForAclUri/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/updateDataResource/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/updateDatasetOnSuccessfulDelete/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/functions/uploadResource/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/AccessModeList/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/BasicRequestOptions/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/CreateSolidLdoDatasetOptions/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/DatasetRequestOptions/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/GetWacRuleSuccess/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/GetWacUriSuccess/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/ISolidLdoDataset/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/SetWacRuleSuccess/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/SolidLdoDatasetContext/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/WacRule/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/interfaces/WacRuleAbsent/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/CheckRootResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/CheckRootResultError/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/ContainerCreateAndOverwriteResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/ContainerCreateIfAbsentResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/ContainerUri/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/CreateAndOverwriteResultErrors/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/CreateErrors/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/CreateIfAbsentResultErrors/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/DeleteResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/DeleteResultError/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/GetWacRuleError/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/GetWacRuleResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/GetWacUriError/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/GetWacUriResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/LeafCreateAndOverwriteResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/LeafCreateIfAbsentResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/LeafUri/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/ReadContainerResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/ReadLeafResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/ReadResultError/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/SetWacRuleError/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/SetWacRuleResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/SharedStatuses/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/UpdateResult/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid/types/UpdateResultError/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/BrowserSolidLdoProvider/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/SolidLdoProvider/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useLdo/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useMatchObject/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useMatchSubject/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useResource/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useRootContainer/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useSolidAuth/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useSubject/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useSubscribeToResource/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/subscribable-dataset/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/traverser-shexj/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/type-traverser/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/blog/</loc>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/blog/2025/03/02/100-alpha1-arrays-are-now-sets/</loc>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/guides/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/guides/advanced_data_manipulation/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/guides/nextgraph/</loc>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/guides/raw_rdf/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/guides/solid/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/guides/solid_react/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/guides/stupid_easy/</loc>
-         <lastmod>2025-03-02</lastmod>
+         <lastmod>2025-04-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/blog/archive/2025/</loc>
+         <lastmod>2025-04-04</lastmod>
     </url>
 </urlset>

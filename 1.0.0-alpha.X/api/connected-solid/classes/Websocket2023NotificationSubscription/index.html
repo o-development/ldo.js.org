@@ -1,0 +1,3822 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ldo.js.org/1.0.0-alpha.X/api/connected-solid/classes/Websocket2023NotificationSubscription/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Class: Websocket2023NotificationSubscription - Linked Data Objects (LDO)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#class-websocket2023notificationsubscription" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Linked Data Objects (LDO)" class="md-header__button md-logo" aria-label="Linked Data Objects (LDO)" data-md-component="logo">
+      
+  <img src="../../../../assets/Logo-40.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linked Data Objects (LDO)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Class: Websocket2023NotificationSubscription
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/o-development/ldo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Linked Data Objects (LDO)" class="md-nav__button md-logo" aria-label="Linked Data Objects (LDO)" data-md-component="logo">
+      
+  <img src="../../../../assets/Logo-40.png" alt="logo">
+
+    </a>
+    Linked Data Objects (LDO)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/o-development/ldo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/raw_rdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Raw Rdf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/solid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Solid
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/nextgraph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For NextGraph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/solid_react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Solid+React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../guides/advanced_data_manipulation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Advanced Data Manipulation
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced Data Manipulation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cli/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/cli
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/cli
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/init/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    init
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/create/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    create
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ldo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/ldo
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/ldo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoBase
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/ShapeType/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ShapeType
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/parseRdf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    parseRdf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/createLdoDatasetFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createLdoDatasetFactory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoDatasetFactory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoDatasetFactory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/createLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/LdoBuilder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LdoBuilder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/toTurtle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toTurtle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/toNTriples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toNTriples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/serialize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    serialize
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/transactions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    transactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/toSparqlUpdate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    toSparqlUpdate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/languageOf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    languageOf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/setLanguagePreferences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    setLanguagePreferences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/graphOf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    graphOf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/write/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ldo/getDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../connected/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/connected
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/connected
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/functions/createConnectedLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createConnectedLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/ConnectedLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConnectedLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/ConnectedLdoTransactionDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConnectedLdoTransactionDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/interfaces/IConnectedLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IConnectedLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/interfaces/ConnectedPlugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConnectedPlugin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/interfaces/Resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/functions/changeData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    changeData
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/functions/commitData/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    commitData
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/SuccessResult/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SuccessResult
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/AbsentReadSuccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AbsentReadSuccess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/AggregateSuccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AggregateSuccess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/IgnoredInvalidUpdateSuccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IgnoredInvalidUpdateSuccess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/ReadSuccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReadSuccess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/ResourceSuccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ResourceSuccess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/Unfetched/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unfetched
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/UpdateDefaultGraphSuccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UpdateDefaultGraphSuccess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/UpdateSuccess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UpdateSuccess
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/ErrorResult/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ErrorResult
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/AggregateError/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AggregateError
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/DisconnectedAttemptingReconnectError/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DisconnectedAttemptingReconnectError
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/InvalidUriError/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InvalidUriError
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/ResourceError/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ResourceError
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/UnexpectedResourceError/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UnexpectedResourceError
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../connected/classes/UnsupportedNotificationError/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UnsupportedNotificationError
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/connected-solid
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/connected-solid
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/createSolidLdoDataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    createSolidLdoDataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SolidResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../types/SolidLeafUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidLeafUri
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../types/SolidContainerUri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidContainerUri
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SolidLeaf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidLeaf
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SolidContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidContainer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../solid-react/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    @ldo/solid-react
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            @ldo/solid-react
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/BrowserSolidLdoProvider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BrowserSolidLdoProvider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/SolidLdoProvider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SolidLdoProvider
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useLdo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useLdo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useRootContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useRootContainer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useSolidAuth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSolidAuth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useSubject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSubject
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useMatchSubject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useMatchSubject
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useMatchObject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useMatchObject
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../solid-react/useSubscribeToResource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useSubscribeToResource
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../blog/archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      constructor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="constructor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overrides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createwebsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      createWebsocket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="createWebsocket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type declaration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Type declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ismanualclose" class="md-nav__link">
+    <span class="md-ellipsis">
+      isManualClose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="isManualClose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxreconnectattempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      maxReconnectAttempts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="maxReconnectAttempts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parentsubscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      parentSubscription
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="parentSubscription">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-declaration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type declaration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Type declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconnectattempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      reconnectAttempts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="reconnectAttempts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reconnectinterval" class="md-nav__link">
+    <span class="md-ellipsis">
+      reconnectInterval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="reconnectInterval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      resource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      socket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="socket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      subscriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="subscriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    <span class="md-ellipsis">
+      close
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="close">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overrides_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overrides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovernotificationchannel" class="md-nav__link">
+    <span class="md-ellipsis">
+      discoverNotificationChannel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="discoverNotificationChannel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issubscribedtonotifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      isSubscribedToNotifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="isSubscribedToNotifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onclose" class="md-nav__link">
+    <span class="md-ellipsis">
+      onClose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onClose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onnotification" class="md-nav__link">
+    <span class="md-ellipsis">
+      onNotification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onNotification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onnotificationerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      onNotificationError
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onNotificationError">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open" class="md-nav__link">
+    <span class="md-ellipsis">
+      open
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="open">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overrides_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overrides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setisopen" class="md-nav__link">
+    <span class="md-ellipsis">
+      setIsOpen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="setIsOpen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribetonotifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      subscribeToNotifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="subscribeToNotifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribetowebsocket" class="md-nav__link">
+    <span class="md-ellipsis">
+      subscribeToWebsocket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="subscribeToWebsocket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsubscribefromallnotifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      unsubscribeFromAllNotifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="unsubscribeFromAllNotifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#returns_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsubscribefromnotification" class="md-nav__link">
+    <span class="md-ellipsis">
+      unsubscribeFromNotification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="unsubscribeFromNotification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inherited-from_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherited from
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-in_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="class-websocket2023notificationsubscription">Class: Websocket2023NotificationSubscription</h1>
+<p>An implementation of the Websocket2023 notifiction spec</p>
+<h2 id="hierarchy">Hierarchy</h2>
+<ul>
+<li><code>NotificationSubscription</code>\&lt;<a href="../../interfaces/SolidConnectedPlugin/"><code>SolidConnectedPlugin</code></a>, <a href="../../interfaces/SolidNotificationMessage/"><code>SolidNotificationMessage</code></a>&gt;</li>
+</ul>
+<p>↳ <strong><code>Websocket2023NotificationSubscription</code></strong></p>
+<h2 id="constructors">Constructors</h2>
+<h3 id="constructor">constructor</h3>
+<p>• <strong>new Websocket2023NotificationSubscription</strong>(<code>resource</code>, <code>parentSubscription</code>, <code>context</code>, <code>createWebsocket?</code>): <a href="./"><code>Websocket2023NotificationSubscription</code></a></p>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>resource</code></td>
+<td style="text-align: left;"><a href="../SolidContainer/"><code>SolidContainer</code></a> | <a href="../SolidLeaf/"><code>SolidLeaf</code></a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>parentSubscription</code></td>
+<td style="text-align: left;">(<code>message</code>: <a href="../../interfaces/SolidNotificationMessage/"><code>SolidNotificationMessage</code></a>) =&gt; <code>void</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>context</code></td>
+<td style="text-align: left;"><code>ConnectedContext</code>\&lt;<a href="../../interfaces/SolidConnectedPlugin/"><code>SolidConnectedPlugin</code></a>[]&gt;</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>createWebsocket?</code></td>
+<td style="text-align: left;">(<code>address</code>: <code>string</code>) =&gt; <code>WebSocket</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns">Returns</h4>
+<p><a href="./"><code>Websocket2023NotificationSubscription</code></a></p>
+<h4 id="overrides">Overrides</h4>
+<p>NotificationSubscription\&lt;
+  SolidConnectedPlugin,
+  SolidNotificationMessage
+\&gt;.constructor</p>
+<h4 id="defined-in">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L44">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:44</a></p>
+<h2 id="properties">Properties</h2>
+<h3 id="context">context</h3>
+<p>• <code>Protected</code> <strong>context</strong>: <code>ConnectedContext</code>\&lt;<a href="../../interfaces/SolidConnectedPlugin/"><code>SolidConnectedPlugin</code></a>[]&gt;</p>
+<h4 id="inherited-from">Inherited from</h4>
+<p>NotificationSubscription.context</p>
+<h4 id="defined-in_1">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:8</p>
+<hr />
+<h3 id="createwebsocket">createWebsocket</h3>
+<p>• <code>Private</code> <strong>createWebsocket</strong>: (<code>address</code>: <code>string</code>) =&gt; <code>WebSocket</code></p>
+<h4 id="type-declaration">Type declaration</h4>
+<p>▸ (<code>address</code>): <code>WebSocket</code></p>
+<h5 id="parameters_1">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>address</code></td>
+<td style="text-align: left;"><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_1">Returns</h5>
+<p><code>WebSocket</code></p>
+<h4 id="defined-in_2">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L32">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:32</a></p>
+<hr />
+<h3 id="ismanualclose">isManualClose</h3>
+<p>• <code>Private</code> <strong>isManualClose</strong>: <code>boolean</code> = <code>false</code></p>
+<h4 id="defined-in_3">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L40">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:40</a></p>
+<hr />
+<h3 id="maxreconnectattempts">maxReconnectAttempts</h3>
+<p>• <code>Private</code> <strong>maxReconnectAttempts</strong>: <code>number</code> = <code>6</code></p>
+<h4 id="defined-in_4">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L42">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:42</a></p>
+<hr />
+<h3 id="parentsubscription">parentSubscription</h3>
+<p>• <code>Protected</code> <strong>parentSubscription</strong>: (<code>message</code>: <a href="../../interfaces/SolidNotificationMessage/"><code>SolidNotificationMessage</code></a>) =&gt; <code>void</code></p>
+<h4 id="type-declaration_1">Type declaration</h4>
+<p>▸ (<code>message</code>): <code>void</code></p>
+<h5 id="parameters_2">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;"><a href="../../interfaces/SolidNotificationMessage/"><code>SolidNotificationMessage</code></a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_2">Returns</h5>
+<p><code>void</code></p>
+<h4 id="inherited-from_1">Inherited from</h4>
+<p>NotificationSubscription.parentSubscription</p>
+<h4 id="defined-in_5">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:7</p>
+<hr />
+<h3 id="reconnectattempts">reconnectAttempts</h3>
+<p>• <code>Private</code> <strong>reconnectAttempts</strong>: <code>number</code> = <code>0</code></p>
+<h4 id="defined-in_6">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L38">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:38</a></p>
+<hr />
+<h3 id="reconnectinterval">reconnectInterval</h3>
+<p>• <code>Private</code> <strong>reconnectInterval</strong>: <code>number</code> = <code>5000</code></p>
+<h4 id="defined-in_7">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L36">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:36</a></p>
+<hr />
+<h3 id="resource">resource</h3>
+<p>• <code>Protected</code> <strong>resource</strong>: <a href="../SolidContainer/"><code>SolidContainer</code></a> | <a href="../SolidLeaf/"><code>SolidLeaf</code></a></p>
+<h4 id="inherited-from_2">Inherited from</h4>
+<p>NotificationSubscription.resource</p>
+<h4 id="defined-in_8">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:6</p>
+<hr />
+<h3 id="socket">socket</h3>
+<p>• <code>Private</code> <strong>socket</strong>: <code>undefined</code> | <code>WebSocket</code></p>
+<h4 id="defined-in_9">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L31">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:31</a></p>
+<hr />
+<h3 id="subscriptions">subscriptions</h3>
+<p>• <code>Protected</code> <strong>subscriptions</strong>: <code>Record</code>\&lt;<code>string</code>, <code>SubscriptionCallbacks</code>\&lt;<a href="../../interfaces/SolidNotificationMessage/"><code>SolidNotificationMessage</code></a>&gt;&gt;</p>
+<h4 id="inherited-from_3">Inherited from</h4>
+<p>NotificationSubscription.subscriptions</p>
+<h4 id="defined-in_10">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:9</p>
+<h2 id="methods">Methods</h2>
+<h3 id="close">close</h3>
+<p>▸ <strong>close</strong>(): <code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="returns_3">Returns</h4>
+<p><code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="overrides_1">Overrides</h4>
+<p>NotificationSubscription.close</p>
+<h4 id="defined-in_11">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L140">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:140</a></p>
+<hr />
+<h3 id="discovernotificationchannel">discoverNotificationChannel</h3>
+<p>▸ <strong>discoverNotificationChannel</strong>(): <code>Promise</code>\&lt;<code>NotificationChannel</code>&gt;</p>
+<h4 id="returns_4">Returns</h4>
+<p><code>Promise</code>\&lt;<code>NotificationChannel</code>&gt;</p>
+<h4 id="defined-in_12">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L75">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:75</a></p>
+<hr />
+<h3 id="issubscribedtonotifications">isSubscribedToNotifications</h3>
+<p>▸ <strong>isSubscribedToNotifications</strong>(): <code>boolean</code></p>
+<h4 id="returns_5">Returns</h4>
+<p><code>boolean</code></p>
+<h4 id="inherited-from_4">Inherited from</h4>
+<p>NotificationSubscription.isSubscribedToNotifications</p>
+<h4 id="defined-in_13">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:12</p>
+<hr />
+<h3 id="onclose">onClose</h3>
+<p>▸ <strong>onClose</strong>(): <code>void</code></p>
+<h4 id="returns_6">Returns</h4>
+<p><code>void</code></p>
+<h4 id="defined-in_14">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L115">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:115</a></p>
+<hr />
+<h3 id="onnotification">onNotification</h3>
+<p>▸ <strong>onNotification</strong>(<code>message</code>): <code>void</code></p>
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;"><a href="../../interfaces/SolidNotificationMessage/"><code>SolidNotificationMessage</code></a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_7">Returns</h4>
+<p><code>void</code></p>
+<h4 id="inherited-from_5">Inherited from</h4>
+<p>NotificationSubscription.onNotification</p>
+<h4 id="defined-in_15">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:18</p>
+<hr />
+<h3 id="onnotificationerror">onNotificationError</h3>
+<p>▸ <strong>onNotificationError</strong>(<code>message</code>): <code>void</code></p>
+<h4 id="parameters_4">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>message</code></td>
+<td style="text-align: left;"><code>NotificationCallbackError</code>\&lt;<a href="../SolidContainer/"><code>SolidContainer</code></a> | <a href="../SolidLeaf/"><code>SolidLeaf</code></a>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_8">Returns</h4>
+<p><code>void</code></p>
+<h4 id="inherited-from_6">Inherited from</h4>
+<p>NotificationSubscription.onNotificationError</p>
+<h4 id="defined-in_16">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:19</p>
+<hr />
+<h3 id="open">open</h3>
+<p>▸ <strong>open</strong>(): <code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="returns_9">Returns</h4>
+<p><code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="overrides_2">Overrides</h4>
+<p>NotificationSubscription.open</p>
+<h4 id="defined-in_17">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L54">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:54</a></p>
+<hr />
+<h3 id="setisopen">setIsOpen</h3>
+<p>▸ <strong>setIsOpen</strong>(<code>status</code>): <code>void</code></p>
+<h4 id="parameters_5">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_10">Returns</h4>
+<p><code>void</code></p>
+<h4 id="inherited-from_7">Inherited from</h4>
+<p>NotificationSubscription.setIsOpen</p>
+<h4 id="defined-in_18">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:20</p>
+<hr />
+<h3 id="subscribetonotifications">subscribeToNotifications</h3>
+<p>▸ <strong>subscribeToNotifications</strong>(<code>subscriptionCallbacks?</code>): <code>Promise</code>\&lt;<code>string</code>&gt;</p>
+<h4 id="parameters_6">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>subscriptionCallbacks?</code></td>
+<td style="text-align: left;"><code>SubscriptionCallbacks</code>\&lt;<a href="../../interfaces/SolidNotificationMessage/"><code>SolidNotificationMessage</code></a>&gt;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_11">Returns</h4>
+<p><code>Promise</code>\&lt;<code>string</code>&gt;</p>
+<h4 id="inherited-from_8">Inherited from</h4>
+<p>NotificationSubscription.subscribeToNotifications</p>
+<h4 id="defined-in_19">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:13</p>
+<hr />
+<h3 id="subscribetowebsocket">subscribeToWebsocket</h3>
+<p>▸ <strong>subscribeToWebsocket</strong>(<code>notificationChannel</code>): <code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="parameters_7">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>notificationChannel</code></td>
+<td style="text-align: left;"><code>NotificationChannel</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_12">Returns</h4>
+<p><code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="defined-in_20">Defined in</h4>
+<p><a href="https://github.com/o-development/ldo/blob/db87958cb6f858f6cf7340ba5d9536a3a794d587/packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts#L85">packages/connected-solid/src/notifications/Websocket2023NotificationSubscription.ts:85</a></p>
+<hr />
+<h3 id="unsubscribefromallnotifications">unsubscribeFromAllNotifications</h3>
+<p>▸ <strong>unsubscribeFromAllNotifications</strong>(): <code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="returns_13">Returns</h4>
+<p><code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="inherited-from_9">Inherited from</h4>
+<p>NotificationSubscription.unsubscribeFromAllNotifications</p>
+<h4 id="defined-in_21">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:15</p>
+<hr />
+<h3 id="unsubscribefromnotification">unsubscribeFromNotification</h3>
+<p>▸ <strong>unsubscribeFromNotification</strong>(<code>subscriptionId</code>): <code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="parameters_8">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>subscriptionId</code></td>
+<td style="text-align: left;"><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_14">Returns</h4>
+<p><code>Promise</code>\&lt;<code>void</code>&gt;</p>
+<h4 id="inherited-from_10">Inherited from</h4>
+<p>NotificationSubscription.unsubscribeFromNotification</p>
+<h4 id="defined-in_22">Defined in</h4>
+<p>packages/connected/dist/notifications/NotificationSubscription.d.ts:14</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div>
+    Made by <a href="https://o.team" target="_blank">O.team</a> with a grant from NGI Zero Entrust via nlnet. Learn more on the <a href="https://nlnet.nl/project/SolidUsableApps/" target="_blank">NLnet project page</a>.
+  </div>
+  <div style="margin-top:16px;margin-bottom:16px;">
+    <a href="https://o.team" target="_blank">
+      <img src="https://images.squarespace-cdn.com/content/v1/626466daaa2f5f40deefa559/c9a1dd7c-0d9a-4da5-9c15-14f9b8092d19/OteamLogo.png?format=150h" alt="O.team Logo" style="height:50px;" />
+    </a>
+    <a href="https://nlnet.nl/" target="_blank">
+      <img src="https://nlnet.nl/logo/banner.png" alt="nlnet foundation logo" style="height:50px;" />
+    </a>
+    <a href="https://nlnet.nl/entrust/" target="_blank">
+      <img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="NGI Zero Entrust Logo" style="height:50px;" />
+    </a>
+  </div>
+  
+    Documentation made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"current": "1.0.0-alpha.X", "provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
