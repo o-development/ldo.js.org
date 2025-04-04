@@ -1,4 +1,4 @@
-site_name: Linked Data Objects (LDO)
+site_name: Linked Data Objects (LDO:'
 site_url: https://ldo.js.org
 repo_url: https://github.com/o-development/ldo
 copyright: Copyright &copy; 2025 Jackson Morgan
@@ -15,8 +15,8 @@ nav:
   - Guides:
     - 'guides/index.md'
     - For Raw Rdf: guides/raw_rdf/index.md
-    # - For Solid:
-    #   - guides/solid/index.md
+    - For Solid: guides/solid/index.md
+    - For NextGraph: guides/solid/index.md
     - For Solid+React: guides/solid_react/index.md
     - Advanced Data Manipulation:
       - guides/advanced_data_manipulation/index.md
@@ -47,6 +47,32 @@ nav:
       - graphOf: 'api/ldo/graphOf.md'
       - write: 'api/ldo/write.md'
       - getDataset: 'api/ldo/getDataset.md'
+    - '@ldo/connected':
+      - 'api/connected/README.md'
+      - createConnectedLdoDataset: 'api/connected/functions/createConnectedLdoDataset.md'
+      - ConnectedLdoDataset: 'api/connected/classes/ConnectedLdoDataset.md'
+      - ConnectedLdoTransactionDataset: 'api/connected/classes/ConnectedLdoTransactionDataset.md'
+      - IConnectedLdoDataset: 'api/connected/interfaces/IConnectedLdoDataset.md'
+      - ConnectedPlugin: 'api/connected/interfaces/ConnectedPlugin.md'
+      - Resource: 'api/connected/interfaces/Resource.md'
+      - changeData: 'api/connected/functions/changeData/'
+      - commitData: 'api/connected/functions/commitData/'
+      - SuccessResult: 'api/connected/classes/SuccessResult.md'
+      - AbsentReadSuccess: 'api/connected/classes/AbsentReadSuccess.md'
+      - AggregateSuccess: 'api/connected/classes/AggregateSuccess.md'
+      - IgnoredInvalidUpdateSuccess: 'api/connected/classes/IgnoredInvalidUpdateSuccess.md'
+      - ReadSuccess: 'api/connected/classes/ReadSuccess.md'
+      - ResourceSuccess: 'api/connected/classes/ResourceSuccess.md'
+      - Unfetched: 'api/connected/classes/Unfetched.md'
+      - UpdateDefaultGraphSuccess: 'api/connected/classes/UpdateDefaultGraphSuccess.md'
+      - UpdateSuccess: 'api/connected/classes/UpdateSuccess.md'
+      - ErrorResult: 'api/connected/classes/ErrorResult.md'
+      - AggregateError: 'api/connected/classes/AggregateError.md'
+      - DisconnectedAttemptingReconnectError: 'api/connected/classes/DisconnectedAttemptingReconnectError.md'
+      - InvalidUriError: 'api/connected/classes/InvalidUriError.md'
+      - ResourceError: 'api/connected/classes/ResourceError.md'
+      - UnexpectedResourceError: 'api/connected/classes/UnexpectedResourceError.md'
+      - UnsupportedNotificationError: 'api/connected/classes/UnsupportedNotificationError.md'
     - '@ldo/solid':
       - 'api/solid/README.md'
       - createSolidLdoDataset: 'api/solid/functions/createSolidLdoDataset.md'
