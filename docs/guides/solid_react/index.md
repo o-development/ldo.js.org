@@ -681,7 +681,7 @@ Finally, we check if there's an error, and if there isn't, we assign the result 
 
 After implementing this step, your application should now be able to upload photos to your Pod.
 
-## 10. Addeding structured data.
+## 10. Adding structured data.
 
 Unstructured data is good, but the real lifeblood of Solid comes from its structured data. In this step, we'll create a Post document that contains the Post's text body, a link to the image, and it's time of posting.
 
