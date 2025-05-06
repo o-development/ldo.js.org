@@ -45,7 +45,7 @@ Indicates that the request to read a resource was a success
 
 #### Defined in
 
-[packages/connected/src/results/success/ReadSuccess.ts:16](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/ReadSuccess.ts#L16)
+[packages/connected/src/results/success/ReadSuccess.ts:16](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/ReadSuccess.ts#L16)
 
 ## Properties
 
@@ -59,7 +59,7 @@ Indicates that the request to read a resource was a success
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:9](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L9)
+[packages/connected/src/results/success/SuccessResult.ts:9](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L9)
 
 ___
 
@@ -72,7 +72,7 @@ request
 
 #### Defined in
 
-[packages/connected/src/results/success/ReadSuccess.ts:14](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/ReadSuccess.ts#L14)
+[packages/connected/src/results/success/ReadSuccess.ts:14](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/ReadSuccess.ts#L14)
 
 ___
 
@@ -88,7 +88,7 @@ The resource that was successful
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:25](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L25)
+[packages/connected/src/results/success/SuccessResult.ts:25](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L25)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:8](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L8)
+[packages/connected/src/results/success/SuccessResult.ts:8](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L8)
 
 ___
 
@@ -118,4 +118,4 @@ The URI of the resource
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:21](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L21)
+[packages/connected/src/results/success/SuccessResult.ts:21](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L21)

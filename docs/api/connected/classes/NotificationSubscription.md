@@ -36,7 +36,7 @@ Abstract class for notification subscription methods.
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:24](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L24)
+[packages/connected/src/notifications/NotificationSubscription.ts:24](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L24)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Abstract class for notification subscription methods.
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:17](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L17)
+[packages/connected/src/notifications/NotificationSubscription.ts:17](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L17)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:22](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L22)
+[packages/connected/src/notifications/NotificationSubscription.ts:22](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L22)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:16](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L16)
+[packages/connected/src/notifications/NotificationSubscription.ts:16](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L16)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:15](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L15)
+[packages/connected/src/notifications/NotificationSubscription.ts:15](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L15)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:18](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L18)
+[packages/connected/src/notifications/NotificationSubscription.ts:18](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L18)
 
 ## Methods
 
@@ -116,7 +116,7 @@ Closes the subscription
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:103](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L103)
+[packages/connected/src/notifications/NotificationSubscription.ts:103](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L103)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:34](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L34)
+[packages/connected/src/notifications/NotificationSubscription.ts:34](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L34)
 
 ___
 
@@ -152,7 +152,7 @@ onNotification
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:115](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L115)
+[packages/connected/src/notifications/NotificationSubscription.ts:115](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L115)
 
 ___
 
@@ -174,7 +174,7 @@ onNotificationError
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:126](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L126)
+[packages/connected/src/notifications/NotificationSubscription.ts:126](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L126)
 
 ___
 
@@ -190,7 +190,7 @@ Opens the subscription
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:97](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L97)
+[packages/connected/src/notifications/NotificationSubscription.ts:97](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L97)
 
 ___
 
@@ -212,7 +212,7 @@ setIsOpen
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:141](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L141)
+[packages/connected/src/notifications/NotificationSubscription.ts:141](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L141)
 
 ___
 
@@ -234,7 +234,7 @@ subscribeToNotifications
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:48](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L48)
+[packages/connected/src/notifications/NotificationSubscription.ts:48](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L48)
 
 ___
 
@@ -250,7 +250,7 @@ unsubscribeFromAllNotifications
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:79](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L79)
+[packages/connected/src/notifications/NotificationSubscription.ts:79](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L79)
 
 ___
 
@@ -272,4 +272,4 @@ unsubscribeFromNotification
 
 #### Defined in
 
-[packages/connected/src/notifications/NotificationSubscription.ts:64](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/notifications/NotificationSubscription.ts#L64)
+[packages/connected/src/notifications/NotificationSubscription.ts:64](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/notifications/NotificationSubscription.ts#L64)

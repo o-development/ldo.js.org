@@ -314,7 +314,7 @@ const profileDocument = await connectedLdoDataset
 
 #### Defined in
 
-[packages/connected/src/IConnectedLdoDataset.ts:96](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/IConnectedLdoDataset.ts#L96)
+[packages/connected/src/types/IConnectedLdoDataset.ts:124](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L124)
 
 ___
 
@@ -550,7 +550,7 @@ connectedLdoDataset.forgetAllResources();
 
 #### Defined in
 
-[packages/connected/src/IConnectedLdoDataset.ts:124](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/IConnectedLdoDataset.ts#L124)
+[packages/connected/src/types/IConnectedLdoDataset.ts:152](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L152)
 
 ___
 
@@ -580,7 +580,31 @@ connectedLdoDataset.forgetResource("https://example.com/resource.ttl");
 
 #### Defined in
 
-[packages/connected/src/IConnectedLdoDataset.ts:114](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/IConnectedLdoDataset.ts#L114)
+[packages/connected/src/types/IConnectedLdoDataset.ts:142](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L142)
+
+___
+
+### getFetchedResources
+
+▸ **getFetchedResources**(): `Plugins`[`number`][``"types"``][``"resource"``][]
+
+Retireves a representation of all Resources that have been fetched.
+
+#### Returns
+
+`Plugins`[`number`][``"types"``][``"resource"``][]
+
+a Resource array
+
+**`Example`**
+
+```typescript
+const allResources = connectedLdoDataset.getFetchedResources();
+```
+
+#### Defined in
+
+[packages/connected/src/types/IConnectedLdoDataset.ts:107](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L107)
 
 ___
 
@@ -640,7 +664,34 @@ const profileDocument = connectedLdoDataset
 
 #### Defined in
 
-[packages/connected/src/IConnectedLdoDataset.ts:72](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/IConnectedLdoDataset.ts#L72)
+[packages/connected/src/types/IConnectedLdoDataset.ts:73](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L73)
+
+___
+
+### getResources
+
+▸ **getResources**(): `Plugins`[`number`][``"types"``][``"resource"``][]
+
+Retireves a representation of all Resources referenced by this dataset
+This does not necessarily mean that it's been fetched (use the
+`getFetchedResources` method for that). It simply means that at one point
+it was referenced.
+
+#### Returns
+
+`Plugins`[`number`][``"types"``][``"resource"``][]
+
+a Resource array
+
+**`Example`**
+
+```typescript
+const allResources = connectedLdoDataset.getResources();
+```
+
+#### Defined in
+
+[packages/connected/src/types/IConnectedLdoDataset.ts:95](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L95)
 
 ___
 
@@ -1094,7 +1145,7 @@ Sets conetext for a specific plugin
 
 #### Defined in
 
-[packages/connected/src/IConnectedLdoDataset.ts:132](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/IConnectedLdoDataset.ts#L132)
+[packages/connected/src/types/IConnectedLdoDataset.ts:160](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L160)
 
 ___
 
@@ -1262,7 +1313,7 @@ ___
 
 ### usingType
 
-▸ **usingType**\<`Type`\>(`shapeType`): `LdoBuilder`\<`Type`\>
+▸ **usingType**\<`Type`\>(`shapeType`): [`IConnectedLdoBuilder`](IConnectedLdoBuilder.md)\<`Type`, `Plugins`\>
 
 #### Type parameters
 
@@ -1278,12 +1329,12 @@ ___
 
 #### Returns
 
-`LdoBuilder`\<`Type`\>
+[`IConnectedLdoBuilder`](IConnectedLdoBuilder.md)\<`Type`, `Plugins`\>
 
-#### Inherited from
+#### Overrides
 
 LdoDataset.usingType
 
 #### Defined in
 
-packages/ldo/dist/LdoDataset.d.ts:9
+[packages/connected/src/types/IConnectedLdoDataset.ts:168](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/IConnectedLdoDataset.ts#L168)

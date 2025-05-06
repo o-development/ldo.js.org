@@ -123,6 +123,7 @@ Hooks
  - [useMatchSubject](https://ldo.js.org/latest/api/solid-react/useMatchSubject/)
  - [useMatchObject](https://ldo.js.org/latest/api/solid-react/useMatchSubject/)
  - [useSubscribeToResource](https://ldo.js.org/latest/api/solid-react/useMatchSubject/)
+ - [useLinkQUery](https://ldo.js.org/latest/api/solid-react/useLinkQuery/)
 
 ## Sponsorship
 This project was made possible by a grant from NGI Zero Entrust via nlnet. Learn more on the [NLnet project page](https://nlnet.nl/project/SolidUsableApps/).

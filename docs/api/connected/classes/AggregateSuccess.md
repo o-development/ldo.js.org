@@ -42,7 +42,7 @@ A grouping of multiple successes as a result of an action
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:47](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L47)
+[packages/connected/src/results/success/SuccessResult.ts:47](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L47)
 
 ## Properties
 
@@ -56,7 +56,7 @@ A grouping of multiple successes as a result of an action
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:9](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L9)
+[packages/connected/src/results/success/SuccessResult.ts:9](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L9)
 
 ___
 
@@ -68,7 +68,7 @@ An array of all successesses
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:45](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L45)
+[packages/connected/src/results/success/SuccessResult.ts:45](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L45)
 
 ___
 
@@ -82,4 +82,4 @@ ___
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:40](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L40)
+[packages/connected/src/results/success/SuccessResult.ts:40](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L40)

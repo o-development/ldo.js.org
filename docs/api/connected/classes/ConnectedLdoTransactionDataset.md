@@ -83,7 +83,7 @@ LdoTransactionDataset.constructor
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:83](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L83)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:86](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L86)
 
 ## Properties
 
@@ -93,7 +93,7 @@ LdoTransactionDataset.constructor
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:68](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L68)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:71](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L71)
 
 ___
 
@@ -191,7 +191,7 @@ Serves no purpose
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:74](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L74)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:77](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L77)
 
 ___
 
@@ -430,7 +430,7 @@ if (result.isError) {
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:163](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L163)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:174](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L174)
 
 ___
 
@@ -500,7 +500,7 @@ const profileDocument = await connectedLdoDataset
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:101](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L101)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:112](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L112)
 
 ___
 
@@ -776,7 +776,7 @@ connectedLdoDataset.forgetAllResources();
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:118](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L118)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:129](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L129)
 
 ___
 
@@ -810,7 +810,7 @@ connectedLdoDataset.forgetResource("https://example.com/resource.ttl");
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:115](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L115)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:126](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L126)
 
 ___
 
@@ -829,6 +829,34 @@ LdoTransactionDataset.getChanges
 #### Defined in
 
 packages/subscribable-dataset/dist/TransactionDataset.d.ts:24
+
+___
+
+### getFetchedResources
+
+▸ **getFetchedResources**(): `Plugins`[`number`][``"types"``][``"resource"``][]
+
+Retireves a representation of all Resources that have been fetched.
+
+#### Returns
+
+`Plugins`[`number`][``"types"``][``"resource"``][]
+
+a Resource array
+
+**`Example`**
+
+```typescript
+const allResources = connectedLdoDataset.getFetchedResources();
+```
+
+#### Implementation of
+
+[IConnectedLdoDataset](../interfaces/IConnectedLdoDataset.md).[getFetchedResources](../interfaces/IConnectedLdoDataset.md#getfetchedresources)
+
+#### Defined in
+
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:108](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L108)
 
 ___
 
@@ -896,7 +924,38 @@ const profileDocument = connectedLdoDataset
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:93](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L93)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:96](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L96)
+
+___
+
+### getResources
+
+▸ **getResources**(): `Plugins`[`number`][``"types"``][``"resource"``][]
+
+Retireves a representation of all Resources referenced by this dataset
+This does not necessarily mean that it's been fetched (use the
+`getFetchedResources` method for that). It simply means that at one point
+it was referenced.
+
+#### Returns
+
+`Plugins`[`number`][``"types"``][``"resource"``][]
+
+a Resource array
+
+**`Example`**
+
+```typescript
+const allResources = connectedLdoDataset.getResources();
+```
+
+#### Implementation of
+
+[IConnectedLdoDataset](../interfaces/IConnectedLdoDataset.md).[getResources](../interfaces/IConnectedLdoDataset.md#getresources)
+
+#### Defined in
+
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:104](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L104)
 
 ___
 
@@ -1440,7 +1499,7 @@ Sets conetext for a specific plugin
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:108](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L108)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:119](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L119)
 
 ___
 
@@ -1518,7 +1577,7 @@ LdoTransactionDataset.startTransaction
 
 #### Defined in
 
-[packages/connected/src/ConnectedLdoTransactionDataset.ts:122](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedLdoTransactionDataset.ts#L122)
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:133](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L133)
 
 ___
 
@@ -1640,7 +1699,7 @@ ___
 
 ### usingType
 
-▸ **usingType**\<`Type`\>(`shapeType`): `LdoBuilder`\<`Type`\>
+▸ **usingType**\<`Type`\>(`shapeType`): [`ConnectedLdoBuilder`](ConnectedLdoBuilder.md)\<`Type`, `Plugins`\>
 
 #### Type parameters
 
@@ -1656,16 +1715,16 @@ ___
 
 #### Returns
 
-`LdoBuilder`\<`Type`\>
+[`ConnectedLdoBuilder`](ConnectedLdoBuilder.md)\<`Type`, `Plugins`\>
 
 #### Implementation of
 
 [IConnectedLdoDataset](../interfaces/IConnectedLdoDataset.md).[usingType](../interfaces/IConnectedLdoDataset.md#usingtype)
 
-#### Inherited from
+#### Overrides
 
 LdoTransactionDataset.usingType
 
 #### Defined in
 
-packages/ldo/dist/LdoTransactionDataset.d.ts:8
+[packages/connected/src/ConnectedLdoTransactionDataset.ts:240](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/ConnectedLdoTransactionDataset.ts#L240)

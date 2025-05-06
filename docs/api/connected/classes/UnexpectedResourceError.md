@@ -44,7 +44,7 @@ returned when something threw an error that LDO did not expect.
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:111](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L111)
+[packages/connected/src/results/error/ErrorResult.ts:111](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L111)
 
 ## Properties
 
@@ -56,7 +56,7 @@ The error that was thrown
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:105](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L105)
+[packages/connected/src/results/error/ErrorResult.ts:105](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L105)
 
 ___
 
@@ -72,7 +72,7 @@ Always true
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:16](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L16)
+[packages/connected/src/results/error/ErrorResult.ts:16](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L16)
 
 ___
 
@@ -116,7 +116,7 @@ The resource that failed
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:40](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L40)
+[packages/connected/src/results/error/ErrorResult.ts:40](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L40)
 
 ___
 
@@ -146,7 +146,7 @@ Indicates the specific type of error
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:100](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L100)
+[packages/connected/src/results/error/ErrorResult.ts:100](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L100)
 
 ___
 
@@ -162,7 +162,7 @@ The URI of the resource
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:35](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L35)
+[packages/connected/src/results/error/ErrorResult.ts:35](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L35)
 
 ___
 
@@ -269,4 +269,4 @@ an UnexpectedResourceError
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:124](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L124)
+[packages/connected/src/results/error/ErrorResult.ts:124](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L124)

@@ -47,7 +47,6 @@ import {
 import { solidConnectedPlugin } from "@ldo/connected-solid";
 import { nextGraphConnectedPlugin } from "@ldo/connected-nextgraph";
 
-
 // Shape Types
 import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes";
 import { SocialMediaPostShapeType } from "./.ldo/socialMediaPost.shapeTypes";
@@ -91,7 +90,6 @@ async function main() {
   );
   // Optionally, you can provide the name of the specific plugin you want to use
   const anotherSolidResource = solidLdoDataset.getResource("", "solid");
-
 
   // This resource is currently unfetched
   console.log(solidResource.isUnfetched()); // Logs true
