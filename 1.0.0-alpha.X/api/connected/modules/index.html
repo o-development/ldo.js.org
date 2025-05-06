@@ -2550,6 +2550,7 @@
 <li><a href="../classes/AbsentReadSuccess/">AbsentReadSuccess</a></li>
 <li><a href="../classes/AggregateError/">AggregateError</a></li>
 <li><a href="../classes/AggregateSuccess/">AggregateSuccess</a></li>
+<li><a href="../classes/ConnectedLdoBuilder/">ConnectedLdoBuilder</a></li>
 <li><a href="../classes/ConnectedLdoDataset/">ConnectedLdoDataset</a></li>
 <li><a href="../classes/ConnectedLdoTransactionDataset/">ConnectedLdoTransactionDataset</a></li>
 <li><a href="../classes/DisconnectedAttemptingReconnectError/">DisconnectedAttemptingReconnectError</a></li>
@@ -2561,8 +2562,10 @@
 <li><a href="../classes/NotificationSubscription/">NotificationSubscription</a></li>
 <li><a href="../classes/ReadSuccess/">ReadSuccess</a></li>
 <li><a href="../classes/ResourceError/">ResourceError</a></li>
+<li><a href="../classes/ResourceLinkQuery/">ResourceLinkQuery</a></li>
 <li><a href="../classes/ResourceSuccess/">ResourceSuccess</a></li>
 <li><a href="../classes/SuccessResult/">SuccessResult</a></li>
+<li><a href="../classes/TrackingProxyContext/">TrackingProxyContext</a></li>
 <li><a href="../classes/UnexpectedResourceError/">UnexpectedResourceError</a></li>
 <li><a href="../classes/Unfetched/">Unfetched</a></li>
 <li><a href="../classes/UnsupportedNotificationError/">UnsupportedNotificationError</a></li>
@@ -2573,14 +2576,27 @@
 <ul>
 <li><a href="../interfaces/ConnectedPlugin/">ConnectedPlugin</a></li>
 <li><a href="../interfaces/ConnectedResult/">ConnectedResult</a></li>
+<li><a href="../interfaces/IConnectedLdoBuilder/">IConnectedLdoBuilder</a></li>
 <li><a href="../interfaces/IConnectedLdoDataset/">IConnectedLdoDataset</a></li>
+<li><a href="../interfaces/ILinkQuery/">ILinkQuery</a></li>
+<li><a href="../interfaces/LinkQueryRunOptions/">LinkQueryRunOptions</a></li>
 <li><a href="../interfaces/Resource/">Resource</a></li>
 <li><a href="../interfaces/SubscriptionCallbacks/">SubscriptionCallbacks</a></li>
+<li><a href="../interfaces/TrackingProxyContextOptions/">TrackingProxyContextOptions</a></li>
 </ul>
 <h2 id="type-aliases">Type Aliases</h2>
 <ul>
 <li><a href="../types/ConnectedContext/">ConnectedContext</a></li>
+<li><a href="../types/ExpandDeep/">ExpandDeep</a></li>
 <li><a href="../types/GetResourceReturnType/">GetResourceReturnType</a></li>
+<li><a href="../types/LQInput/">LQInput</a></li>
+<li><a href="../types/LQInputFlattenSet/">LQInputFlattenSet</a></li>
+<li><a href="../types/LQInputObject/">LQInputObject</a></li>
+<li><a href="../types/LQInputSubSet/">LQInputSubSet</a></li>
+<li><a href="../types/LQReturn/">LQReturn</a></li>
+<li><a href="../types/LQReturnExpandSet/">LQReturnExpandSet</a></li>
+<li><a href="../types/LQReturnObject/">LQReturnObject</a></li>
+<li><a href="../types/LQReturnSubSet/">LQReturnSubSet</a></li>
 <li><a href="../types/NotificationCallbackError/">NotificationCallbackError</a></li>
 <li><a href="../types/ResourceEventEmitter/">ResourceEventEmitter</a></li>
 <li><a href="../types/ReturnTypeFromArgs/">ReturnTypeFromArgs</a></li>
@@ -2590,7 +2606,13 @@
 <li><a href="../functions/changeData/">changeData</a></li>
 <li><a href="../functions/commitData/">commitData</a></li>
 <li><a href="../functions/createConnectedLdoDataset/">createConnectedLdoDataset</a></li>
+<li><a href="../functions/createTrackingProxyBuilder/">createTrackingProxyBuilder</a></li>
+<li><a href="../functions/createTrackingSetProxy/">createTrackingSetProxy</a></li>
+<li><a href="../functions/createTrackingSubjectProxy/">createTrackingSubjectProxy</a></li>
+<li><a href="../functions/exploreLinks/">exploreLinks</a></li>
+<li><a href="../functions/exploreLinksRecursive/">exploreLinksRecursive</a></li>
 <li><a href="../functions/graphNodeToString/">graphNodeToString</a></li>
+<li><a href="../functions/shouldFetchResource/">shouldFetchResource</a></li>
 <li><a href="../functions/splitChangesByGraph/">splitChangesByGraph</a></li>
 <li><a href="../functions/stringToGraphNode/">stringToGraphNode</a></li>
 </ul>

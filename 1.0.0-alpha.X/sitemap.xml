@@ -45,6 +45,10 @@
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ConnectedLdoBuilder/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ConnectedLdoDataset/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
@@ -89,11 +93,19 @@
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ResourceLinkQuery/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/ResourceSuccess/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/SuccessResult/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/classes/TrackingProxyContext/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
@@ -129,7 +141,31 @@
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/createTrackingProxyBuilder/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/createTrackingSetProxy/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/createTrackingSubjectProxy/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/exploreLinks/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/exploreLinksRecursive/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/graphNodeToString/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/functions/shouldFetchResource/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
@@ -149,7 +185,19 @@
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/IConnectedLdoBuilder/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/IConnectedLdoDataset/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/ILinkQuery/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/LinkQueryRunOptions/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
@@ -161,11 +209,51 @@
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/interfaces/TrackingProxyContextOptions/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/ConnectedContext/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/ExpandDeep/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/GetResourceReturnType/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQInput/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQInputFlattenSet/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQInputObject/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQInputSubSet/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQReturn/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQReturnExpandSet/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQReturnObject/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/connected/types/LQReturnSubSet/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
@@ -718,6 +806,10 @@
     </url>
     <url>
          <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useLdo/</loc>
+         <lastmod>2025-05-06</lastmod>
+    </url>
+    <url>
+         <loc>https://ldo.js.org/1.0.0-alpha.X/api/solid-react/useLinkQuery/</loc>
          <lastmod>2025-05-06</lastmod>
     </url>
     <url>
