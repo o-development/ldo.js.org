@@ -35,7 +35,7 @@ plugins available to the ConnectedLdoDataset.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:18](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L18)
+[packages/connected/src/InvalidIdentifierResource.ts:18](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L18)
 
 ## Properties
 
@@ -51,7 +51,7 @@ Indicates that this is not an error
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:16](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L16)
+[packages/connected/src/InvalidIdentifierResource.ts:16](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L16)
 
 ___
 
@@ -67,7 +67,7 @@ The most recent result from one of the resource methods.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:15](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L15)
+[packages/connected/src/InvalidIdentifierResource.ts:15](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L15)
 
 ___
 
@@ -83,7 +83,7 @@ The name of the resource. For example "NextGraphResource"
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:14](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L14)
+[packages/connected/src/InvalidIdentifierResource.ts:14](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L14)
 
 ___
 
@@ -99,7 +99,7 @@ The uri of the resource
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:13](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L13)
+[packages/connected/src/InvalidIdentifierResource.ts:13](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L13)
 
 ## Methods
 
@@ -234,7 +234,7 @@ undefined if that is currently unknown.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:39](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L39)
+[packages/connected/src/InvalidIdentifierResource.ts:39](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L39)
 
 ___
 
@@ -254,7 +254,7 @@ Returns true if this resource is currently performing its first fetch
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:33](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L33)
+[packages/connected/src/InvalidIdentifierResource.ts:33](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L33)
 
 ___
 
@@ -274,7 +274,7 @@ Returns true if this resource has performed a fetch at least once
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:27](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L27)
+[packages/connected/src/InvalidIdentifierResource.ts:27](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L27)
 
 ___
 
@@ -294,7 +294,7 @@ Returns true if this resource is currently loading.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:24](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L24)
+[packages/connected/src/InvalidIdentifierResource.ts:24](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L24)
 
 ___
 
@@ -315,7 +315,7 @@ currently unknown.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:36](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L36)
+[packages/connected/src/InvalidIdentifierResource.ts:36](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L36)
 
 ___
 
@@ -335,7 +335,7 @@ Returns true if this resource is currently subscribed to notifications.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:42](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L42)
+[packages/connected/src/InvalidIdentifierResource.ts:42](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L42)
 
 ___
 
@@ -355,7 +355,7 @@ Returns true if this reosource has not performed a fetch at least once
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:30](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L30)
+[packages/connected/src/InvalidIdentifierResource.ts:30](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L30)
 
 ___
 
@@ -652,7 +652,7 @@ Fetches the resource.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:45](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L45)
+[packages/connected/src/InvalidIdentifierResource.ts:45](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L45)
 
 ___
 
@@ -672,7 +672,7 @@ Fetches the resource if it hasn't been fetched yet.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:48](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L48)
+[packages/connected/src/InvalidIdentifierResource.ts:48](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L48)
 
 ___
 
@@ -797,7 +797,7 @@ Begins a subscription to this resource
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:54](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L54)
+[packages/connected/src/InvalidIdentifierResource.ts:54](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L54)
 
 ___
 
@@ -817,7 +817,7 @@ Unsubscribes from all notifications.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:63](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L63)
+[packages/connected/src/InvalidIdentifierResource.ts:63](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L63)
 
 ___
 
@@ -843,7 +843,7 @@ Unsubscribes from notifications on this resource
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:60](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L60)
+[packages/connected/src/InvalidIdentifierResource.ts:60](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L60)
 
 ___
 
@@ -863,4 +863,4 @@ Applies updates to this resource.
 
 #### Defined in
 
-[packages/connected/src/InvalidIdentifierResource.ts:51](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/InvalidIdentifierResource.ts#L51)
+[packages/connected/src/InvalidIdentifierResource.ts:51](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/InvalidIdentifierResource.ts#L51)

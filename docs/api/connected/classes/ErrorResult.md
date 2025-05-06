@@ -38,7 +38,7 @@ Error.constructor
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:21](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L21)
+[packages/connected/src/results/error/ErrorResult.ts:21](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L21)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Always true
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:16](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L16)
+[packages/connected/src/results/error/ErrorResult.ts:16](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L16)
 
 ___
 
@@ -112,7 +112,7 @@ Indicates the specific type of error
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:11](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L11)
+[packages/connected/src/results/error/ErrorResult.ts:11](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L11)
 
 ___
 

@@ -23,7 +23,7 @@ A starting context
 
 #### Defined in
 
-[packages/connected/src/ConnectedPlugin.ts:55](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedPlugin.ts#L55)
+[packages/connected/src/types/ConnectedPlugin.ts:55](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/ConnectedPlugin.ts#L55)
 
 ___
 
@@ -35,7 +35,7 @@ The name of the plugin ("solid" for example).
 
 #### Defined in
 
-[packages/connected/src/ConnectedPlugin.ts:20](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedPlugin.ts#L20)
+[packages/connected/src/types/ConnectedPlugin.ts:20](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/ConnectedPlugin.ts#L20)
 
 ___
 
@@ -63,7 +63,7 @@ example `https://example.com/profile#me` becomes
 
 #### Defined in
 
-[packages/connected/src/ConnectedPlugin.ts:51](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedPlugin.ts#L51)
+[packages/connected/src/types/ConnectedPlugin.ts:51](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/ConnectedPlugin.ts#L51)
 
 ___
 
@@ -85,7 +85,7 @@ filled out in an actual instance.
 
 #### Defined in
 
-[packages/connected/src/ConnectedPlugin.ts:60](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedPlugin.ts#L60)
+[packages/connected/src/types/ConnectedPlugin.ts:60](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/ConnectedPlugin.ts#L60)
 
 ## Methods
 
@@ -108,7 +108,7 @@ A function that will create a resource on the remote at a random URI.
 
 #### Defined in
 
-[packages/connected/src/ConnectedPlugin.ts:34](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedPlugin.ts#L34)
+[packages/connected/src/types/ConnectedPlugin.ts:34](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/ConnectedPlugin.ts#L34)
 
 ___
 
@@ -132,7 +132,7 @@ function does not fetch the resource or interface with a cache.
 
 #### Defined in
 
-[packages/connected/src/ConnectedPlugin.ts:27](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedPlugin.ts#L27)
+[packages/connected/src/types/ConnectedPlugin.ts:27](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/ConnectedPlugin.ts#L27)
 
 ___
 
@@ -156,4 +156,4 @@ true if this is a valid URI
 
 #### Defined in
 
-[packages/connected/src/ConnectedPlugin.ts:43](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/ConnectedPlugin.ts#L43)
+[packages/connected/src/types/ConnectedPlugin.ts:43](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/types/ConnectedPlugin.ts#L43)

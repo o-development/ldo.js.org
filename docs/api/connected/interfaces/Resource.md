@@ -30,7 +30,7 @@ Indicates that this is not an error
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:27](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L27)
+[packages/connected/src/Resource.ts:27](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L27)
 
 ___
 
@@ -42,7 +42,7 @@ The most recent result from one of the resource methods.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:39](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L39)
+[packages/connected/src/Resource.ts:39](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L39)
 
 ___
 
@@ -54,7 +54,7 @@ The name of the resource. For example "NextGraphResource"
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:35](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L35)
+[packages/connected/src/Resource.ts:35](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L35)
 
 ___
 
@@ -66,7 +66,7 @@ The uri of the resource
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:31](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L31)
+[packages/connected/src/Resource.ts:31](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L31)
 
 ## Methods
 
@@ -181,7 +181,7 @@ undefined if that is currently unknown.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:65](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L65)
+[packages/connected/src/Resource.ts:65](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L65)
 
 ___
 
@@ -197,7 +197,7 @@ Returns true if this resource is currently performing its first fetch
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:55](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L55)
+[packages/connected/src/Resource.ts:55](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L55)
 
 ___
 
@@ -213,7 +213,7 @@ Returns true if this resource has performed a fetch at least once
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:47](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L47)
+[packages/connected/src/Resource.ts:47](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L47)
 
 ___
 
@@ -229,7 +229,7 @@ Returns true if this resource is currently loading.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:43](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L43)
+[packages/connected/src/Resource.ts:43](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L43)
 
 ___
 
@@ -246,7 +246,7 @@ currently unknown.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:60](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L60)
+[packages/connected/src/Resource.ts:60](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L60)
 
 ___
 
@@ -262,7 +262,7 @@ Returns true if this resource is currently subscribed to notifications.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:69](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L69)
+[packages/connected/src/Resource.ts:69](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L69)
 
 ___
 
@@ -278,7 +278,7 @@ Returns true if this reosource has not performed a fetch at least once
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:51](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L51)
+[packages/connected/src/Resource.ts:51](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L51)
 
 ___
 
@@ -539,7 +539,7 @@ Fetches the resource.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:73](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L73)
+[packages/connected/src/Resource.ts:73](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L73)
 
 ___
 
@@ -555,7 +555,7 @@ Fetches the resource if it hasn't been fetched yet.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:77](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L77)
+[packages/connected/src/Resource.ts:77](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L77)
 
 ___
 
@@ -664,7 +664,7 @@ Begins a subscription to this resource
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:92](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L92)
+[packages/connected/src/Resource.ts:92](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L92)
 
 ___
 
@@ -680,7 +680,7 @@ Unsubscribes from all notifications.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:104](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L104)
+[packages/connected/src/Resource.ts:104](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L104)
 
 ___
 
@@ -702,7 +702,7 @@ Unsubscribes from notifications on this resource
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:100](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L100)
+[packages/connected/src/Resource.ts:100](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L100)
 
 ___
 
@@ -724,4 +724,4 @@ Applies updates to this resource.
 
 #### Defined in
 
-[packages/connected/src/Resource.ts:82](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/Resource.ts#L82)
+[packages/connected/src/Resource.ts:82](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/Resource.ts#L82)

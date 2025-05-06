@@ -50,7 +50,7 @@ Indicates that a request to a resource was aa success
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:27](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L27)
+[packages/connected/src/results/success/SuccessResult.ts:27](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L27)
 
 ## Properties
 
@@ -64,7 +64,7 @@ Indicates that a request to a resource was aa success
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:9](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L9)
+[packages/connected/src/results/success/SuccessResult.ts:9](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L9)
 
 ___
 
@@ -76,7 +76,7 @@ The resource that was successful
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:25](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L25)
+[packages/connected/src/results/success/SuccessResult.ts:25](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L25)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:8](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L8)
+[packages/connected/src/results/success/SuccessResult.ts:8](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L8)
 
 ___
 
@@ -102,4 +102,4 @@ The URI of the resource
 
 #### Defined in
 
-[packages/connected/src/results/success/SuccessResult.ts:21](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/success/SuccessResult.ts#L21)
+[packages/connected/src/results/success/SuccessResult.ts:21](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/success/SuccessResult.ts#L21)

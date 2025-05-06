@@ -53,7 +53,7 @@ An error for a specific resource
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:46](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L46)
+[packages/connected/src/results/error/ErrorResult.ts:46](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L46)
 
 ## Properties
 
@@ -69,7 +69,7 @@ Always true
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:16](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L16)
+[packages/connected/src/results/error/ErrorResult.ts:16](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L16)
 
 ___
 
@@ -109,7 +109,7 @@ The resource that failed
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:40](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L40)
+[packages/connected/src/results/error/ErrorResult.ts:40](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L40)
 
 ___
 
@@ -139,7 +139,7 @@ Indicates the specific type of error
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:11](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L11)
+[packages/connected/src/results/error/ErrorResult.ts:11](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L11)
 
 ___
 
@@ -151,7 +151,7 @@ The URI of the resource
 
 #### Defined in
 
-[packages/connected/src/results/error/ErrorResult.ts:35](https://github.com/o-development/ldo/blob/0518c5c7483d8344bdec226a595a6c39a34f346f/packages/connected/src/results/error/ErrorResult.ts#L35)
+[packages/connected/src/results/error/ErrorResult.ts:35](https://github.com/o-development/ldo/blob/2085e12f9f1a1b9db0429a041343e0568e3bede9/packages/connected/src/results/error/ErrorResult.ts#L35)
 
 ___
 
