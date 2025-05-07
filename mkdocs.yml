@@ -52,6 +52,7 @@ nav:
       - createConnectedLdoDataset: 'api/connected/functions/createConnectedLdoDataset.md'
       - ConnectedLdoDataset: 'api/connected/classes/ConnectedLdoDataset.md'
       - ConnectedLdoTransactionDataset: 'api/connected/classes/ConnectedLdoTransactionDataset.md'
+      - ConnectedLdoBuilder: 'api/connected/classes/ConnectedLdoBuilder.md'
       - IConnectedLdoDataset: 'api/connected/interfaces/IConnectedLdoDataset.md'
       - ConnectedPlugin: 'api/connected/interfaces/ConnectedPlugin.md'
       - Resource: 'api/connected/interfaces/Resource.md'
@@ -93,6 +94,7 @@ nav:
       - useMatchSubject: 'api/solid-react/useMatchSubject.md'
       - useMatchObject: 'api/solid-react/useMatchObject.md'
       - useSubscribeToResource: 'api/solid-react/useSubscribeToResource.md'
+      - useLinkQuery: 'api/solid-react/useLinkQuery.md'
 
     # - '@ldo/jsonld-dataset-proxy': 'api/jsonld-dataset-proxy/index.md'
     # - '@ldo/dataset': 'api/dataset/index.md'
