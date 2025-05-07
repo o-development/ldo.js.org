@@ -9,9 +9,8 @@ hide:
 
 <center>
 
-[For Raw Rdf](guides/raw_rdf/index.md){ .md-button .md-button--primary  }
-<!-- [For Solid](solid/index.md){ .md-button .md-button--primary  } -->
-[For Solid+React](guides/solid_react/index.md){ .md-button .md-button--primary  }
+<a href="guides/raw_rdf/index.md" class="md-button md-button--primary">For Raw Rdf</a>
+<a href="guides/solid_react/index.md" class="md-button md-button--primary">For Solid+React</a>
 
 </center>
 
