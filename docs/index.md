@@ -9,8 +9,8 @@ hide:
 
 <center>
 
-<a href="guides/raw_rdf/index.md" class="md-button md-button--primary">For Raw Rdf</a>
-<a href="guides/solid_react/index.md" class="md-button md-button--primary">For Solid+React</a>
+<a href="guides/raw_rdf/" class="md-button md-button--primary">For Raw Rdf</a>
+<a href="guides/solid_react/" class="md-button md-button--primary">For Solid+React</a>
 
 </center>
 
