@@ -3,28 +3,28 @@
 Fetches a resource and rerenders the component as the state of the resource changes.
 
 ```typescript
-import { useLdo, useResource, useSubject, commitData } from "@ldo/solid-react";
+import { useResource } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
   const resource = useResource("https://example.com/profile");
 
-  if (resource.isLoading()) {
-    return <p>Loading...</p>
+  if (resource?.isLoading()) {
+    return <p>Loading...</p>;
   }
-  return <p>{resource.uri} loaded</p>
-}
+
+  return <p>{resource?.uri} loaded</p>;
+};
 ```
 
-### Parameters
+## Parameters
 
- - `uri: string` - the URI of the resource
- - `options: {}` - Options containing the following fields
-   - `suppressInitialRead?: boolean` - If true, this hook will not trigger a read event to fetch the document.
+ - `uri: string` - The URI of the resource
+ - `options?: UseResourceOptions` - Optional configuration containing:
+   - `suppressInitialRead?: boolean` - If true, this hook will not trigger a read event to fetch the document
    - `reloadOnMount?: boolean` - If true, this hook will trigger a read event whenever this component mounts
-   - `subscribe?: boolean` - If true, this will subscribe to updates via Websockets
+   - `subscribe?: boolean` - If true, this will subscribe to updates via WebSockets
 
-### Returns
+## Returns
 
-A resource
+A resource object that provides access to the resource's data and status.

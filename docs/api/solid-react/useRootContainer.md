@@ -1,23 +1,22 @@
 # `useRootContainer`
 
-Gets the Root container of the given URI
+Gets the root container of the given URI.
 
 ```typescript
-import { useLdo, useResource, useSubject, commitData } from "@ldo/solid-react";
+import { useRootContainer } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
   const rootContainer = useRootContainer("https://example.com/profile");
 
-  return <p>RootContainer {rootContainer?.uri}</p>
-}
+  return <p>Root Container: {rootContainer?.uri}</p>;
+};
 ```
 
-### Parameters
+## Parameters
 
- - `uri: string` - the URI of the resource
+ - `uri: string` - The URI of the resource
 
-### Returns
+## Returns
 
-A root container or undefined if it hasn't been fetched yet
+A root container or undefined if it hasn't been fetched yet.

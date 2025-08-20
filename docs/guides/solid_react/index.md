@@ -843,6 +843,155 @@ Notice that we can get the URL for the image with `post.image["@id"]`, but we're
 
 We've also added a delete button. Deleting containers and resources is just as simple as running `resource.delete()`.
 
+## 12. Editing Posts with useChangeSubject
+
+Now let's add the ability to edit existing posts. We'll use the `useChangeSubject` hook to implement the edit functionality in our existing EditPost component.
+
+Let's update **EditPost.tsx** to use LDO hooks:
+
+**EditPost.tsx**
+```tsx
+import { FunctionComponent, useState } from "react";
+import { ContainerUri } from "@ldo/solid";
+import { useResource, useChangeSubject, useSubject } from "@ldo/solid-react";
+import { PostShShapeType } from "./.ldo/post.shapeTypes";
+
+export const EditPost: FunctionComponent<{ postUri: ContainerUri }> = ({
+  postUri,
+}) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const postIndexUri = `${postUri}index.ttl`;
+  const resource = useResource(postIndexUri);
+  
+  // Get the current post data for display
+  const currentPost = useSubject(PostShShapeType, postIndexUri);
+  
+  // Get the editable post data using useChangeSubject
+  const [editablePost, setPost, commitPost] = useChangeSubject(
+    PostShShapeType,
+    postIndexUri
+  );
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editablePost) return;
+
+    const result = await commitPost();
+    if (result.isError) {
+      console.error("Failed to update post:", result.message);
+    } else {
+      console.log("Post updated successfully!");
+      setIsEditing(false);
+    }
+  };
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+  };
+
+  if (resource?.isLoading()) {
+    return <p>Loading...</p>;
+  }
+
+  if (isEditing) {
+    return (
+      <form onSubmit={handleSubmit}>
+        <h3>Edit Post</h3>
+        <textarea
+          value={editablePost?.articleBody || ""}
+          onChange={(e) => {
+            setPost(resource, (post) => {
+              post.articleBody = e.target.value;
+            });
+          }}
+          placeholder="Edit your post content..."
+          required
+        />
+        <div>
+          <button type="submit">Save Changes</button>
+          <button type="button" onClick={handleCancel}>
+            Cancel
+          </button>
+        </div>
+      </form>
+    );
+  }
+
+  return (
+    <div>
+      <p>{currentPost?.articleBody}</p>
+      <button onClick={handleEdit}>Edit Post</button>
+    </div>
+  );
+};
+```
+
+Now let's update **Post.tsx** to include the edit functionality:
+
+**Post.tsx**
+```tsx hl_lines="1-4 9-42"
+import { FunctionComponent, useCallback, useMemo } from "react";
+import { ContainerUri, LeafUri } from "@ldo/solid";
+import { useLdo, useResource, useSubject } from "@ldo/solid-react";
+import { PostShShapeType } from "./.ldo/post.shapeTypes";
+import { EditPost } from "./EditPost";
+
+export const Post: FunctionComponent<{ postUri: ContainerUri }> = ({
+  postUri,
+}) => {
+  const postIndexUri = `${postUri}index.ttl`;
+  const postResource = useResource(postIndexUri);
+  const post = useSubject(PostShShapeType, postIndexUri);
+  const { getResource } = useLdo();
+  const imageResource = useResource(
+    post?.image?.["@id"] as LeafUri | undefined
+  );
+
+  // Convert the blob into a URL to be used in the img tag
+  const blobUrl = useMemo(() => {
+    if (imageResource && imageResource.isBinary()) {
+      return URL.createObjectURL(imageResource.getBlob()!);
+    }
+    return undefined;
+  }, [imageResource]);
+
+  const deletePost = useCallback(async () => {
+    const postContainer = getResource(postUri);
+    await postContainer.delete();
+  }, [postUri, getResource]);
+
+  if (postResource.status.isError) {
+    return <p>postResource.status.message</p>;
+  }
+
+  return (
+    <div>
+      <EditPost postUri={postUri} />
+      {blobUrl && (
+        <img src={blobUrl} alt={post.articleBody} style={{ height: 300 }} />
+      )}
+      <button onClick={deletePost}>Delete Post</button>
+    </div>
+  );
+};
+```
+
+The key differences between `useChangeSubject` and the previous methods we've used:
+
+1. **Transaction-based**: `useChangeSubject` creates a transaction dataset that allows you to make multiple changes before committing them all at once.
+
+2. **Resource parameter**: The `setPost` function requires a resource object as its first parameter, which you can get from `useResource`.
+
+3. **Callback pattern**: Changes are made through a callback function that receives the editable object.
+
+4. **Error handling**: The `commitPost` function returns a result object that you can check for errors.
+
+This approach is perfect for forms where you want to collect multiple changes before saving them to the Pod.
+
 ## Conclusion
 
-And with that, you have a fully functional Solid application. LDO's React/Solid integration keeps track of state and makes sure everything is run efficiently so you can focus on developing your application.
+And with that, you have a fully functional Solid application with the ability to create, read, update, and delete posts. LDO's React/Solid integration keeps track of state and makes sure everything is run efficiently so you can focus on developing your application.
