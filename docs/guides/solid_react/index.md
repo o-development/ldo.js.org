@@ -681,7 +681,7 @@ Finally, we check if there's an error, and if there isn't, we assign the result 
 
 After implementing this step, your application should now be able to upload photos to your Pod.
 
-## 10. Addeding structured data.
+## 10. Adding structured data.
 
 Unstructured data is good, but the real lifeblood of Solid comes from its structured data. In this step, we'll create a Post document that contains the Post's text body, a link to the image, and it's time of posting.
 
@@ -994,4 +994,4 @@ This approach is perfect for forms where you want to collect multiple changes be
 
 ## Conclusion
 
-And with that, you have a fully functional Solid application with the ability to create, read, update, and delete posts. LDO's React/Solid integration keeps track of state and makes sure everything is run efficiently so you can focus on developing your application.
+And with that, you have a fully functional Solid application. LDO's React/Solid integration keeps track of state and makes sure everything is run efficiently so you can focus on developing your application.

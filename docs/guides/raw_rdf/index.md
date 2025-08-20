@@ -306,7 +306,7 @@ import { toTurtle } from "@ldo/ldo"
 const rawTurtle: string = await toTurtle(profile);
 ```
 
-### `toNTiples(linkedDataObject)`
+### `toNTriples(linkedDataObject)`
 ```typescript
 import { toNTriples } from "@ldo/ldo"
 // ...

@@ -1,4 +1,4 @@
-# `init` command
+# `create` command
 
 LDO's cli's create command initializes a package and repsoitory to upload your own shapes.
 
