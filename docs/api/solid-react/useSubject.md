@@ -3,22 +3,26 @@
 A hook that lets you get a Linked Data Object for a specific subject.
 
 ```typescript
-import { useSubject } from "@ldo/solid-react";
+import { useSubject, useResource } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
 import { ProfileShapeType } from "./.ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
+  const resource = useResource("https://example.com/profile");
   const profile = useSubject(ProfileShapeType, "https://example.com/profile#me");
 
-  return <p>Name: {profile?.name}</p>
-}
+  if (resource?.isLoading() || !profile) return <p>Loading...</p>;
+
+  return <p>Name: {profile.name}</p>;
+};
 ```
 
-### Parameters
+## Parameters
 
  - `ShapeType: ShapeType` - The ShapeType dictating the shape of the Linked Data Object
- - `subject: string | SubjectNode` - the subject URI
+ - `subject: string | SubjectNode` - The subject URI
+ - `options?: UseSubjectOptions` - Optional configuration
 
-### Returns
+## Returns
 
-A linked data object corresponding to the given subject
+A linked data object corresponding to the given subject.

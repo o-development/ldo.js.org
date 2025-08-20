@@ -1,16 +1,16 @@
 # `useSubscribeToResource`
 
-A hook that lets you subscribe to a list of Resource URLs via webhooks.
+A hook that lets you subscribe to a list of Resource URLs via WebSockets.
 
 When a resource is updated on a Pod, the updates will automatically be reflected in LDO.
 
 ```typescript
-import { useSubscribeToResource } from "@ldo/solid-react";
+import { useSubscribeToResource, useSubject } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
 import { ProfileShapeType } from "./.ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
-  // Subscribes to updates on the Pod for the given resource. If the Pod is
+  // Subscribes to updates on the Pod for the given resources. If the Pod is
   // updated, any component touching changed data will rerender.
   useSubscribeToResource(
     "https://example.com/Person1",
@@ -26,17 +26,19 @@ const Component: FunctionComponent = () => {
     "https://example.com/Person2#me"
   );
 
-  return <div>
-    <p>Profile1: {profile1.name}</p>
-    <p>Profile2: {profile2.name}</p>
-  </div>
-}
+  return (
+    <div>
+      <p>Profile1: {profile1?.name}</p>
+      <p>Profile2: {profile2?.name}</p>
+    </div>
+  );
+};
 ```
 
-### Parameters
+## Parameters
 
- - `...ResrouceUri: string[]` - A list of resource URIs.
+ - `...resourceUris: string[]` - A list of resource URIs to subscribe to.
 
-### Returns
+## Returns
 
 Void.

@@ -1,13 +1,15 @@
-# `useMatchSubject`
+# `useMatchObject`
 
-A hook that lets you get a list of Linked Data Objects for a subject matching the provided parameters.
+A hook that lets you get a list of Linked Data Objects for objects matching the provided parameters.
 
 ```typescript
-import { useMatchObject } from "@ldo/solid-react";
+import { useMatchObject, useResource } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
 import { ProfileShapeType } from "./.ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
+  const resource = useResource("https://example.com/data");
+  
   // Gets all objects in the database that know Kevin Bacon 
   const profiles = useMatchObject(
     ProfileShapeType,
@@ -16,19 +18,26 @@ const Component: FunctionComponent = () => {
     null,
   );
 
-  return <div>
-    {profiles.map((profile) => <p>Name: {profile?.name}</p>}
-  </div>
-}
+  if (resource?.isLoading()) return <p>Loading...</p>;
+
+  return (
+    <div>
+      {profiles.map((profile) => (
+        <p key={profile["@id"]}>Name: {profile?.name}</p>
+      ))}
+    </div>
+  );
+};
 ```
 
-### Parameters
+## Parameters
 
  - `ShapeType: ShapeType` - The ShapeType dictating the shape of the Linked Data Object
  - `subject: string | SubjectNode | null` - The subject to match
  - `predicate: string | PredicateNode | null` - The predicate to match
  - `graph: string | GraphNode | null` - The graph to match
+ - `options?: UseMatchObjectOptions` - Optional configuration
 
-### Returns
+## Returns
 
 A list of linked data objects corresponding to the given matched items.
