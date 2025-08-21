@@ -127,9 +127,9 @@ async function run() {
   janeProfile.name = "Jane Smith";
   janeProfile.knows?.add({
     "@id": "https://solidweb.me/john_smith/profile/card#me",
-    type: {
+    type: set({
       "@id": "Person",
-    },
+    }),
     name: "John Smith",
     knows: set(janeProfile),
   });
@@ -137,9 +137,9 @@ async function run() {
   // Logs "Jane Smith"
   console.log(janeProfile.name);
   // Logs "John Smith"
-  console.log(janeProfile.knows?.toArray()[0].name);
+  console.log(janeProfile.knows?.toArray()[0]?.name);
   // Logs "Jane Smith"
-  console.log(janeProfile.knows?toArray().[0].knows?.toArray()[0].name);
+  console.log(janeProfile.knows?.toArray()[0]?.knows?.toArray()[0]?.name);
 
   /**
    * Step 3: Convert it back to RDF
@@ -277,16 +277,16 @@ aysnc function start() {
   // Logs "Aang"
   console.log(profile.name);
   // Logs "Person"
-  console.log(profile.type["@id"]);
+  console.log(profile.type.toArray()[0]?.["@id"]);
   // Logs 1
   console.log(profile.knows?.size);
   // Logs "Katara"
-  console.log(profile.knows?.toArray()[0].name);
+  console.log(profile.knows?.toArray()[0]?.name);
   profile.name = "Bonzu Pippinpaddleopsicopolis III"
   // Logs "Bonzu Pippinpaddleopsicopolis III"
   console.log(profile.name);
   profile.knows?.add({
-    type: { "@id": "Person" },
+    type: set({ "@id": "Person" }),
     name: "Sokka"
   });
   // Logs 2
