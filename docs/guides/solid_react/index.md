@@ -247,22 +247,22 @@ LDO uses ShEx "Shapes" as schemas to describe how data looks in an application. 
 npx @ldo/cli init
 ```
 
-This command will install required libraries and creates two folders: the `.shapes` folder and the `.ldo` folder.
+This command will install required libraries and creates two folders: the `_shapes` folder and the `_ldo` folder.
 
-If you look in the `.shapes` folder, you'll find a default file called `foafProfile.shex`. This is a ShEx shape that defines a very simplified profile object.
+If you look in the `_shapes` folder, you'll find a default file called `foafProfile.shex`. This is a ShEx shape that defines a very simplified profile object.
 
-If you look in the `.ldo` folder, you'll files generated from the shape. For example, `foafProfile.typings.ts` contains the Typescript typings associated with the shape, `foafProfile.context.ts` conatians a JSON-LD context for the shape, and `foafProfile.shapeTypes.ts` contains a shape type, a special object that groups all the information for a shape together. We'll be using ShapeTypes later in this tutorial.
+If you look in the `_ldo` folder, you'll files generated from the shape. For example, `foafProfile.typings.ts` contains the Typescript typings associated with the shape, `foafProfile.context.ts` conatians a JSON-LD context for the shape, and `foafProfile.shapeTypes.ts` contains a shape type, a special object that groups all the information for a shape together. We'll be using ShapeTypes later in this tutorial.
 
 For our project, we want to use a Solid Profile, so let's delete the "foafProfile" ShEx shape and make a new file for our Solid profile.
 
 ```bash
-rm ./src/.shapes/foafProfile.shex
-touch ./src/.shapes/solidProfile.shex
+rm ./src/_shapes/foafProfile.shex
+touch ./src/_shapes/solidProfile.shex
 ```
 
 Now, let's create a shape for the Solid Profile. The code for a Solid profile is listed below, but you can learn more about creating ShEx shapes of your own on the [ShEx website](https://shex.io)
 
-**.shapes/solidProfile.shex**
+**_shapes/solidProfile.shex**
 ```shex
 PREFIX srs: <https://shaperepo.com/schemas/solidProfile#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -393,7 +393,7 @@ Finally, we can run the command below to build the Solid Profile shape.
 npm run build:ldo
 ```
 
-You'll notice that the `.ldo` folder contains information about a _solid_ profile.
+You'll notice that the `_ldo` folder contains information about a _solid_ profile.
 
 ## 6. Fetching and using information
 
@@ -407,7 +407,7 @@ We can use the `useResource` and `useSubject` hooks to do this.
 ```tsx hl_lines="2 3 7-14 21"
 import { FunctionComponent } from "react";
 import { useResource, useSolidAuth, useSubject } from "@ldo/solid-react";
-import { SolidProfileShapeShapeType } from "./.ldo/solidProfile.shapeTypes";
+import { SolidProfileShapeShapeType } from "./_ldo/solidProfile.shapeTypes";
 
 export const Header: FunctionComponent = () => {
   const { session, login, logout } = useSolidAuth();
@@ -685,9 +685,9 @@ After implementing this step, your application should now be able to upload phot
 
 Unstructured data is good, but the real lifeblood of Solid comes from its structured data. In this step, we'll create a Post document that contains the Post's text body, a link to the image, and it's time of posting.
 
-Before we can do that, like we did with the profile, we want to have a ShEx shape for a social media posting. Create a new file called **./.shapes.post.shex** and paste the following ShEx shape.
+Before we can do that, like we did with the profile, we want to have a ShEx shape for a social media posting. Create a new file called **./_shapes/post.shex** and paste the following ShEx shape.
 
-**./.shapes/post.shex**
+**./_shapes/post.shex**
 ```shex
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -723,7 +723,7 @@ npm run build:ldo
 With the new shape in order, let's add some code to **MakePost.tsx** to create the structured data we need.
 
 ```tsx hl_lines="1 2 8 14-37 39"
-import { PostShShapeType } from "./.ldo/post.shapeTypes";
+import { PostShShapeType } from "./_ldo/post.shapeTypes";
 import { useLdo } from "@ldo/solid-react";
 
 export const MakePost: FunctionComponent<{ mainContainer: Container }> = ({
@@ -795,7 +795,7 @@ Finally, let's bring it all together and modify **Post.tsx** to display the uplo
 import { FunctionComponent, useCallback, useMemo } from "react";
 import { ContainerUri, LeafUri } from "@ldo/solid";
 import { useLdo, useResource, useSubject } from "@ldo/solid-react";
-import { PostShShapeType } from "./.ldo/post.shapeTypes";
+import { PostShShapeType } from "./_ldo/post.shapeTypes";
 
 export const Post: FunctionComponent<{ postUri: ContainerUri }> = ({
   postUri,
@@ -854,7 +854,7 @@ Let's update **EditPost.tsx** to use LDO hooks:
 import { FunctionComponent, useState } from "react";
 import { ContainerUri } from "@ldo/solid";
 import { useResource, useChangeSubject, useSubject } from "@ldo/solid-react";
-import { PostShShapeType } from "./.ldo/post.shapeTypes";
+import { PostShShapeType } from "./_ldo/post.shapeTypes";
 
 export const EditPost: FunctionComponent<{ postUri: ContainerUri }> = ({
   postUri,
@@ -937,7 +937,7 @@ Now let's update **Post.tsx** to include the edit functionality:
 import { FunctionComponent, useCallback, useMemo } from "react";
 import { ContainerUri, LeafUri } from "@ldo/solid";
 import { useLdo, useResource, useSubject } from "@ldo/solid-react";
-import { PostShShapeType } from "./.ldo/post.shapeTypes";
+import { PostShShapeType } from "./_ldo/post.shapeTypes";
 import { EditPost } from "./EditPost";
 
 export const Post: FunctionComponent<{ postUri: ContainerUri }> = ({

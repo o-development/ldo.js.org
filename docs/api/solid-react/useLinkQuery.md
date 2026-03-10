@@ -5,7 +5,7 @@ A hook that lets you define a query and will explore links in documents until al
 ```typescript
 import { useLinkQuery } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType";
 
 // Define a link query outside of the render function so it doesn't trigger
 // unneeded updates.

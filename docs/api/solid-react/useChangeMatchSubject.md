@@ -7,7 +7,7 @@ Use this hook for forms that need to modify multiple matching subjects.
 ```typescript
 import { useChangeMatchSubject, useResource } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
   const resource = useResource("https://example.com/profiles");

@@ -34,7 +34,7 @@ Create a script to build ShEx shapes and convert them into Linked Data Objects. 
   ...
   scripts: {
     ...
-    "build:ldo": "ldo build --input ./shapes --output ./.ldo"
+    "build:ldo": "ldo build --input ./shapes --output ./_ldo"
     ...
   }
   ...
@@ -73,10 +73,10 @@ npm run build:ldo
 ```
 
 This will generate five files:
- - `./.ldo/foafProfile.shapeTypes.ts` <-- This is the important file
- - `./.ldo/foafProfile.typings.ts`
- - `./.ldo/foafProfile.schema.ts`
- - `./.ldo/foafProfile.context.ts`
+ - `./_ldo/foafProfile.shapeTypes.ts` <-- This is the important file
+ - `./_ldo/foafProfile.typings.ts`
+ - `./_ldo/foafProfile.schema.ts`
+ - `./_ldo/foafProfile.context.ts`
 
 ## Simple Example
 
@@ -90,7 +90,7 @@ import {
   toTurtle,
   set,
 } from "@ldo/ldo";
-import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes";
+import { FoafProfileShapeType } from "./_ldo/foafProfile.shapeTypes";
 
 async function run() {
   const rawTurtle = `
@@ -204,7 +204,7 @@ Once you have an LdoDataset we can get a Linked Data Object. A linked data objec
 Thie first step is defining which Shape Type you want to retrieve from the dataset. We can use the generated shape types and the `usingType()` method for this.
 
 ```typescript
-import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes.ts";
+import { FoafProfileShapeType } from "./_ldo/foafProfile.shapeTypes.ts";
 
 // ... Get the LdoDataset
 
@@ -269,8 +269,8 @@ Once you've created a Linked Data Object, you can get and set data as if it were
 
 ```typescript
 import { LinkedDataObject, set } from "@ldo/ldo";
-import { FoafProfileFactory } from "./.ldo/foafProfile.ldoFactory.ts";
-import { FoafProfile } from "./.ldo/foafProfile.typings";
+import { FoafProfileFactory } from "./_ldo/foafProfile.ldoFactory.ts";
+import { FoafProfile } from "./_ldo/foafProfile.typings";
 
 aysnc function start() {
   const profile: FoafProfile = // Create LDO

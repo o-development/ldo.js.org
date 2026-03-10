@@ -6,7 +6,7 @@ resources.
 **`Example`**
 
 ```typescript
-import { ProfileShapeType } from "./.ldo/Profile.shapeType.ts";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType.ts";
 
 // Create a link query
 const linkQuery = ldoDataset
@@ -264,7 +264,7 @@ A subset of the ShapeType as defined by the LinkQuery
 **`Example`**
 
 ```
-import { ProfileShapeType } from "./.ldo/Profile.shapeType.ts";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType.ts";
 
 // Create a link query
 const linkQuery = ldoDataset
@@ -316,7 +316,7 @@ An unsubscribeId
 **`Example`**
 
 ```
-import { ProfileShapeType } from "./.ldo/Profile.shapeType.ts";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType.ts";
 
 // Create a link query
 const linkQuery = ldoDataset

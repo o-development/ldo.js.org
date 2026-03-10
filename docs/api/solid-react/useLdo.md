@@ -59,7 +59,7 @@ A function that lets you get a Linked Data Object for a specific subject. This f
 ```typescript
 import { useLdo } from "@ld/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
   const { getSubject } = useLdo();
@@ -92,7 +92,7 @@ Creates modifiable data that can be edited and committed.
 ```typescript
 import { useLdo, useResource, commitData } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { PostShapeType } from "./.ldo/Post.shapeType";
+import { PostShapeType } from "./_ldo/Post.shapeType";
 
 const Component: FunctionComponent = () => {
   const { createData } = useLdo();
@@ -132,7 +132,7 @@ Takes a Linked Data Object and turns it into a modifiable Linked Data Object tha
 ```typescript
 import { useLdo, useResource, useSubject, commitData } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
   const { changeData } = useLdo();
@@ -172,7 +172,7 @@ Commits changes made on Linked Data Objects to the Pod.
 ```typescript
 import { useLdo, useResource, commitData } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { PostShapeType } from "./.ldo/Post.shapeType";
+import { PostShapeType } from "./_ldo/Post.shapeType";
 
 const Component: FunctionComponent = () => {
   const { createData } = useLdo();
