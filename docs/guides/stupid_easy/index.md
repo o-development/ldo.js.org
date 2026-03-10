@@ -17,7 +17,7 @@ npx @ldo/cli init
 npm i @ldo/solid-react
 ```
 
-## 3. Observe the generated files in the `/src/.ldo` folder
+## 3. Observe the generated files in the `/src/_ldo` folder
 
 FoafProfile.typings.ts
 
@@ -163,7 +163,7 @@ Profile.tsx
 ```typescript  hl_lines="1 3 6 7 8 10 11 12 14 15 16"
 import { useResource, useSolidAuth, useSubject } from "@ldo/solid-react";
 import { FunctionComponent } from "react";
-import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes"
+import { FoafProfileShapeType } from "./_ldo/foafProfile.shapeTypes"
 
 export const Profile: FunctionComponent = () => {
   const { session } = useSolidAuth();
@@ -185,7 +185,7 @@ export const Profile: FunctionComponent = () => {
 ```typescript hl_lines="1 9 17 18 19 20 21 22"
 import { useLdo, useResource, useSolidAuth, useSubject } from "@ldo/solid-react";
 import { FunctionComponent } from "react";
-import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes"
+import { FoafProfileShapeType } from "./_ldo/foafProfile.shapeTypes"
 
 export const Profile: FunctionComponent = () => {
   const { session } = useSolidAuth();

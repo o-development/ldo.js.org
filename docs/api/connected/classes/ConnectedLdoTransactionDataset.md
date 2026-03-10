@@ -11,7 +11,7 @@ to initialize this class
 
 ```typescript
 import { createConnectedLdoDataset } from "@ldo/connected";
-import { ProfileShapeType } from "./.ldo/profile.shapeTypes.ts"
+import { ProfileShapeType } from "./_ldo/profile.shapeTypes.ts"
 import { solidConnectedPlugin } from "connected-solid";
 
 // ...
@@ -405,7 +405,7 @@ A success or failure
 
 ```typescript
 import { createConnectedLdoDataset } from "@ldo/connected";
-import { ProfileShapeType } from "./.ldo/profile.shapeTypes.ts"
+import { ProfileShapeType } from "./_ldo/profile.shapeTypes.ts"
 import { solidConnectedPlugin } from "connected-solid";
 
 // ...

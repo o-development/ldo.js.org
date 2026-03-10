@@ -9,11 +9,11 @@ npx @ldo/cli create ./my_project
 cd ./my_project
 ```
 
-This command will create a `.shapes` and `.ldo` folder that will store the schemas and generated code for LDO respectively.
+This command will create a `_shapes` and `_ldo` folder that will store the schemas and generated code for LDO respectively.
 
 ## Modify the project
 
-You can modify the project by adding shapes to the `.shapes` folder and running `npm run build:ldo`.
+You can modify the project by adding shapes to the `_shapes` folder and running `npm run build:ldo`.
 
 ## Publish to NPM
 

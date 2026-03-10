@@ -5,7 +5,7 @@ A hook that lets you get a list of Linked Data Objects for objects matching the 
 ```typescript
 import { useMatchObject, useResource } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
   const resource = useResource("https://example.com/data");

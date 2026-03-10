@@ -11,21 +11,21 @@ npm run build:ldo
 The `build` command can also be run manually. For example: 
 
 ```bash
-ldo build --input ./.shapes --output ./.ldo
+ldo build --input ./_shapes --output ./_ldo
 ```
 
-This command will create a `.shapes` and `.ldo` folder that will store the schemas and generated code for LDO respectively.
+This command will create a `_shapes` and `_ldo` folder that will store the schemas and generated code for LDO respectively.
 
 ## Parameters
 
 ### `-i [directory]`, `--input [directory]`
 
-__Default Value__: `./.shapes``
+__Default Value__: `./_shapes``
 
 The input directory. This directory should be filled with `*.shex` files.
 
 ### `-o [directory]`, `--output [directory]`
 
-__Default Value__: `./.ldo``
+__Default Value__: `./_ldo``
 
 The output directory.

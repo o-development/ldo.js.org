@@ -7,7 +7,7 @@ When a resource is updated on a Pod, the updates will automatically be reflected
 ```typescript
 import { useSubscribeToResource, useSubject } from "@ldo/solid-react";
 import React, { FunctionComponent } from "react";
-import { ProfileShapeType } from "./.ldo/Profile.shapeType";
+import { ProfileShapeType } from "./_ldo/Profile.shapeType";
 
 const Component: FunctionComponent = () => {
   // Subscribes to updates on the Pod for the given resources. If the Pod is

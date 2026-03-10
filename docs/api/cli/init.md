@@ -17,13 +17,13 @@ cd my_project/
 ldo init
 ```
 
-This command will create a `.shapes` and `.ldo` folder that will store the schemas and generated code for LDO respectively.
+This command will create a `_shapes` and `_ldo` folder that will store the schemas and generated code for LDO respectively.
 
 ## Parameters
 
 ### `-d [directory]`, `--directory [directory]` (Optional)
 
-The `init` command takes in one parameter: `-d` or `--directory`. If present, the `init` command will create the `.shapes` and `.ldo` folders in the given directory.
+The `init` command takes in one parameter: `-d` or `--directory`. If present, the `init` command will create the `_shapes` and `_ldo` folders in the given directory.
 
 ```bash
 npx run @ldo/cli init --director ./my_cool_dir
@@ -43,12 +43,12 @@ The command does the following:
     - If the `--directory` parameter is set, the `PARENT_DIRECTORY` is the given directory.
     - If `src`, `lib`, or `bin` are present in the project, the `PARENT_DIRECTORY` is `src`, `lib`, or `bin` selected in that order.
     - Else the `PARENT_DIRECTORY` is the project's root directory.
- - Creates a file at `PARENT_DIRECTORY/.shapes/foafProfile.shex` to serve as an example ShEx file. (This can be deleted at any time)
+ - Creates a file at `PARENT_DIRECTORY/_shapes/foafProfile.shex` to serve as an example ShEx file. (This can be deleted at any time)
  - Adds a build script, `build:ldo`, to `package.json`. For example, if the `PARENT_DIRECTORY` was `foo` the following would be added:
  ```json
  "scripts": {
    ...
-   "build:ldo": "ldo build --input foo/.shapes --output foo/.ldo"
+   "build:ldo": "ldo build --input foo/_shapes --output foo/_ldo"
  }
  ```
- - Runs the build script, generating the `.ldo` folder
+ - Runs the build script, generating the `_ldo` folder

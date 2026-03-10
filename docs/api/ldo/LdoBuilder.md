@@ -8,7 +8,7 @@ It is not recommended to instantiate an LdoDataset. Instead use the [`createLdoD
 
 ```typescript
 import { LdoDataset, createLdoDatasetFactory } from "@ldo/ldo";
-import { FoafProfileShapeType } from "./.ldo/foafProfile.shapeTypes";
+import { FoafProfileShapeType } from "./_ldo/foafProfile.shapeTypes";
 
 const ldoDataset = createLdoDataset();
 const ldoBuilder = ldoDataset.usingType(FoafProfileShapeType);
