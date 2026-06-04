@@ -243,7 +243,7 @@ profiles.forEach((person) => {
 ```typescript
 const friendsOfPerson1 = ldoDataset
   .usingType(FoafProfileShapeType)
-  .matchSubject(
+  .matchObject(
     namedNode("http://example.com/Person1"),
     namedNode("http://xmlns.com/foaf/0.1/knows")
   );
